@@ -1,0 +1,9 @@
+{
+  "name": "gmail-classifier",
+  "version": "0.1.0",
+  "description": "Intelligent Gmail email classification and organization with learning",
+  "author": {
+    "name": "Claude",
+    "email": "claude@anthropic.com"
+  }
+}
