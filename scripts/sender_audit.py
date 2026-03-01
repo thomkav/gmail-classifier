@@ -23,8 +23,24 @@ def extract_sender_info(from_header: str) -> tuple:
     return name, addr, domain
 
 
-def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993):
-    """Fetch FROM headers for all unread emails in INBOX"""
+def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993,
+                         include_subjects=False, progress_fn=None):
+    """Fetch FROM headers (and optionally Subject) for all unread emails in INBOX.
+
+    Args:
+        imap_host: IMAP server hostname.
+        imap_port: IMAP server port.
+        include_subjects: When True, also fetch Subject headers and return
+            a 5-tuple with domain_emails dict as the fifth element.
+        progress_fn: Optional callback(current, total) for progress reporting.
+
+    Returns:
+        4-tuple (sender_counter, domain_counter, sender_to_domain, total) when
+        include_subjects is False (backward-compatible).
+
+        5-tuple adding domain_emails: dict[str, list[dict]] when True.
+        Each dict has keys: sender, subject, domain.
+    """
     user = os.environ.get("GMAIL_EMAIL", "thomkav@gmail.com")
     password = os.environ.get("GMAIL_APP_PASSWORD", "")
 
@@ -32,13 +48,15 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993):
         print("ERROR: GMAIL_APP_PASSWORD not set", file=sys.stderr)
         sys.exit(1)
 
-    print(f"Connecting to {imap_host}...", file=sys.stderr)
+    if not progress_fn:
+        print(f"Connecting to {imap_host}...", file=sys.stderr)
     mail = imaplib.IMAP4_SSL(imap_host, imap_port)
     mail.login(user, password)
     mail.select("INBOX", readonly=True)
 
     # Search for unread emails
-    print("Searching for unread emails...", file=sys.stderr)
+    if not progress_fn:
+        print("Searching for unread emails...", file=sys.stderr)
     status, data = mail.search(None, "UNSEEN")
     if status != "OK":
         print(f"ERROR: Search failed: {status}", file=sys.stderr)
@@ -46,30 +64,43 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993):
 
     msg_ids = data[0].split()
     total = len(msg_ids)
-    print(f"Found {total} unread emails. Fetching FROM headers...", file=sys.stderr)
+    if not progress_fn:
+        print(f"Found {total} unread emails. Fetching headers...", file=sys.stderr)
 
     sender_counter = Counter()
     domain_counter = Counter()
     sender_to_domain = {}
+    domain_emails = {} if include_subjects else None
     batch_size = 200
+
+    fetch_fields = "(BODY.PEEK[HEADER.FIELDS (FROM SUBJECT)])" if include_subjects else "(BODY.PEEK[HEADER.FIELDS (FROM)])"
 
     for i in range(0, total, batch_size):
         batch = msg_ids[i:i + batch_size]
         batch_str = b",".join(batch)
         progress = min(i + batch_size, total)
-        print(f"  Fetching {progress}/{total}...", file=sys.stderr)
 
-        status, response = mail.fetch(batch_str, "(BODY.PEEK[HEADER.FIELDS (FROM)])")
+        if progress_fn:
+            progress_fn(progress, total)
+        else:
+            print(f"  Fetching {progress}/{total}...", file=sys.stderr)
+
+        status, response = mail.fetch(batch_str, fetch_fields)
         if status != "OK":
-            print(f"  Warning: batch fetch failed at {i}", file=sys.stderr)
+            if not progress_fn:
+                print(f"  Warning: batch fetch failed at {i}", file=sys.stderr)
             continue
 
         for item in response:
             if isinstance(item, tuple) and len(item) >= 2:
-                header = item[1]
-                if isinstance(header, bytes):
-                    header = header.decode("utf-8", errors="replace")
-                from_value = header.replace("From: ", "").replace("from: ", "").strip()
+                raw = item[1]
+                if isinstance(raw, bytes):
+                    raw = raw.decode("utf-8", errors="replace")
+
+                # Use email.message_from_string for robust header parsing
+                msg = email.message_from_string(raw)
+                from_value = msg.get("From", "").strip()
+
                 if from_value:
                     name, addr, domain = extract_sender_info(from_value)
                     display = f"{name} <{addr}>" if name else addr
@@ -77,9 +108,16 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993):
                     domain_counter[domain] += 1
                     sender_to_domain[display] = domain
 
+                    if include_subjects:
+                        subject = msg.get("Subject", "").strip()
+                        entry = {"sender": from_value, "subject": subject, "domain": domain}
+                        domain_emails.setdefault(domain, []).append(entry)
+
     mail.close()
     mail.logout()
 
+    if include_subjects:
+        return sender_counter, domain_counter, sender_to_domain, total, domain_emails
     return sender_counter, domain_counter, sender_to_domain, total
 
 
