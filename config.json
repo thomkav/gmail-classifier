@@ -1,0 +1,5415 @@
+{
+  "email_address": "thomkav@gmail.com",
+  "categories": {
+    "receipts": {
+      "confidence": "high",
+      "label": "receipts",
+      "action": "archive",
+      "patterns": [
+        "order",
+        "receipt",
+        "invoice",
+        "confirmation"
+      ],
+      "common_domains": [
+        "amazon.com",
+        "ebay.com",
+        "stripe.com",
+        "paypal.com",
+        "etsy.com",
+        "account.etsy.com",
+        "email.etsy.com",
+        "toasttab.com",
+        "opentable.com",
+        "resy.com",
+        "order.homedepot.com",
+        "emailinfo.bestbuy.com",
+        "usps.gov",
+        "shipstation.com",
+        "mail.swiship.com"
+      ]
+    },
+    "newsletters": {
+      "confidence": "medium",
+      "label": "newsletters",
+      "action": "review",
+      "quality_tiers": [
+        "high",
+        "medium",
+        "low"
+      ],
+      "patterns": [
+        "newsletter",
+        "weekly digest",
+        "monthly update",
+        "subscription"
+      ]
+    },
+    "promotions": {
+      "confidence": "medium",
+      "label": "promotions",
+      "action": "archive",
+      "patterns": [
+        "limited time",
+        "sale",
+        "offer",
+        "discount",
+        "promo",
+        "exclusive deal"
+      ]
+    }
+  },
+  "preferences": {
+    "keep_senders": [
+      "gmail.com",
+      "hotmail.com",
+      "sy.nexus",
+      "journalclub.io",
+      "newsletter.journalclub.io",
+      "mail.journalclub.io",
+      "tahniholt.com",
+      "email.paperlesspost.com",
+      "ucdenver.edu",
+      "dor.oregon.gov",
+      "labaton.com",
+      "link.com",
+      "accounts.google.com",
+      "docs.google.com",
+      "namecheap.com",
+      "justworks.com",
+      "1password.com",
+      "info.1password.com",
+      "r.sofi.com",
+      "docker.com",
+      "delta.com",
+      "stripe.com",
+      "me.com",
+      "yahoo.com",
+      "cuanschutz.edu",
+      "aol.com",
+      "id.apple.com",
+      "github.com",
+      "icloud.com",
+      "docusign.net",
+      "wetransfer.com",
+      "eventbrite.com",
+      "apple.com",
+      "n.delta.com",
+      "accountprotection.microsoft.com",
+      "microsoft.com",
+      "orders.apple.com",
+      "email.1password.com",
+      "account.microsoft.com",
+      "email.trinet.com",
+      "mac.com",
+      "lastpass.com"
+    ],
+    "keep_newsletters": [
+      "nytimes.com"
+    ],
+    "archive_newsletters": [],
+    "no_unsub": [
+      "namecheap.com"
+    ],
+    "archived_domains": [
+      "newsletter.newyorker.com",
+      "denverpost.com",
+      "update.oregonlive.com",
+      "substack.com",
+      "patreon.com",
+      "email.apple.com",
+      "messaging.squareup.com",
+      "wolfceramics.com",
+      "eartheasy.com",
+      "e.rover.com",
+      "techjobsforgood.com",
+      "info.digitalocean.com",
+      "e.ceramicartsdaily.org",
+      "newsletters.wired.com",
+      "calmatters.org",
+      "hellgatenyc.com",
+      "email.theguardian.com",
+      "mail.americastestkitchen.com",
+      "theparisreview.org",
+      "news.criterion.com",
+      "groundnews.email",
+      "lists.wnyc.org",
+      "mail.beehiiv.com",
+      "e.pendleton-usa.com",
+      "farmrio.com",
+      "studiosuits.com",
+      "t.shopifyemail.com",
+      "poshmark.com",
+      "oregonpotters.org",
+      "restoreoregon.org",
+      "portlandfruit.org",
+      "pottersvineyard.com",
+      "mindbodyonline.com",
+      "courtreserve.com",
+      "forgehotyoga.com",
+      "updates.fresha.com",
+      "withjoy.com",
+      "vikunja.cloud",
+      "notifications.acorns.com",
+      "lyftmail.com",
+      "amazon.com",
+      "google.com",
+      "notify.wellsfargo.com",
+      "member.americanexpress.com",
+      "email.marcopolo.me",
+      "thebetterbone.com",
+      "empower.com",
+      "proxyvote.com",
+      "3.basecamp.com",
+      "public.govdelivery.com",
+      "mail.cesystems.tech",
+      "aisleplanner.com",
+      "thepeoplescourts.com",
+      "pam.org",
+      "welcome.americanexpress.com",
+      "sandmarc.com",
+      "eml.nordstrom.com",
+      "mail2.wellsfargorewards.com",
+      "mgs.opentable.com",
+      "perfectunion.us",
+      "e.ilhanomar.com",
+      "eml.condenast.com",
+      "protect-oregon.com",
+      "email.rocketmoney.com",
+      "networkforgood.com",
+      "kickstarter.com",
+      "discord.com",
+      "culturehub.org",
+      "teacupnordic.org",
+      "art-newyork.org",
+      "newyorklivearts.org",
+      "here.ccsend.com",
+      "email.nypl.org",
+      "thisiscriminal.com",
+      "xray.fm",
+      "portlandplayhouse.org",
+      "idealist.org",
+      "fotoncandle.com",
+      "5rhythms.com",
+      "atriumpdx.com",
+      "kilnfire.com",
+      "adoptoneblock.com",
+      "rs.email.nextdoor.com",
+      "hello.qobuz.com",
+      "maximumfun.org",
+      "oregonfoodbank.org",
+      "mail.carefirstwellbeing.com",
+      "passportinc.com",
+      "ecs.walgreens.com",
+      "onetable.org",
+      "bandcamp.com",
+      "toasttab.com",
+      "resy.com",
+      "jumbospickleball.com",
+      "simplepractice.com",
+      "q.quantumfiber.com",
+      "actblue.com",
+      "splitwise.com",
+      "digitalocean.com",
+      "info.portland.gov",
+      "footwise.com",
+      "internal.nike.com",
+      "portlandtextilemonth.com",
+      "em9026.welcomeback.fullcircle.com",
+      "samplize.com",
+      "thomsonreuters.com",
+      "playbypoint.com",
+      "blvd.co",
+      "g.shopifyemail.com",
+      "sellwoodyoga.com",
+      "welcomehomecoalition.org",
+      "shared1.ccsend.com",
+      "23342135.mailchimpapp.com",
+      "email.actionnetwork.org",
+      "actionnetwork.org",
+      "primevideo.com",
+      "cascada.me",
+      "mail.merceradvisors.com",
+      "priority.instagram.com",
+      "mail.instagram.com",
+      "colibripdx.com",
+      "email.lifecare-news.com",
+      "94761737.mailchimpapp.com",
+      "creativemornings.com",
+      "royalmail.com",
+      "hertz.pt",
+      "getbrick.app",
+      "duke.edu",
+      "sendtax.hrblock.com",
+      "thecurrency.empower.com",
+      "zivameditation.com",
+      "varsitytutors.com",
+      "steampowered.com",
+      "sortedfood.com",
+      "medium.com",
+      "thisismetis.com",
+      "groundnewsletter.com",
+      "glassdoor.com",
+      "linkedin.com",
+      "eat.seamless.com",
+      "mail2.gofarrewards.wellsfargo.com",
+      "mail.notion.so",
+      "dropbox.com",
+      "dropboxmail.com",
+      "robinhood.com",
+      "doordash.com",
+      "piazza.com",
+      "spotify.com",
+      "foreignpolicy.com",
+      "news.united.com",
+      "backblaze.com",
+      "crunch.com",
+      "connect.wellsfargoemail.com",
+      "meetup.com",
+      "effyblue.com",
+      "transitionswm.com",
+      "wnyc.org",
+      "insideapple.apple.com",
+      "stagejobspro.com",
+      "rmlsweb.com",
+      "e.turbotax.intuit.com",
+      "filmandtvpro.com",
+      "experience.com",
+      "info.padmapper.com",
+      "theatlantic.com",
+      "mobilize.us",
+      "mail.turo.com",
+      "express.medallia.com",
+      "hrblock.com",
+      "driveyournarrative.com",
+      "mint.com",
+      "em.aetna.com",
+      "mandy.com",
+      "marieforleo.com",
+      "ziprecruiter.com",
+      "streeteasy.com",
+      "harvestapp.com",
+      "frostproductions.biz",
+      "musicsales.com",
+      "jotform.com",
+      "bklyncommons.com",
+      "jeffsugg.com",
+      "dukemychart.org",
+      "wearehacienda.com",
+      "ps122.org",
+      "kentdenver.org",
+      "qemailserver.com",
+      "mail.zillow.com",
+      "wolfram.com",
+      "mail.optimumemail1.com",
+      "pramp.com",
+      "timeular.com",
+      "email.jetblue.com",
+      "adorama.com",
+      "uhaul.com",
+      "alkymi.io",
+      "fastcomet.com",
+      "payments-email.apartments.com",
+      "beyondbooksmart.com",
+      "monkeypodmarketing.com",
+      "uber.com",
+      "paypal.com",
+      "understandingwar.org",
+      "gibneydance.org",
+      "bbg.org",
+      "henrystreet.org",
+      "underdogportland.com",
+      "domesny.com",
+      "cozy.co",
+      "imleagues.com",
+      "ccinvest.com",
+      "advancedmd.com",
+      "joylist.nyc",
+      "mail1.wellsfargo.com",
+      "guildmortgage.net",
+      "eastbankmtg.com",
+      "e.delta.com",
+      "citibikenyc.com",
+      "smartmeters.coned.com",
+      "bhphotovideo.com",
+      "squarespace.com",
+      "aptdeco.com",
+      "swingleftpeninsula.org",
+      "coursereport.com",
+      "nycdatascience.com",
+      "flatironschool.com",
+      "neuvoo.com",
+      "employmentalert.com",
+      "backstage.com",
+      "emailinfo.bestbuy.com",
+      "oe.target.com",
+      "wayfair.com",
+      "walmart.com",
+      "official.nike.com",
+      "nike.com",
+      "notices.rei.com",
+      "ebill.optimum.net",
+      "customerassistance.coned.com",
+      "emailconed.com",
+      "email.coned.com",
+      "zipcar.com",
+      "email.zipcar.com",
+      "gojuno.com",
+      "redfin.com",
+      "skyslope.com",
+      "alerts.craigslist.org",
+      "sparefoot.com",
+      "mail.flagstar.com",
+      "clubreadymail.com",
+      "corepoweryoga.com",
+      "cyclebar.com",
+      "denverboulderingclub.com",
+      "oregonadultsoccer.com",
+      "theweek.com",
+      "newsletter.theweek.com",
+      "promo.theweek.com",
+      "revealnews.org",
+      "blenderguru.com",
+      "marketwatchmail.com",
+      "email.consumerreports.org",
+      "audible.com",
+      "email-marriott.com",
+      "ifly.alaskaair.com",
+      "o.delta.com",
+      "servicetitan.com",
+      "modeanalytics.com",
+      "kaggle.intercom-mail.com",
+      "dataiku.com",
+      "e.redgiant.com",
+      "e.pond5.com",
+      "adobe.com",
+      "squarespace.info",
+      "wordpress.com",
+      "twitch.tv",
+      "doodle.com",
+      "lensa.com",
+      "directvnow.com",
+      "hulumail.com",
+      "notification.intuit.com",
+      "spaceinvadersocial.com",
+      "order.homedepot.com",
+      "teachforamerica.org",
+      "theepochtimes.com",
+      "shop.app",
+      "act.democrats.org",
+      "countryfinancial.com",
+      "signup.com",
+      "zerowasteoutlet.com",
+      "dhl.com",
+      "aspiration.com",
+      "abebooks.com",
+      "twitter.com",
+      "crooked.com",
+      "luv.southwest.com",
+      "iluv.southwest.com",
+      "emails.flyfrontier.com",
+      "flyfrontier.com",
+      "t.delta.com",
+      "email.peacocktv.com",
+      "s.onepeloton.com",
+      "mojang.com",
+      "cybercoders.com",
+      "singlesprout.com",
+      "collegerecruiter-careeradvice.com",
+      "alumnirecruiter.com",
+      "angel.co",
+      "indeed.com",
+      "generalassemb.ly",
+      "m.mail.coursera.org",
+      "t.mail.coursera.org",
+      "codecademy.com",
+      "kadenze.com",
+      "www.kadenze.com",
+      "learncodethehardway.com",
+      "machinelearningmastery.com",
+      "datascienceweekly.org",
+      "heroku.com",
+      "wework.com",
+      "hackerrankmail.com",
+      "hackerrankforwork.com",
+      "autodesk.com",
+      "vdocipher.com",
+      "arturia.com",
+      "ecstaticdance.nyc",
+      "daybreaker.com",
+      "koalacab.com",
+      "chewy.com",
+      "huel.com",
+      "brooklinen.com",
+      "zappos.com",
+      "fahertybrand.com",
+      "getquip.com",
+      "shapeways.com",
+      "food52.com",
+      "audm.com",
+      "ground-news.com",
+      "mailva.evite.com",
+      "youtube.com",
+      "lemonade.com",
+      "billmatrix.com",
+      "transamerica.com",
+      "powerthepolls.org",
+      "e.adamschiff.com",
+      "trustpilotmail.com",
+      "redditmail.com",
+      "sale.craigslist.org",
+      "avalonbay.com",
+      "editmysite.com",
+      "pb08.ascendbywix.com",
+      "messages.offerup.com",
+      "email.offerup.com",
+      "service.newyorktimes.com",
+      "roomrs.co",
+      "email.apartments.com",
+      "convo.zillow.com",
+      "update.trulia.com",
+      "johnlscott.com",
+      "prioritylending.com",
+      "compass.com",
+      "hous.craigslist.org",
+      "basecamphomeinspections.com",
+      "storagepost.com",
+      "apmortgage.com",
+      "seamless.com",
+      "gotobus.com",
+      "parkmobileglobal.com",
+      "info.coned.com",
+      "e.hotwire.com",
+      "expediamail.com",
+      "kayak.com",
+      "fareboom.com",
+      "info.email.aa.com",
+      "email.alaskaair.com",
+      "oroxleather.com",
+      "tuftandneedle.com",
+      "bonobos.com",
+      "alexmill.com",
+      "e.potterybarn.com",
+      "delivery.dickssportinggoods.com",
+      "swissgear.com",
+      "2modern.com",
+      "sys.vevor.com",
+      "thefarmersdog.com",
+      "email.chipotle.com",
+      "magicspoon.com",
+      "wyzant.com",
+      "service-now.com",
+      "echosign.com",
+      "memberium.com",
+      "e-mail.condenast.com",
+      "wickedreports.com",
+      "autodeskcommunications.com",
+      "ohhey.depop.com",
+      "365datascience.com",
+      "fullstackacademy.com",
+      "o.sofi.org",
+      "myloanzone.com",
+      "webuyblack.com",
+      "squaremktg.com",
+      "colinallred.com",
+      "northtexasgivingday.org",
+      "nl.npr.org",
+      "goodbusiness.works",
+      "hackyengineering.com",
+      "freeya.com",
+      "subscriber-services.com",
+      "yelp.com",
+      "bikedurham.org",
+      "meowwolf.com",
+      "fireandflavor.com",
+      "refund.globalblue.com",
+      "eventinsurancenow.com",
+      "eatwoodspoon.com",
+      "portlandforall.org",
+      "enews.united.com",
+      "send.daybreaker.com",
+      "notifications.nike.com",
+      "communications.paypal.com",
+      "service.paypal.com",
+      "workspace-updates.empower.com",
+      "tldrnewsletter.com",
+      "notifications.lyrahealth.com",
+      "katabughazaleh.com",
+      "thekitchen.org",
+      "33646933.mailchimpapp.com",
+      "my.joinhoney.com",
+      "carefirst.com",
+      "acuityscheduling-mail.com",
+      "montclair.edu",
+      "plans.eventbrite.com",
+      "oregonforall.us",
+      "acuityscheduling.com",
+      "kindreddogpdx.com",
+      "berniesanders.com",
+      "verdi.com",
+      "multco.us",
+      "messages.lhmailer.com",
+      "forbitterforworse.com",
+      "mail.momence.com",
+      "saikat.us",
+      "performancespacenewyork.org",
+      "opentable.com",
+      "pcun.org",
+      "account.etsy.com",
+      "bolt.eu",
+      "order.online",
+      "e.lululemon.com",
+      "nowyogapdx.ccsend.com",
+      "nicolamoore.eu",
+      "vote.org",
+      "event.eventbrite.com",
+      "meyerandassoc.com",
+      "gopassport.com",
+      "support.freetaxusa.com",
+      "myturn.com",
+      "alerts.parkmobile.io",
+      "inaturalist.org",
+      "citi.com",
+      "myhopcard.com",
+      "email.etsy.com",
+      "feedbackemail.americanexpress.com",
+      "care.lifestance.com",
+      "gr-gallery.com",
+      "gillibrand.senate.gov",
+      "thepeoplesyoga.org",
+      "artistcraftsman.com",
+      "e.doctorswithoutborders.org",
+      "thewoostergroup.org",
+      "e.thekeyrewards.com",
+      "vizcom.com",
+      "makebooks.blurb.com",
+      "conserve.nature.org",
+      "stillsitting.com",
+      "christinetylerhill.com",
+      "verifyle.com",
+      "plaid.com",
+      "mail.creditkarma.com",
+      "lyrahealth.com",
+      "mail5.zocdoc.com",
+      "updates.ubisoft.com",
+      "thetiebar.com",
+      "taxes.freetaxusa.com",
+      "messages.gofundme.com",
+      "news.fullcircle.com",
+      "eternal.tv",
+      "vagaro.com",
+      "printwithme.com",
+      "plutobooks.com",
+      "frame.work",
+      "ocasiocortez.com",
+      "mail.hbomax.com",
+      "retsupport.com",
+      "thegreenearthco.com",
+      "spincyclenyc.com",
+      "shipstation.com",
+      "skillshare.com",
+      "e.mail.washingtonpost.com",
+      "carbonaraapp.com",
+      "namaspa.com",
+      "netlify.com",
+      "zenoti.com",
+      "mailman.bloomerang-mail.com",
+      "email.sevenrooms.com",
+      "mail.ridewithgps.com",
+      "202675278.mailchimpapp.com",
+      "eventsured.com",
+      "surveynrc.com",
+      "notification.evgo.com",
+      "lodgecastiron.com",
+      "smartwaiver.com",
+      "moonshotgamestore.com",
+      "united.com",
+      "farmstand.fullcircle.com",
+      "fullcircle.com",
+      "loopdeloopvintner.com",
+      "liquidquartzsealer.com",
+      "pamcut.org",
+      "mail.swiship.com",
+      "judge.me",
+      "mtmograph.com",
+      "email1.marriott-vacations.com",
+      "orders.indochino.com",
+      "etsy.com",
+      "poacafe.com",
+      "abathhouse.com",
+      "healthadvocate.uhc.com",
+      "jetbrains.com",
+      "covermanager.com",
+      "comunicaciones.iberia.com",
+      "inguest.com",
+      "googlemail.com",
+      "brf.empowermyretirement.com",
+      "matchafreak.com",
+      "penrosefriends.org",
+      "justride.com",
+      "rosehaven.org",
+      "edit.houzz.com",
+      "risk-reward.org",
+      "e.dcsg.com",
+      "workingfamilies.org",
+      "chunks.shop",
+      "wonderbagworld.com",
+      "actionnetworkhelp.zendesk.com",
+      "morningceramics.com",
+      "turntonetworks.com",
+      "abramsbooks.com",
+      "booking.spothopperapp.com",
+      "adoptoneblock.org",
+      "therebello.com",
+      "recreation.gov",
+      "pulsepdx.net",
+      "photomyne.com",
+      "skincareessentials.com",
+      "marketing.freetaxusa.com",
+      "wise.com",
+      "wearerecs.com",
+      "bonterratech.com",
+      "61779777.mailchimpapp.com",
+      "listen360.com",
+      "buffalogames.com",
+      "outletpdx.com",
+      "m.cascadetickets.com",
+      "m.shopifyemail.com",
+      "go.reuters.com",
+      "ranchosantana.com",
+      "blockbluelight.com",
+      "retirementpartner.com",
+      "basecamp.com",
+      "barrowstreettheatre.ccsend.com",
+      "exploretock.com",
+      "toast-restaurants.com",
+      "marketing.blvd.me",
+      "multcolib.sirsi.net",
+      "aarmy.com",
+      "product.miro.com",
+      "o.thekeyrewards.com",
+      "notifications.quantumfiber.com",
+      "otter.ai",
+      "mail.threads.net",
+      "e.democrats.org",
+      "moxyinternational.com",
+      "makerpipe.com",
+      "everyaction.com",
+      "st.urbanoutfitters.com",
+      "22356331.mailchimpapp.com",
+      "humanitix.com",
+      "djpdx.info",
+      "flagstar.com",
+      "mail-identity.trinet.com",
+      "ascensus.com",
+      "usps.gov",
+      "roninresearch.com",
+      "oregonlive.com",
+      "todoist.com",
+      "loyalty.email.ikea.com",
+      "yogasix.com",
+      "email.alltrails.com",
+      "clippercard.com",
+      "gorgeweddingconcierge.co",
+      "m2.washpost.com",
+      "glasp.co",
+      "notifications.lowes.com",
+      "updates.notion.so",
+      "appointment-plus.com",
+      "craighill.co",
+      "groundnews.app",
+      "promote.weebly.com",
+      "crm.ba.com",
+      "gainrepmail.com",
+      "on-running.com",
+      "clover.com",
+      "email.livingroomtheaters.com",
+      "system.u-tec.com",
+      "renewhome.com",
+      "yardgames.com",
+      "annabryantart.com",
+      "theguardian.com",
+      "paperculture.com",
+      "culturedcode.com",
+      "facebookuserprivacysettlement.com",
+      "carta.com",
+      "restaurant-information.com",
+      "saphety.com",
+      "em.ferry.nyc",
+      "e.tatteredcover.com",
+      "encuestas.iberia.com",
+      "alerts.caremark.com",
+      "alotrolado.org",
+      "welcomecustomer.gonift.com",
+      "lamama.org",
+      "uchicago.edu",
+      "coloradosos.gov",
+      "advocate.uhc.com",
+      "email.thefork.pt",
+      "notifications.surlatable.com",
+      "email.surlatable.com",
+      "e.livingroomtheaters.com",
+      "playwrightshorizons.org",
+      "info.tidal.com",
+      "info.classpass.com",
+      "marketing.sg.weavecoms.com",
+      "ntslive.co.uk",
+      "honeygrow.com",
+      "psksupermarkets.com",
+      "email.otterbox.com",
+      "theoneill.org",
+      "katieporter.com",
+      "h5.hilton.com",
+      "mailout.plex.tv",
+      "zupans.com",
+      "thefutonshop.com",
+      "news.native-instruments.com",
+      "ses.vevor.com",
+      "shop.schoolhouse.com",
+      "innovations.samsungusa.com",
+      "boulderingproject.com",
+      "ora.vevor.com",
+      "email.hatch.co",
+      "doctors-without-borders.classy-mail.org",
+      "newyork.msf.org",
+      "mail.quince.com",
+      "theparisreview.info",
+      "emails.alomoves.com",
+      "mail.parkmobile.io",
+      "libraryfoundation.org",
+      "lustery.com",
+      "e.nymag.com",
+      "printhouseavl.com",
+      "secretparty.io",
+      "kl.blackdiamondequipment.com",
+      "email.mrcooper.com",
+      "my.store-emails.com",
+      "spotapps.co",
+      "getchipdrop.com",
+      "note.marcopolo.me",
+      "cadem.org",
+      "updates.biketownpdx.com",
+      "tix-mail.com",
+      "mail-15.hive.co",
+      "pocketcasts.com",
+      "mail.schwab.com",
+      "e4.rover.com",
+      "e.potterybarnkids.com",
+      "alerts.rei.com",
+      "customer-mail.smile.io",
+      "elavon.com",
+      "mail.crunchyroll.com",
+      "marketing.id.me",
+      "teafund.org",
+      "messaging.peacocktv.com",
+      "union.fit",
+      "is.email.nextdoor.com",
+      "plugshare.com",
+      "openstageit.com",
+      "thisiswoowoo.com",
+      "mailusa.atgtickets.com",
+      "nqujb5.fg97.fdske.com",
+      "mail.instinctvet.email",
+      "bamboosushi.com",
+      "thesocietyhotel.com",
+      "your.cvs.com",
+      "slack.com",
+      "campaign.eventbrite.com",
+      "smallpdf.com",
+      "pendosurvey.com",
+      "mnb.email",
+      "notifications.alaskaair.com",
+      "openart.ai",
+      "order.eventbrite.com",
+      "zolababy.com",
+      "jivamuktiyoganyc.com",
+      "evidencebasedbirth.com",
+      "solgaard.co",
+      "democrats.senatemajority.com",
+      "weddings.theknot.com",
+      "betteroffbowling.com",
+      "susannebartsch.com",
+      "masusushi.com",
+      "wellspentmarket.com",
+      "m.aladdin-theater.com",
+      "emailupdates.trimet.org",
+      "mikeandcarlee.com",
+      "message.sevenrooms.com",
+      "response.dpacnc.com",
+      "seiu503.org",
+      "v.alaskaair.com",
+      "colorofchange.org",
+      "venmo.com",
+      "loanadministration.com",
+      "newsletter.journalclub.io",
+      "runsignup.com",
+      "email.zillow.com",
+      "email.optimumemail1.com",
+      "adobe acrobat sign on behalf of cao.solutionsnike.com",
+      "marketing.patreon.com",
+      "mail2.zocdoc.com",
+      "mms.att.net",
+      "wearecuriousfoxes.com",
+      "matcheducation.org",
+      "therepresentatives.org",
+      "ladanceproject.com",
+      "naatco.org",
+      "wellnessliving.com",
+      "sona-systems.net",
+      "dixonplace.org",
+      "hbs.edu",
+      "noreply.acorns.com",
+      "cancer.org",
+      "mindfulsupportservices.com",
+      "nyc.rr.com",
+      "redgiant.com",
+      "email.nebula.tv",
+      "newsletter.quivr.app",
+      "comms.mail.washingtonpost.com"
+    ]
+  },
+  "llm_classifications": {
+    "sy.nexus": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content includes event announcements and forwarded messages."
+    },
+    "email.paperlesspost.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content mentions updates to terms of service and privacy policy."
+    },
+    "tahniholt.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content appears to be marketing for events."
+    },
+    "dor.oregon.gov": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content is related to a request code for a letter response."
+    },
+    "labaton.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Content is related to a class action concern."
+    },
+    "link.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "The subject line mentions updates to terms of service and privacy policy, which are typical for notifications."
+    },
+    "volcanicbottleshoppe.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The subject line mentions a special order and shipping, which are typical for receipt emails."
+    },
+    "arena.io": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "The subject line mentions a laptop return and confirmation, which could be related to a promotion or service update."
+    },
+    "wetransfer.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "File transfer service, promotional content"
+    },
+    "ctt.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Shipping and delivery confirmation"
+    },
+    "policy.farmers.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Insurance policy update"
+    },
+    "hrccommunityhub.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Community news and updates"
+    },
+    "support.meundies.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "resurva.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Booking reminder and confirmation"
+    },
+    "americanmontage.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Event announcement and performance report"
+    },
+    "tigerlilyholistic.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Appointment reminder and booking confirmation"
+    },
+    "beyondmenu.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and pickup reminder"
+    },
+    "mail3.zocdoc.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Appointment reminder and rescheduling"
+    },
+    "alexandria-nyc.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Event announcement and ticket release"
+    },
+    "sharegrid.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event reminders and promotions"
+    },
+    "wecar.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Payment receipts and confirmation emails"
+    },
+    "lastpass.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Security and account-related notifications"
+    },
+    "smiledining.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmations and receipts"
+    },
+    "thegetdownnyc.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Entertainment and lifestyle content"
+    },
+    "ovationtix.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event promotions and confirmations"
+    },
+    "secure-booker.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Appointment and booking confirmations"
+    },
+    "insideicloud.icloud.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Apple ID and iCloud-related notifications"
+    },
+    "masienda.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Free shipping promotions"
+    },
+    "baydin.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "The content and subject lines are typical of promotional marketing emails."
+    },
+    "mgb.modento.io": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "The content is related to a dental appointment and is likely a notification from a professional service."
+    },
+    "saytechnologies.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The content is related to financial reports and is likely an automated email from a financial service."
+    },
+    "notifications.skype.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "The content is related to account notifications and is likely from a professional service."
+    },
+    "lyft-new.zendesk.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "The content is related to a follow-up from a ride-sharing service and is likely a notification."
+    },
+    "chownow.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The content is related to an order confirmation and is likely from a professional service."
+    },
+    "lks-lantern.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "The content is related to a Best Buy claim and is likely a promotional email."
+    },
+    "haveibeenpwned.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "The content is related to a data breach notification and is likely a notification."
+    },
+    "cultivatecatering.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The content is related to an invoice and is likely from a professional service."
+    },
+    "powells.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The content is related to an order confirmation and is likely from a professional service."
+    },
+    "zola.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to gifts and RSVPs."
+    },
+    "mail.mailchimpapp.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing and promotional emails for classes and plays."
+    },
+    "schwab.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Tax return documents and dividend distribution reminders."
+    },
+    "amtrak.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "eTicket and refund receipts."
+    },
+    "fareharbor.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Booking and event reminders."
+    },
+    "interfaithallianceco.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Newsletter content about events and deadlines."
+    },
+    "mail.nystateofhealth.ny.gov": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Important health insurance eligibility notices."
+    },
+    "gofundme.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Donation thank you messages and fundraising invitations."
+    },
+    "janeapp.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipts and appointment reminders."
+    },
+    "sierraclub.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to environmental issues and voting."
+    },
+    "wixsiteautomations.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and plan expiration notifications."
+    },
+    "rosetofilms.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Campaign-related emails and invitations."
+    },
+    "transitionswm.merceradvisors.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Webinar and newsletter invitations."
+    },
+    "tulasoftware.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails."
+    },
+    "peerspace.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Promotional content related to community spaces."
+    },
+    "mail.universaltennis.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to tennis and free trials."
+    },
+    "wonderlandnewyork.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content related to events and ticket sales."
+    },
+    "diginn.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails."
+    },
+    "naflink.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Promotional content related to offers and discounts."
+    },
+    "travel.priceline.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Flight update notifications."
+    },
+    "e.animoto.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to discounts and sales."
+    },
+    "eatkubeh.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to Thanksgiving and special deals."
+    },
+    "prefaremeals.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to food delivery and new programs."
+    },
+    "ableton.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to software licenses and invoices."
+    },
+    "mail.betterment.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to financial investments and advice."
+    },
+    "phnyc.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about fundraising and events."
+    },
+    "thepeoplemovers.co": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to new acts and projects."
+    },
+    "gusto.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipts related to tax forms and W-2 documents."
+    },
+    "thekinkkit.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to sex advice and Kinky Halloween tips."
+    },
+    "plusthis.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to webinars and direct response copywriting."
+    },
+    "aa.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipts related to boarding passes and password changes."
+    },
+    "formlift.net": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to FormLift extension and donations."
+    },
+    "troikatronix.freshdesk.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about registration questions and ticket receipts."
+    },
+    "asurion.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipts related to claim documents and completion."
+    },
+    "agents.icims.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about onsite interviews."
+    },
+    "uch.edu": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification from the University of Colorado Hospital."
+    },
+    "ykvision.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to wedding and engagement photos."
+    },
+    "nwnavigator.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to trip finalization and quote confirmation."
+    },
+    "calendly.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Event reminders and booking notifications."
+    },
+    "ceramicartsnetwork.org": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Subscription renewal failure notifications."
+    },
+    "discover.offerup.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to gift offers."
+    },
+    "planetofthevapes.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to discounts and product launches."
+    },
+    "climatepeople.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to job search optimization and climate-related topics."
+    },
+    "slingemail.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Emails related to subscription status and password updates."
+    },
+    "northernbrewer.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Emails related to order status and delivery updates."
+    },
+    "jetblue.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Emails related to travel credit and account management."
+    },
+    "nitehawkcinema.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Emails related to order status and delivery updates."
+    },
+    "kickstartfinder.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Emails related to job opportunities and promotions."
+    },
+    "mail.crateandbarrel.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Emails related to order status and delivery updates."
+    },
+    "shonsimon.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Emails related to Black Friday discounts and promotions."
+    },
+    "the-citizenry.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Emails related to order status and delivery updates."
+    },
+    "questdiagnostics.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Emails related to appointment and authorization confirmations."
+    },
+    "cmycubes.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Emails related to feedback requests and promotions."
+    },
+    "feiyue-shoes.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Emails related to discounts and promotions."
+    },
+    "emailinfo.geeksquad.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Emails related to software installation and purchase information."
+    },
+    "loom.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Emails related to updates and promotions."
+    },
+    "news.edx.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Emails related to course recommendations and updates."
+    },
+    "alerts.depop.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Emails related to password reset and order updates."
+    },
+    "sharegrid-mail.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Emails related to listings and promotions."
+    },
+    "troikatronix.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Emails related to newsletters and event announcements."
+    },
+    "revelsystems.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content mentions 'Order Received' and pizza preparation."
+    },
+    "codevid19.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content includes countdowns and important information."
+    },
+    "gc.cuny.edu": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Content is about events and publications."
+    },
+    "triplebyte.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Content is about application updates and referrals."
+    },
+    "haas.berkeley.edu": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Content is about application deadlines and events."
+    },
+    "ynab-1f617b5d34d0.intercom-mail.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content is about budgeting tips."
+    },
+    "customink.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Content is about gear and products."
+    },
+    "ridewithvia.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Content mentions receipts and tips."
+    },
+    "npr.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Content is about election results and stories."
+    },
+    "wistia.com": {
+      "category": "notification",
+      "confidence": 75,
+      "reasoning": "Content is about password updates."
+    },
+    "customerservice.nyc.gov": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Content is about service request confirmations and closures."
+    },
+    "reverb.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content is about feedback and shipping."
+    },
+    "splice.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Content is about VIP lists and sample downloads."
+    },
+    "todaytix.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content is about winning tickets."
+    },
+    "bookrenter.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "These emails are related to textbook rentals and returns."
+    },
+    "thevolunteercenter.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "These emails are newsletters from a volunteer center."
+    },
+    "cigna.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "These emails are from a health insurance company with service updates."
+    },
+    "wellsfargo.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "These emails are from a financial institution with account notifications."
+    },
+    "chasetravel.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "These emails are related to travel reservations."
+    },
+    "mechanicalkeyboards.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "These emails are related to order shipments."
+    },
+    "hamptonjitney.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "These emails are related to jitney reservations."
+    },
+    "shipup.co": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation message"
+    },
+    "blinkcharging.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Invites to join a community or celebrate an event"
+    },
+    "houseloan.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Credit report update and device verification"
+    },
+    "txn-email03.playstation.com": {
+      "category": "notification",
+      "confidence": 75,
+      "reasoning": "Password update notifications"
+    },
+    "image3d.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation messages"
+    },
+    "radiationbusiness.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "News and updates"
+    },
+    "timberlinelodge.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Reservation confirmation and modification messages"
+    },
+    "joinhoney.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Exclusive offer messages"
+    },
+    "mit.edu": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Course discount and learning opportunities"
+    },
+    "itch.io": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Payment confirmation messages"
+    },
+    "crowdcast.io": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Updates and new features"
+    },
+    "messages.tax.ny.gov": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Tax-related messages"
+    },
+    "nytechmetal.com": {
+      "category": "notification",
+      "confidence": 75,
+      "reasoning": "Service reminders"
+    },
+    "limebike.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Ride receipt messages"
+    },
+    "playtomic.io": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Payment and ticket confirmation messages"
+    },
+    "li.me": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Ride receipt messages"
+    },
+    "urbanglass.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Support and scholarship opportunities"
+    },
+    "glympse.cb2.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Delivery confirmation messages"
+    },
+    "e.clearme.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Renewal and family-related messages"
+    },
+    "prop.trulia.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content about rentals"
+    },
+    "sf-notifications.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account activity notification"
+    },
+    "judgeme.email": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional request for reviews"
+    },
+    "cablevision.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Service update or appointment reminder"
+    },
+    "staycourant.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and shipment updates"
+    },
+    "cachelifeny.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional event announcement"
+    },
+    "showclix.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Event ticket and receipt"
+    },
+    "alticeusa.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Customer feedback request"
+    },
+    "spitfireaudio.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content about music and inspiration"
+    },
+    "den.tl": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Electronic receipt"
+    },
+    "mail.uipath.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Event update or reminder"
+    },
+    "ifly.southwest.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Flight reservation confirmation"
+    },
+    "smdservers.net": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Document completion and payment receipt"
+    },
+    "mongodb.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Alert or update about a service"
+    },
+    "support.facebook.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to Facebook Research Studies."
+    },
+    "mydeviceprotect.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to returning devices."
+    },
+    "reddit.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account-related notifications from Reddit."
+    },
+    "users.smore.com": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "Newsletter content from Breakthrough Kent Denver."
+    },
+    "lyft-bikes-scooters.zendesk.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Customer service follow-up from Lyft."
+    },
+    "wennercpa.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipt-related content from Wenner CPA."
+    },
+    "prospectusdocs.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Shareholder information and receipts from various financial institutions."
+    },
+    "safeguardit.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Monthly invoice from Safeguard Self Storage."
+    },
+    "e.gogoair.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipts from Gogo Air."
+    },
+    "rt.adobesystems.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to Adobe products."
+    },
+    "figure53.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and password change notifications."
+    },
+    "orders.otterbox.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Shipping and order confirmation emails."
+    },
+    "collapsiblegiraffe.org": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order and shipping confirmation emails."
+    },
+    "t.spiritairlines.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Flight status and customer satisfaction survey."
+    },
+    "expressvpn.xyz": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account expiration and renewal notifications."
+    },
+    "brainshark.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Service discontinuation and news notifications."
+    },
+    "gallup4.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Customer service feedback requests."
+    },
+    "enterprisecarshare.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The emails are related to car rental services and contain information about reservations and cancellations."
+    },
+    "publicstorage.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The emails are related to storage services and contain order confirmations and invoices."
+    },
+    "billmonk.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The emails are related to a financial service and contain promotional messages."
+    },
+    "springboardr.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "The emails are related to a survey and contain promotional messages."
+    },
+    "onetravel.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The emails are related to travel services and contain promotional messages."
+    },
+    "e.tripadvisor.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The emails are related to a review platform and contain promotional messages."
+    },
+    "mail6.zocdoc.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The emails are related to a medical appointment and contain updates about the appointment status."
+    },
+    "starcycleride.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The emails are related to a bike rental service and contain information about reservations and receipts."
+    },
+    "notices.nystateofhealth.ny.gov": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The emails are related to health insurance and contain important notices."
+    },
+    "active.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The emails are related to a fitness organization and contain transaction receipts."
+    },
+    "iberia.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The emails are related to an airline and contain boarding passes."
+    },
+    "roll20.net": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The emails are related to a gaming platform and contain important notices."
+    },
+    "alaskaair.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The emails are related to an airline and contain boarding passes."
+    },
+    "openedgepay.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The emails are related to a healthcare service and contain payment requests and receipts."
+    },
+    "ptande.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to tennis and pickleball offers."
+    },
+    "email.blinds.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and shipping confirmation emails."
+    },
+    "o.rejuvenation.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and shipping confirmation emails."
+    },
+    "sketchfab.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Important changes to Sketchfab policies."
+    },
+    "h6.hilton.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Confirmation emails related to Hilton Honors account."
+    },
+    "toogoodtogo.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "User terms and conditions update."
+    },
+    "tatteredcover.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Book sale and calendar update emails."
+    },
+    "epoch.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Order confirmation and renewal notice emails."
+    },
+    "e-mail.columbia.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional emails related to gear deals."
+    },
+    "drawnames.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to a gift exchange."
+    },
+    "edenbrothers.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and shipping information."
+    },
+    "tmail.nvidia.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Account creation and authentication notifications."
+    },
+    "seatgeek.com": {
+      "category": "notification",
+      "confidence": 60,
+      "reasoning": "Password update and terms of use changes."
+    },
+    "farmersinsurance.com": {
+      "category": "notification",
+      "confidence": 75,
+      "reasoning": "Feedback request and account creation."
+    },
+    "ss.email.nextdoor.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Notification about unread messages."
+    },
+    "roulette.org": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to a game."
+    },
+    "studioxfitness.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to fitness and bingo."
+    },
+    "bidup.amtrak.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to Amtrak upgrades."
+    },
+    "brownpapertickets.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails."
+    },
+    "promo.theweekjunior.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to a sale."
+    },
+    "ferry.nyc": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and survey emails."
+    },
+    "showdigs.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional email about property viewing."
+    },
+    "bookshop.org": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and reset password instructions."
+    },
+    "soltechsolutions.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional email with discount offers."
+    },
+    "ground.news": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Subscription expiration and thank you emails."
+    },
+    "usps.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Shipping and delivery notifications."
+    },
+    "1800doorbell.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional email with coupon offers."
+    },
+    "bcbssettlement.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Settlement notice emails."
+    },
+    "goodyoga.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional email with rate increase and reservation offers."
+    },
+    "notifications.auspost.com.au": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Shipping and delivery notifications."
+    },
+    "outbound.research.net": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional email with survey invitations."
+    },
+    "dickblick.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails."
+    },
+    "demaction.us": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional emails about democracy actions and updates."
+    },
+    "gearo.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails."
+    },
+    "sent-via.netsuite.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation and shipping updates."
+    },
+    "epicgames.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation and password reset emails."
+    },
+    "thriveemarket.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional emails about membership and special offers."
+    },
+    "rev-mail.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Pricing change and transcription challenge notifications"
+    },
+    "dessea.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Halloween edition and product launch notifications"
+    },
+    "bootcampspot.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Boot camp event and open house invitations"
+    },
+    "burningman.org": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Event registration and sale reminders"
+    },
+    "nightnationrun.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Valentine's Day discount and registration reminders"
+    },
+    "hq.bill.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Invoice and payment reminders"
+    },
+    "mail.acorns.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to financial growth."
+    },
+    "dsny.nyc.gov": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Government service update about pickup schedules."
+    },
+    "order.westelm.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and appointment confirmation."
+    },
+    "chinaresidencies.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Advertising for nightlife residency opportunities."
+    },
+    "mail.zocdoc.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Appointment confirmation and cancellation notifications."
+    },
+    "blackmagicdesign.com": {
+      "category": "promotion",
+      "confidence": 60,
+      "reasoning": "Product updates and privacy policy changes."
+    },
+    "mail.gofarrewards.wellsfargo.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Confirmation of rewards redemption."
+    },
+    "manifestbodyworks.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Invitations and booking forms"
+    },
+    "verifoneway.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Credit card expiration notice"
+    },
+    "maestroconference.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Conference reminders"
+    },
+    "tdymoving.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Moving estimate"
+    },
+    "ticketcentral.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event ticket promotions"
+    },
+    "videoblocksupdates.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Trial and complimentary download reminders"
+    },
+    "culturalinsurance.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation"
+    },
+    "onetravelspecials.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing and discounts"
+    },
+    "durhamhabitat.org": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Account alerts"
+    },
+    "prophecy.io": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Hiring announcement"
+    },
+    "intuit.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alerts"
+    },
+    "godaddy.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Domain sale"
+    },
+    "aimmedia.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Reset password"
+    },
+    "moderndomesticpdx.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation"
+    },
+    "communitywarehouse.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Service update"
+    },
+    "emails.hertz.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Pick-up details"
+    },
+    "heliumcomedy.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Cyber deals"
+    },
+    "news.thefork.pt": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional message from a restaurant booking platform."
+    },
+    "byok.io": {
+      "category": "promotion",
+      "confidence": 95,
+      "reasoning": "Promotional message from a BYOK (Bring Your Own Kindness) initiative."
+    },
+    "officedepot.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation from a hardware store."
+    },
+    "firstgroup.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation from a charter company."
+    },
+    "busify.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation from a quote service."
+    },
+    "account.netflix.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account verification notification from Netflix."
+    },
+    "provident.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Loan statement notification from a financial institution."
+    },
+    "viasat.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Payment confirmation"
+    },
+    "wfgnationaltitle.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "e1.acehardware.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Reminder to review purchases"
+    },
+    "digital.metamail.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event announcement"
+    },
+    "thecircuitgym.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Membership update"
+    },
+    "notify.offerup.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account activity notification"
+    },
+    "acehardware.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order shipped confirmation"
+    },
+    "ricoconsign.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "schoolhouse.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order update"
+    },
+    "mg-it.circlemedical.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Appointment confirmation"
+    },
+    "huntfishoregon.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Purchase receipt"
+    },
+    "ticketweb.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "peakdesign.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation"
+    },
+    "login.gov": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account alert"
+    },
+    "precompro.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Reservation confirmation"
+    },
+    "circleci.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Service update"
+    },
+    "send.concentrix.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Reminder from a company"
+    },
+    "bookeo.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Booking confirmation"
+    },
+    "wifi.southwest.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Internet purchase receipt"
+    },
+    "services.teamviewer.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Service update"
+    },
+    "good.store": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "healthsafe-id.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account alert about security settings update"
+    },
+    "go.metamail.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Event announcement for Meta Connect 2023"
+    },
+    "notify.postalmate.net": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Package shipment notification"
+    },
+    "optimumsuddenlinkfeettlement.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Settlement notice from a telecommunications company"
+    },
+    "bde.blackdiamondequipment.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Voluntary recall and discount offer"
+    },
+    "email1.geico.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Claim confirmation from an insurance company"
+    },
+    "1800postcards.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Discount offer for postcards"
+    },
+    "macsales.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Invoice confirmation from a computer sales company"
+    },
+    "theopalinsights.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to eCommerce and sales."
+    },
+    "bengingi.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to recipes."
+    },
+    "mail.lpr.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about an event or performance."
+    },
+    "zellecitibank.net": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipt for an additional payment."
+    },
+    "relay.showmojo.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about an inquiry response."
+    },
+    "info.ms.aa.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about flight check-in."
+    },
+    "mail.ms.aa.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to flight upgrades."
+    },
+    "email.truebill.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to bill savings."
+    },
+    "trn.hellosawyer.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for Artshack Brooklyn."
+    },
+    "mail.hellosign.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about a signed document."
+    },
+    "icrc.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about humanitarian efforts."
+    },
+    "marketing.pressed.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to Vitamin C."
+    },
+    "barrowstreettheatre.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content related to a Broadway show."
+    },
+    "support-us.icrc.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about humanitarian efforts."
+    },
+    "goshippo.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "glia.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Workout invitation"
+    },
+    "email.homedepot.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Product review"
+    },
+    "brooklynboulders.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "News update"
+    },
+    "ecoroots.us": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Discount offer"
+    },
+    "moma.org": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Sales receipt"
+    },
+    "eat.grubhub.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "txn-email.playstation.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Password update"
+    },
+    "goaffpro.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Partner invitation"
+    },
+    "m.blueapron.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "havenprintco.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Discount promotion"
+    },
+    "heartland.us": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "ridearro.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to St. Patrick's Day and fare upfront offers."
+    },
+    "clockwisemd.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Office reservation confirmation from a medical care provider."
+    },
+    "easeus.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Discount offer for a 4-in-1 bundle."
+    },
+    "taskrabbit.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Password update request and support interaction request."
+    },
+    "targetgiftcardcenter.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Gift card delivery status update."
+    },
+    "ondecksports.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order shipment confirmation."
+    },
+    "email.bananarepublic.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order shipment confirmation."
+    },
+    "sg.rentalcars.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Car hire deal offer."
+    },
+    "aom.southwest.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Flight departure time update."
+    },
+    "mail.authorize.net": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Transaction receipt for a marketing group."
+    },
+    "bookmail.wordery.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation message."
+    },
+    "peets.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content about a product (Java Blue Batavia)."
+    },
+    "theaterlabnyc.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content about an event (Poetry Now Online)."
+    },
+    "reply.bronto.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Newsletter content about a special issue (Duke's Resilience in Full View)."
+    },
+    "offers.privateinternetaccess.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content about a discount offer (3 Months Free)."
+    },
+    "leafly.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipt content about an order."
+    },
+    "bacnyc.org": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content about an upcoming event (PlayBAC launches next week)."
+    },
+    "jmtw.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about activities and updates."
+    },
+    "simplynuc.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content about a work-from-home package."
+    },
+    "leetcode.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Newsletter content about a weekly digest."
+    },
+    "triangleartsnyc.org": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content about an art event."
+    },
+    "knockdowncenter.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content about an event (Kayzo Doghouse Takeover)."
+    },
+    "m.lastpass.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about cybersecurity threats."
+    },
+    "keap.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content about discounts (50% off for 6 months)."
+    },
+    "getkisi.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Password change/reset notifications are typically sent by websites for security purposes."
+    },
+    "cinchwallet.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional messages related to local causes and payments are common from financial and charity websites."
+    },
+    "agoda-messaging.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Messages from hotel booking platforms are usually notifications about replies to messages."
+    },
+    "agoda.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Booking confirmation emails are standard receipts for travel bookings."
+    },
+    "account.pinterest.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Emails from Pinterest about login activity and email confirmation are standard notifications."
+    },
+    "notify.email.aa.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Trip confirmation emails are standard notifications for travel bookings."
+    },
+    "orangetheoryfitness.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Casino night and news updates are promotional messages from fitness and wellness websites."
+    },
+    "flywheelsports.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Marketing emails from a fitness platform."
+    },
+    "eventbee.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event listing confirmation emails."
+    },
+    "allianzassistance.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Insurance policy confirmation emails."
+    },
+    "reservations.rentalcars.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Rental car booking confirmation emails."
+    },
+    "hoststreamsell.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Trial nearing end notifications."
+    },
+    "lawdepot.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails from a legal services company."
+    },
+    "em.nordstrom.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Receipt emails from a retail company."
+    },
+    "nyumc.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Event-related emails from an educational institution."
+    },
+    "pbs.org": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Promotional content from a public broadcasting organization."
+    },
+    "picatic.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event ticket confirmation emails."
+    },
+    "cinemaspice.net": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Subject lines mention order completion and file download."
+    },
+    "prana.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Subject lines mention shipping notice and order number."
+    },
+    "uncommongoods.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Subject lines mention order arrival and shipping."
+    },
+    "essential.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Subject lines mention refund and order confirmation."
+    },
+    "em.dsw.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Subject lines mention discounts and temporary passwords."
+    },
+    "mail.house.gov": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Subject lines mention account alerts and security notices."
+    },
+    "jet.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Subject lines mention password reset instructions."
+    },
+    "charlesletourneau.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Invoice related content"
+    },
+    "hilton.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and receipt"
+    },
+    "controlvoltage.net": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Package and order notification"
+    },
+    "mail2.smarttix.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Discount and welcome email"
+    },
+    "hootsuite.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Sales and marketing content"
+    },
+    "celtx.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Free trial offer"
+    },
+    "icontact.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to newsletters."
+    },
+    "pijonbox.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to monthly boxes."
+    },
+    "hirevue.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Notification about an interview."
+    },
+    "mathworks.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Notification about account verification."
+    },
+    "bcbsnc.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Welcome message for member services."
+    },
+    "disqus.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Account verification or welcome message."
+    },
+    "ryanairmail.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Welcome message or boarding pass information."
+    },
+    "kivuto.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Notification about download and key expiration."
+    },
+    "usairwaysmobile.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Mobile boarding pass confirmation."
+    },
+    "ticketmaster.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation for tickets."
+    },
+    "getaccept.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Legal document with promotional content"
+    },
+    "labatongoogleassistantarbitrationsettlement.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Arbitration settlement request"
+    },
+    "e.rejuvenation.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Free shipping offer"
+    },
+    "picktime.io": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Appointment confirmation"
+    },
+    "portlandtherapycenter.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Account activation request"
+    },
+    "hs.email.nextdoor.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Login code request"
+    },
+    "actionid.ngpvan.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Password reset request"
+    },
+    "39215330.mailchimpapp.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Valentine's Day promotion"
+    },
+    "supercast.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Subscription confirmation"
+    },
+    "quantumfiber.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Password reset request"
+    },
+    "emails.sohorep.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Ticket promotion"
+    },
+    "em.officedepot.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Bonus rewards offer"
+    },
+    "eml.walgreens.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to deals and discounts."
+    },
+    "kalayogabk.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to discounts and special offers."
+    },
+    "payments.intuit.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and payment-related content."
+    },
+    "chirpbooks.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to a sale and bundle offer."
+    },
+    "promotion.bedbathandbeyond.com": {
+      "category": "promotion",
+      "confidence": 95,
+      "reasoning": "Promotional content related to a sale and discount offer."
+    },
+    "epicgardening.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to a gift guide and special offer."
+    },
+    "e.williams-sonoma.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to a discount and special offer."
+    },
+    "botanicalinterests.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to a gift guide and special offer."
+    },
+    "aclu-or.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert and notification from a non-profit organization."
+    },
+    "support.kanary.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account verification and notification from a support service."
+    },
+    "i.tate.org.uk": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and payment-related content."
+    },
+    "jdfulwiler.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Subject line suggests a business communication related to a quote adjustment."
+    },
+    "email.lightspeedhq.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Subject line explicitly mentions a receipt and tax invoice."
+    },
+    "notifications.dcsg.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Subject line suggests a notification related to an order."
+    },
+    "text-to-sql.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Subject line suggests a webinar promotion."
+    },
+    "waii.ai": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Subject line suggests an invitation to a webinar."
+    },
+    "empower-retirement.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Subject line suggests an alert related to retirement."
+    },
+    "loopreturns.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Subject line suggests a return confirmation."
+    },
+    "financialaidantitrustsettlement.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Subject line suggests a notification related to a proposed class action settlement."
+    },
+    "crunchbase.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Subject line suggests an invitation to a webinar."
+    },
+    "7480657.mailchimpapp.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Subject line suggests a thank you message related to a Mailchimp event."
+    },
+    "7035532.brevosend.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content with a seasonal theme."
+    },
+    "dell.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Security-related notification about two-step verification."
+    },
+    "helpfulengineering.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Blog post-like content with a reflective tone."
+    },
+    "canarytechnologies.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation from a hotel."
+    },
+    "olo.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation from Honeygrow."
+    },
+    "mail.indochino.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Black Friday promotion with a sense of urgency."
+    },
+    "wfgtitle.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Transaction confirmation for a home transaction."
+    },
+    "tilefive.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Reservation confirmation."
+    },
+    "tuxedoaction.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Offer with a discount and urgency."
+    },
+    "krogerhealth.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Appointment confirmation from Kroger."
+    },
+    "proudmarycoffee.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Sale promotion with a sense of urgency."
+    },
+    "privy-marketing.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional message thanking for signing up."
+    },
+    "sfmcmail.indochino.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional message welcoming to a service."
+    },
+    "vendoservices.com": {
+      "category": "promotion",
+      "confidence": 95,
+      "reasoning": "Promotional message offering a discount."
+    },
+    "bd.blackdiamondequipment.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional message offering a discount on climbing gear."
+    },
+    "m.codewars.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Notification about important updates to terms and policies."
+    },
+    "campaigns.meta.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Notification about an important update to an app."
+    },
+    "cs.officedepot.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation and receipt for a purchase."
+    },
+    "doublethedonation.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional message about employer matching donations."
+    },
+    "epilepsy-fnd-colorado.classy-mail.org": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Donation receipt for a charity."
+    },
+    "davidbloomconductor.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional message about upcoming events."
+    },
+    "pendleton.narvar.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation for a purchase."
+    },
+    "penwool.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and thank you for a purchase."
+    },
+    "payments.farmers.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Payment confirmation"
+    },
+    "fnf.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation"
+    },
+    "weloveshag.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Marketing content"
+    },
+    "cascadia-partners.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "app.smartsheet.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "algaecookingclub.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Marketing content"
+    },
+    "urgentcarecolombia.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "notification.getyourguide.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "spoton.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation"
+    },
+    "getcheex.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "guildmortgage.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "createsend.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert"
+    },
+    "paymynotice.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Payment receipt"
+    },
+    "loox.io": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "mtadd.empowermyretirement.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Security notice"
+    },
+    "cleeng.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Gift subscriptions strategy"
+    },
+    "info.mta.org": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Privacy policy update"
+    },
+    "vanguardretirement-mail.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Sales and discounts"
+    },
+    "manychat.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account closure notice"
+    },
+    "porquenotacos.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Free taco offer"
+    },
+    "cinema21.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Ticket confirmation"
+    },
+    "wickpilates.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Software update"
+    },
+    "facebookmail.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Payment information update"
+    },
+    "laurelhursttheater.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Internet ticketing purchase"
+    },
+    "sofarsounds.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Local artists discovery"
+    },
+    "e.westelm.co.uk": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Summer sale offer"
+    },
+    "wixinvoices.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Invoice from collective"
+    },
+    "nvgaming.nvidia.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content related to gaming and technology promotions."
+    },
+    "qualtrics-survey.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content related to a survey."
+    },
+    "thegrotto.org": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content related to an order confirmation."
+    },
+    "r2.arts-mail.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content related to an event announcement."
+    },
+    "sharpeningsupplies.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content related to a product celebration."
+    },
+    "alerts.wellsfargo.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content related to an account alert."
+    },
+    "rei.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Content related to a survey."
+    },
+    "updates.offerup.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest a promotional message about a sold item."
+    },
+    "mail.evgo.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest a promotional message about new pricing from EVgo."
+    },
+    "bizrate.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "The domain and content suggest a promotional message about a purchase review."
+    },
+    "property.booking.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest a receipt for a property booking."
+    },
+    "rockgympro.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest an order confirmation for a gym membership."
+    },
+    "theupsstore.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The domain and content suggest an automatic reply related to a UPS label."
+    },
+    "springbone.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "The domain and content suggest a promotional message about a grand opening with a discount."
+    },
+    "mcmenamins.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest a ticket confirmation for an event."
+    },
+    "thecinemagictheater.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest a thank you message for an order."
+    },
+    "mail.cb2.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain and content suggest a delivery time confirmation for a CB2 order."
+    },
+    "e.converse.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "The domain and content suggest a promotional message about an employee discount."
+    },
+    "amp.events": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotion for an event."
+    },
+    "alerts.hotpads.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Notification about a listing change."
+    },
+    "acornpm.mailer.appfolio.us": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for a property."
+    },
+    "naturesfootprint.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order details for a product."
+    },
+    "arapahoevotes.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account alert about voting."
+    },
+    "powr.io": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation for a service."
+    },
+    "fourthwall.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for a product."
+    },
+    "100-percent.co.uk": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for a product."
+    },
+    "californiacarnivores.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Shipping confirmation for an order."
+    },
+    "metrorock.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotion for a show."
+    },
+    "itsteranga.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order confirmation for a product."
+    },
+    "stamps.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Package confirmation for a shipment."
+    },
+    "alomoves.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Membership cancellation notification."
+    },
+    "legal.bill.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Important updates to terms of service."
+    },
+    "greenerprinter.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to order completion"
+    },
+    "vendhq.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Invoice/receipt related subject line"
+    },
+    "staples.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation subject line"
+    },
+    "patient.questdiagnostics.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Discount offer subject line"
+    },
+    "halfbakedart.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order shipped confirmation"
+    },
+    "restaurantlogin.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation subject line"
+    },
+    "pbs12.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Weekly streaming guide subject line"
+    },
+    "news.maxon.net": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "News article subject line"
+    },
+    "roam-research-6a2c436dc9f6.intercom-mail.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Subscription change notification"
+    },
+    "tmw.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Receipt from Men's Wearhouse"
+    },
+    "universe.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Event announcement subject line"
+    },
+    "brooklynboulders.zendesk.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert about membership suspension."
+    },
+    "message.questdiagnostics.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Important message from a healthcare provider."
+    },
+    "quorumfcu.org": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Notice from a financial institution."
+    },
+    "redscorner.us": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation from a retailer."
+    },
+    "hitchd.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Thank you message for a contribution."
+    },
+    "express2.medallia.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Feedback request from a retailer."
+    },
+    "squaretrade.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Contract confirmation from a protection plan provider."
+    },
+    "survey.coned.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Request for feedback from a utility company."
+    },
+    "distrokid.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Album release announcement from a music company."
+    },
+    "talenthherder.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Job posting and role announcement"
+    },
+    "pillowcube.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Product announcement with a secret emoji."
+    },
+    "mta.info": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Survey request from a transportation authority."
+    },
+    "dentalxchange.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Transaction receipt from a dental care provider."
+    },
+    "villagedentaldtc.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Transaction receipt from a dental care provider."
+    },
+    "motionarray.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Video creation resources and templates from a company."
+    },
+    "healthdataexchange.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotion for creating an account."
+    },
+    "chat.inboxhealth.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Confirmation of registration."
+    },
+    "pirateship.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation for a shipment."
+    },
+    "registration.edx.org": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotion for activating an account."
+    },
+    "noreply.email.carfax.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Welcome message for used car listings."
+    },
+    "pr.hayneedlecom.emailpowerreviews.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Review confirmation for a purchase."
+    },
+    "mp1.tripadvisor.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotion for weekend getaways."
+    },
+    "cotopaxi.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "bananarepublic.narvar.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Package arrival notification"
+    },
+    "svc.volunteermatch.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Volunteer opportunity announcement"
+    },
+    "flosusa.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order update"
+    },
+    "emailbedbathandbeyond.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Limited-time offer"
+    },
+    "musictoday.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "ko-fi.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Donation receipt"
+    },
+    "batch.mg.schedulicitymail.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Shop reopening update"
+    },
+    "sparkbeyond.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing message about data science opportunities."
+    },
+    "usa.uniqlo.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Order confirmation email from Uniqlo."
+    },
+    "kx.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Technical whitepaper promoting Kx's services."
+    },
+    "oktheater.org": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Film premiere announcement."
+    },
+    "mail.pageuppeople.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Job application reminder."
+    },
+    "reppify.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Job referral and application confirmation."
+    },
+    "trm.brassring.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Job application confirmation."
+    },
+    "underdog.io": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Application confirmation and thank you message."
+    },
+    "drivendata.org": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Confirmation email for email address verification."
+    },
+    "talent.icims.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Thank you message for registering a profile."
+    },
+    "ontramail.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional message about an event."
+    },
+    "discordapp.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Email verification message for Discord."
+    },
+    "factorio.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Email verification message for Factorio."
+    },
+    "spireworks.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Privacy policy update message."
+    },
+    "pivotal.io": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Job application follow-up message."
+    },
+    "auth.cloud.datastax.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Email verification message for DataStax authentication."
+    },
+    "e.digikey.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content related to technical topics and educational resources."
+    },
+    "m.teachable.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Content related to course enrollment and learning materials."
+    },
+    "mails.teamviewer.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Content related to privacy policy updates and service notifications."
+    },
+    "bootstrapstudio.io": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Content related to product tutorials and learning materials."
+    },
+    "email.checkout.visa.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content related to service updates and important notifications."
+    },
+    "paddle.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Content related to order confirmations and receipts."
+    },
+    "bookweb.org": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Content related to holiday gift guides and promotional materials."
+    },
+    "indiebound.org": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content related to order confirmations and shipping updates."
+    },
+    "addlibra.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content related to order confirmations and shipping updates."
+    },
+    "findkeep.love": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content related to gift offers and promotional materials."
+    },
+    "mobilebytes.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content related to order confirmations and receipts."
+    },
+    "trint.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Content related to terms of use updates and service notifications."
+    },
+    "email.dowjones.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Promotional content related to improving a service."
+    },
+    "creators.gumroad.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing content for a product update."
+    },
+    "cultureyard.net": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "Newsletter content for a specific month."
+    },
+    "xixcollective.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content for an upcoming event."
+    },
+    "withfriends.co": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content about a rebate offer."
+    },
+    "ancientbathsny.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for a booking."
+    },
+    "freeconferencecall.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content about a service."
+    },
+    "primalvideo.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content about YouTube keyword ranking tools."
+    },
+    "foxrentacar.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for a rental reservation."
+    },
+    "data36.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Subscription confirmation"
+    },
+    "trilogyed.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event invitation"
+    },
+    "e.galvanize.com": {
+      "category": "newsletter",
+      "confidence": 85,
+      "reasoning": "Educational content"
+    },
+    "katenorthrup.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Subscription confirmation"
+    },
+    "xlnaudio.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Limited-time offer"
+    },
+    "email.urbanoutfitters.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "canva.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing and invitation to join a team."
+    },
+    "info.awardhq.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and shipping information."
+    },
+    "light-speed.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Marketing and community engagement."
+    },
+    "teamviewer.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account validation and security notice."
+    },
+    "pretix.eu": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Ticket confirmation and order details."
+    },
+    "email.thrifty.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation and charges."
+    },
+    "production.priceline.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Itinerary confirmation and details."
+    },
+    "tp-link.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Marketing and product activation."
+    },
+    "comodo.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Domain control validation and order details."
+    },
+    "sellcoursesonline.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Marketing and course promotion."
+    },
+    "optimum.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content suggests an order confirmation or work order."
+    },
+    "verizon.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Content suggests an account sign-up notification."
+    },
+    "infusionsoft.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Content suggests a request for user feedback for marketing purposes."
+    },
+    "alert.wellsfargoemail.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content suggests an account alert or security notice."
+    },
+    "mailchimp.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Content suggests an invitation to join a marketing platform."
+    },
+    "seamlessweb.zendesk.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content suggests an order confirmation or update."
+    },
+    "state.co.us": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Content suggests a confirmation message for online services."
+    },
+    "www.colorado.gov": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content suggests a transaction receipt."
+    },
+    "reachnow.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content suggests a receipt for a one-time fee."
+    },
+    "movietickets.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content suggests an order confirmation."
+    },
+    "kaplan.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content suggests an order confirmation."
+    },
+    "allevents.in": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Content suggests an action required message for an event listing."
+    },
+    "oyegroup.org": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation for printer pickup and payment"
+    },
+    "vimeo.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Password reset notification"
+    },
+    "creative-capital.org": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotion for Kickstarter campaign"
+    },
+    "xifin.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Payment receipt"
+    },
+    "vendinimail.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Ticket purchase confirmation"
+    },
+    "digikey.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Part life status update"
+    },
+    "tn.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Limited early release promotion"
+    },
+    "cyclebardtc.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Black Friday early access promotion"
+    },
+    "otterbox.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Incident update"
+    },
+    "democrats.org": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Campaign update"
+    },
+    "zirmed.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Payment Receipt for Thomas M Kavanagh"
+    },
+    "triumph.net": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Vague marketing content"
+    },
+    "virginamerica.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "It's Time to Check In"
+    },
+    "wepay.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Payment Refunded"
+    },
+    "elevate.virginamerica.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Virgin America Reservation QMYLIN"
+    },
+    "burkesurvey.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "DIRECTV NOW Wants Your Feedback"
+    },
+    "shutterstock.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Your Shutterstock account"
+    },
+    "keyprom8.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Order status update"
+    },
+    "turbosquid.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Email confirmation"
+    },
+    "beyondpay.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Employee account setup"
+    },
+    "boltbus.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Bus reservation update"
+    },
+    "showmecables.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Order shipment update"
+    },
+    "surveymonkeyuser.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Survey invitation"
+    },
+    "bikramyogawestlinn.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Free class offer"
+    },
+    "redbullsoundselect.uservoice.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Product promotion"
+    },
+    "adobelightroom.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Trial expiration reminder for Adobe Lightroom."
+    },
+    "hpd.nyc.gov": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Account creation notification from NYC Housing Connect."
+    },
+    "thebuildersassociation.org": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Course promotion for Builders Advanced Course."
+    },
+    "mtc-nyc.org": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Email not recognized as a subscriber notification."
+    },
+    "nypl.org": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Update from The New York Public Library."
+    },
+    "alerts.skype.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Password change notification for Skype account."
+    },
+    "checkin.email.aa.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "The domain is associated with American Airlines and is used for check-in reminders."
+    },
+    "memberclicks-mail.net": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The domain is used for sending out marketing materials and forms."
+    },
+    "aa.globalnotifications.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "The domain is used for sending out notifications related to American Airlines."
+    },
+    "globalfocusundergrad.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "The domain is used for job-related promotions and internships."
+    },
+    "expressvpn.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "The domain is used for marketing and promotions related to VPN services."
+    },
+    "ticketfly.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "The domain is used for marketing and promotions related to ticket sales."
+    },
+    "tixato.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "The domain is used for sending out order confirmations and ticket information."
+    },
+    "aadvantage.email.aa.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "The domain is associated with American Airlines and is used for sending out notifications."
+    },
+    "efax-reports.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain is associated with eFax, which is used for sending and receiving faxes."
+    },
+    "shiftplanning.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The domain suggests a business offering a service related to shift planning."
+    },
+    "quickbase.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The domain is associated with a project management tool and suggests a notification about an application."
+    },
+    "mail.tes.co.uk": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The domain is associated with TES Connect, a membership service, and suggests a notification about important information."
+    },
+    "aspirepublicschools.org": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The domain is associated with a public school system and suggests a promotional message about a teacher residency program."
+    },
+    "stockfootageforfree.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "The domain suggests a confirmation or notification about an account."
+    },
+    "earnmoremall.mywellsfargorewards.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The domain is associated with a rewards program and suggests a promotional message."
+    },
+    "dime.io": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "The domain suggests an order confirmation."
+    },
+    "mail.mywellsfargorewards.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "The domain suggests a confirmation or notification about an account."
+    },
+    "marquette.edu": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Event announcement from Marquette University"
+    },
+    "amplestoragecenter.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Storage confirmation message from Ample Storage Center"
+    },
+    "hendersoncollegiate.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Event announcement from Henderson Collegiate"
+    },
+    "delightedapp.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Recommendation survey from Delighted"
+    },
+    "postyourbook02.info": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Textbook trade-in promotion from Duke Students"
+    },
+    "tde.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Event announcement from The Duke Endowment"
+    },
+    "siu.edu": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Deadline extension message from SIU"
+    },
+    "studentbluenc.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Insurance confirmation message from Student BlueNC"
+    },
+    "backstagecreative.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Confirmation instructions"
+    },
+    "duke.net": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Account-related content"
+    },
+    "webex.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Service update"
+    },
+    "xkcd.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation"
+    },
+    "arlp.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Event announcement"
+    },
+    "reply.ticketmaster.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Event reminder"
+    },
+    "hertz.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Reservation confirmation"
+    },
+    "email.chegg.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing content"
+    },
+    "keble.ox.ac.uk": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Account-related content"
+    },
+    "supershuttle.net": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Reservation confirmation"
+    },
+    "myusairways.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Account-related content"
+    },
+    "dukeschedulator.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotion for Schedulator registration"
+    },
+    "gainesvilleimprov.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotion for Gainesville Improv Festival submissions"
+    },
+    "collapsablegiraffe.org": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The content is related to order confirmations and shipping updates."
+    },
+    "thrivemarket.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "The content includes promotional offers and membership benefits."
+    },
+    "desssa.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "The content includes product launches and alerts."
+    },
+    "optimumsuddenlinkfeesettlement.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "The content is related to important notices and settlements."
+    },
+    "dessa.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The subject lines mention alerts, launches, and community updates, which are typical of notification emails."
+    },
+    "sweatco.in": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "The content suggests a financial transaction or reset of a wallet."
+    },
+    "alesolutions.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "The content indicates a hotel confirmation or update."
+    },
+    "crateandbarrel.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The content suggests an order confirmation or update."
+    },
+    "learning.nycda.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "The content indicates an account update or notification."
+    },
+    "fully.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "The content suggests an order confirmation or update."
+    },
+    "info.viasat.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "The content suggests a survey or feedback request."
+    },
+    "googlegroups.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Invitation to join a group"
+    },
+    "gocurb.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Account-related information"
+    },
+    "publictheater.org": {
+      "category": "notification",
+      "confidence": 60,
+      "reasoning": "Account-related content"
+    },
+    "clinic.specialseasy.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Account-related information"
+    },
+    "talenthderer.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Subject contains a job opportunity."
+    },
+    "migracioncolombia.gov.co": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Subject contains a government-related term and action."
+    },
+    "nc.rr.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Subject line indicates a report or confirmation"
+    },
+    "acroyoga.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content appears to be related to a fitness class."
+    },
+    "codewars.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content appears to be related to coding challenges."
+    },
+    "dentrix.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Promotional content related to dental appointments."
+    },
+    "sfmc.empowermyretirement.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Marketing and trial offers related to retirement management."
+    },
+    "mytimemail.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Promotional content related to appointments."
+    },
+    "mightytext.net": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account-related notifications."
+    },
+    "email.meta.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account security and password change notifications."
+    },
+    "auth.apartments.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account security and access code notifications."
+    },
+    "boardgamearena.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to board games."
+    },
+    "cro.consumer.org": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Order cancellation and membership confirmation."
+    },
+    "email.sonyentertainmentnetwork.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Purchase confirmation and password change notifications."
+    },
+    "seatedapp.io": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content related to rewards and reservations."
+    },
+    "welcome.offerup.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content and calls to action"
+    },
+    "milkcratekitchen.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to a cooking event."
+    },
+    "portlandoregon.gov": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Official government notifications about submissions and payments."
+    },
+    "eventteament.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Marketing and event promotion."
+    },
+    "info.crunchyroll.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Account security and password update notifications."
+    },
+    "disinformationindex.org": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Event invitations and updates."
+    },
+    "vxnbill.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Password reset and cancellation requests."
+    },
+    "care.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Job application notifications."
+    },
+    "statefarm.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Insurance-related notifications."
+    },
+    "bluura.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails."
+    },
+    "airtable.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Workspace invitation and feature promotion."
+    },
+    "splash.events": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Event invitations."
+    },
+    "neo4j.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Sandbox trial and expiration notifications."
+    },
+    "chief.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Engineering opportunity invitation."
+    },
+    "janestreet.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Event invitation."
+    },
+    "et.npr.org": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Privacy policy updates and journalism-related messages are typical of notification emails."
+    },
+    "withremy.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Content promotes job opportunities."
+    },
+    "earthship.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Content is related to rental confirmation."
+    },
+    "spoke.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Content promotes premium SMS features."
+    },
+    "bigwinds.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content promotes lessons."
+    },
+    "build.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Survey and order confirmation emails"
+    },
+    "prefare-denver.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation emails"
+    },
+    "explore.gofarrewards.wellsfargo.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to rewards and travel."
+    },
+    "optima-rec.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Job opportunity announcements."
+    },
+    "e.embracepetinsurance.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Pet insurance-related marketing content."
+    },
+    "careers.ibm.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Job opportunity and career development content."
+    },
+    "mobirise.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Website builder and extension promotion."
+    },
+    "abilitie.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Job opportunity and interview invitation."
+    },
+    "thegabrielmethod.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Gift and recipe book promotion."
+    },
+    "nest.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Security-related messages"
+    },
+    "system.mg.schedulicity.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Appointment reminders and confirmations"
+    },
+    "eventsmart.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Marketing and trial-related messages"
+    },
+    "toggl.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Weekly report and welcome messages"
+    },
+    "sepuedepdx.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Invoice and payment access"
+    },
+    "mykevo.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Kevo notifications"
+    },
+    "contemporaneous.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Personal news and show premieres"
+    },
+    "hrc.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Advocacy org updates"
+    },
+    "sharevault.net": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "User activation and password reset"
+    },
+    "eclinicalmail.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Doctor's office messages"
+    },
+    "localmed.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Job scheduling and action needed"
+    },
+    "stackoverflow.email": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Job recap and feature updates"
+    },
+    "movementresearch.org": {
+      "category": "newsletter",
+      "confidence": 80,
+      "reasoning": "Educational content with a call-to-action"
+    },
+    "pb08.wixemails.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "theamm.org": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert with a call-to-action"
+    },
+    "mail.op.onepeloton.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert with a call-to-action"
+    },
+    "simplenexus.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "wixbookings.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Booking confirmation with a call-to-action"
+    },
+    "enterprise.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Rental agreement with a call-to-action"
+    },
+    "rxorder.walgreens.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "insights.truebill.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account alert with a call-to-action"
+    },
+    "robtherich.org": {
+      "category": "promotion",
+      "confidence": 100,
+      "reasoning": "Promotional content about a Steve of Tomorrow opening with discount tickets available."
+    },
+    "groupme.com": {
+      "category": "notification",
+      "confidence": 100,
+      "reasoning": "Group creation notifications."
+    },
+    "box.com": {
+      "category": "notification",
+      "confidence": 100,
+      "reasoning": "Account addition notifications."
+    },
+    "auraframes.com": {
+      "category": "promotion",
+      "confidence": 100,
+      "reasoning": "Promotional content about an Aura Frame."
+    },
+    "wix-groups.com": {
+      "category": "notification",
+      "confidence": 100,
+      "reasoning": "Group post notifications."
+    },
+    "monday.com": {
+      "category": "promotion",
+      "confidence": 100,
+      "reasoning": "Promotional content about project management tools."
+    },
+    "galvanize.com": {
+      "category": "promotion",
+      "confidence": 100,
+      "reasoning": "Promotional content about account confirmation and welcome messages."
+    },
+    "anthem.com": {
+      "category": "notification",
+      "confidence": 100,
+      "reasoning": "Health ID card and password reset notifications."
+    },
+    "gallupmail.com": {
+      "category": "notification",
+      "confidence": 100,
+      "reasoning": "Insights reminder and feedback request."
+    },
+    "audinate.com": {
+      "category": "promotion",
+      "confidence": 100,
+      "reasoning": "Promotional content about Dante Via Trials expiration."
+    },
+    "goarro.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Content is promotional in nature, thanking the recipient for using a service."
+    },
+    "futureperfectproductions.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Content is related to an organization and likely a newsletter."
+    },
+    "thebushwickstarr.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Content is related to an organization and likely a newsletter."
+    },
+    "neulionnetwork.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Content is promotional in nature, related to sports events."
+    },
+    "midea.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content is related to account updates."
+    },
+    "wacom.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content is related to account updates."
+    },
+    "adobesign.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content is related to account updates."
+    },
+    "nebula.tv": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content is related to account updates."
+    },
+    "em.farmers.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Content is promotional in nature, related to insurance."
+    },
+    "id.me": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Content is related to account updates."
+    },
+    "adp.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to email activation and registration instructions."
+    },
+    "surveysouthwest.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Flight booking confirmation and reminder."
+    },
+    "stormkingartcenter.org": {
+      "category": "newsletter",
+      "confidence": 85,
+      "reasoning": "Community event updates and advocacy org content."
+    },
+    "drivers.coop": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Co-op ride confirmation and new app announcement."
+    },
+    "boomarts.org": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Event ticket reminder and thank you for attending."
+    },
+    "italist.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content about italist's achievements and services."
+    },
+    "analogcases.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content about analog cases and sales."
+    },
+    "newgeorgiaproject.org": {
+      "category": "newsletter",
+      "confidence": 85,
+      "reasoning": "Community advocacy and event updates."
+    },
+    "issueprojectroom.org": {
+      "category": "newsletter",
+      "confidence": 85,
+      "reasoning": "Community advocacy and event updates."
+    },
+    "blueapron.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content about customer service and account cancellation."
+    },
+    "unsplash.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Editorial content with a call-to-action"
+    },
+    "limnu.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Collaboration and subscription promotion"
+    },
+    "ngpvan.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Password reset request"
+    },
+    "academia-mail.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Educational content with a call-to-action"
+    },
+    "datastax.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event promotion and workshop invitation"
+    },
+    "onlinemail.tableau.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Account activation instructions"
+    },
+    "m.seatedapp.io": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event promotion and booking reminder"
+    },
+    "fusedesk.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Live chat updates and text snippets"
+    },
+    "email.vimeo.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Password reset request"
+    },
+    "rev.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Transcription order confirmation and automated transcripts"
+    },
+    "bhphoto.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Product update and checkout availability"
+    },
+    "triangle-arts-association.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Community event updates and blog posts"
+    },
+    "cironline.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Advocacy org updates and community news"
+    },
+    "evernote.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Invitations and workspace updates."
+    },
+    "envato.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account-related notifications."
+    },
+    "gmail.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Invitation and scheduling"
+    },
+    "email.openai.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Product launch and updates"
+    },
+    "fullbrig.ht": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Product launch and announcement"
+    },
+    "ifttt.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Event and maintenance notifications"
+    },
+    "partners.try.be": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Gift voucher and order confirmation"
+    },
+    "benisouk.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Account confirmation and activation emails"
+    },
+    "bangemails.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Subscription pause and password reset notifications"
+    },
+    "e.fredmeyermail.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Password update and sign-in confirmation notifications"
+    },
+    "causeiq.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Nonprofit program areas and financial situations"
+    },
+    "accountchek.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Asset verification notifications"
+    },
+    "networkforgood.org": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Donation thank you notifications"
+    },
+    "kellybenefits.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Open enrollment reminder notifications"
+    },
+    "mindfultherapygroup.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content is related to an appointment reminder."
+    },
+    "livingroomtheaters.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content is related to a ticket purchase."
+    },
+    "booking.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Content is related to a booking confirmation."
+    },
+    "cornershop.zendesk.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Zendesk is used for customer support and notifications."
+    },
+    "cornershopapp.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain suggests an order-related message."
+    },
+    "mg.drivers.coop": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "The domain is associated with a cooperative and the message is promotional."
+    },
+    "smcdems.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "The domain is associated with a political organization and the message is promotional."
+    },
+    "marinevinylfabric.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "The domain suggests an order confirmation message."
+    },
+    "seattlecoffeegear.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain suggests an order confirmation message."
+    },
+    "indiecommerce.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "The domain suggests an order confirmation message."
+    },
+    "tableau.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account activation and existence checks are typical notifications."
+    },
+    "bellingcat.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Content about money, wedding pictures, and disinfo aligns with promotion."
+    },
+    "theskint.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Weekend and debate-related content aligns with promotion."
+    },
+    "email.anthem.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Health care summary updates are typical notifications."
+    },
+    "netlinksolution.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Login information changes and password requests are typical notifications."
+    },
+    "1iota.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Event reminders and password recovery align with promotion."
+    },
+    "eltechs.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Product review and order confirmation align with promotion."
+    },
+    "aescripts.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "New order and license confirmation align with promotion."
+    },
+    "welcome.mydeviceprotect.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Coverage documents for Preferred Care"
+    },
+    "zapier.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Find Your New Favorite App"
+    },
+    "virtualvisibilityinc.com": {
+      "category": "receipt",
+      "confidence": 95,
+      "reasoning": "Re: Vimeo issue"
+    },
+    "quora.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Nick_Chilson_followed_you_on_Quora"
+    },
+    "vectorworks.net": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Vectorworks password reset"
+    },
+    "timerepublik.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "TIMEREPUBLIK | You have a new message"
+    },
+    "dispatch.lhmailer.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Birthday wishes from your dentist"
+    },
+    "baseline.mail.campuslabs.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "uncommonschools.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Nonprofit organization email"
+    },
+    "carolinatheatre.org": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "interactivepython.org": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Password reset notification"
+    },
+    "manhattanlsat.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "gojee.com": {
+      "category": "promotion",
+      "confidence": 70,
+      "reasoning": "Promotional content with a call-to-action"
+    },
+    "chase.com": {
+      "category": "notification",
+      "confidence": 70,
+      "reasoning": "Financial account update notification"
+    },
+    "mail.journalclub.io": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Appointment reminder"
+    },
+    "kitchenculturepdx.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Product promotion"
+    },
+    "fightforprogress.org": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "Nonprofit advocacy organization"
+    },
+    "waterdropfilter.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Product promotion"
+    },
+    "mail.plex.tv": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Appointment reminder"
+    },
+    "email.rei.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Appointment reminder"
+    },
+    "surlatable.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Product promotion"
+    },
+    "welcomemember.gonift.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Appointment reminder"
+    },
+    "inrupt.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Verification message"
+    },
+    "familyforward.org": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Appointment reminder"
+    },
+    "shadowdark01-f153f.firebaseapp.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Verification message"
+    },
+    "fracturedatlas.org": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "The domain suggests a meditation-related newsletter."
+    },
+    "epilepsycoloradowyoming.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Promotional content related to summer camp."
+    },
+    "condenast.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Account alert for signing in."
+    },
+    "bold.co": {
+      "category": "promotion",
+      "confidence": 95,
+      "reasoning": "Promotional message about a purchase."
+    },
+    "waiverking.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Appointment reminder for a waiver."
+    },
+    "email02.account.sony.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Password reset notification."
+    },
+    "dekmantel.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional message about a new release."
+    },
+    "mail.app.supabase.io": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Signup confirmation."
+    },
+    "rocketgate.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Payment confirmation and activation suggest commercial marketing."
+    },
+    "mail.bengingi.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Recipe content with a call-to-action implies commercial marketing."
+    },
+    "donorthreesixty.com": {
+      "category": "newsletter",
+      "confidence": 90,
+      "reasoning": "Visit to a shop suggests advocacy or community content."
+    },
+    "simplizero.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Carbon neutral purchase confirmation implies a transactional receipt."
+    },
+    "zencastr.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Milestone announcement with a call-to-action suggests commercial marketing."
+    },
+    "getsupernatural.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Subscription model discussion implies commercial marketing."
+    },
+    "soltech.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Living space improvement suggestion with a call-to-action implies commercial marketing."
+    },
+    "columbia.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Order confirmation implies a transactional receipt."
+    },
+    "pb07.ascendbywix.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Christmas-themed promotional message."
+    },
+    "email.account.sony.com": {
+      "category": "notification",
+      "confidence": 95,
+      "reasoning": "Password change request from a financial account."
+    },
+    "textures.com": {
+      "category": "receipt",
+      "confidence": 85,
+      "reasoning": "Registration confirmation for a service."
+    },
+    "optima-cs.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Opportunity to join a new program or service."
+    },
+    "macrium.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Software registration promotion."
+    },
+    "xola.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Help with booking request."
+    },
+    "mail.spin.pm": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "File transfer service message."
+    },
+    "votefwd.org": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Approval to send letters with a voting organization."
+    },
+    "swingleft.org": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Thank you message for joining a group."
+    },
+    "surjaction.org": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Request for information about the recipient."
+    },
+    "denveracorn.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Dining promotion message."
+    },
+    "dataskeptic.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Launch announcement for a new podcast."
+    },
+    "harlemyogastudio.com": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Yoga studio promotion message."
+    },
+    "email.youneedabudget.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Budgeting tool promotion message."
+    },
+    "proxydocs.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Annual meeting voting promotion."
+    },
+    "rennit.nyc": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Appointment reminder."
+    },
+    "say.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional tone and ETF-related content."
+    },
+    "elegantthemes.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional tone and subscription confirmation."
+    },
+    "instacart.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional tone and excitement."
+    },
+    "ontraport.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Service update and journey completion."
+    },
+    "email.udemy.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional tone and bootcamp announcement."
+    },
+    "e.udemymail.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Educational content with a call-to-action."
+    },
+    "ubi.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Password reset request."
+    },
+    "youneedabudget.com": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "Subscription confirmation for a budgeting newsletter."
+    },
+    "joinit.org": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Password reset request."
+    },
+    "nbhutia.com": {
+      "category": "receipt",
+      "confidence": 90,
+      "reasoning": "Appointment details."
+    },
+    "essentialsupport.zendesk.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Customer support request."
+    },
+    "adoramarental.com": {
+      "category": "receipt",
+      "confidence": 80,
+      "reasoning": "Confirmation email related to a rental process."
+    },
+    "dcdc.org": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "Domain suggests a nonprofit or advocacy organization."
+    },
+    "immediatemedium.org": {
+      "category": "newsletter",
+      "confidence": 95,
+      "reasoning": "Domain suggests a nonprofit or advocacy organization."
+    },
+    "usa.redcross.org": {
+      "category": "promotion",
+      "confidence": 80,
+      "reasoning": "Blood drive promotion."
+    },
+    "csoftintl.com": {
+      "category": "promotion",
+      "confidence": 75,
+      "reasoning": "Theater ticket promotion."
+    },
+    "customersupport.rakuten.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Account preferences changed."
+    },
+    "slideshark.com": {
+      "category": "notification",
+      "confidence": 80,
+      "reasoning": "Important reminder about changes."
+    },
+    "em.mathworks.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Promotional content for learning MATLAB."
+    },
+    "go.mathworks.com": {
+      "category": "promotion",
+      "confidence": 95,
+      "reasoning": "Promotional content for MATLAB and Simulink."
+    },
+    "piazzacareers.com": {
+      "category": "promotion",
+      "confidence": 85,
+      "reasoning": "Promotional content for a Silicon Valley tour."
+    },
+    "autodesk.zendesk.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Support case update."
+    },
+    "mail1.prezi.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Password reset request."
+    },
+    "e.travelocity.com": {
+      "category": "notification",
+      "confidence": 85,
+      "reasoning": "Login name information."
+    },
+    "email.evernote.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Password compromise alert."
+    },
+    "ebrary.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Welcome email from ebrary"
+    },
+    "travelocity.com": {
+      "category": "promotion",
+      "confidence": 90,
+      "reasoning": "Welcome email from Travelocity"
+    },
+    "smtp.zazzle.com": {
+      "category": "notification",
+      "confidence": 90,
+      "reasoning": "Zazzle Terms of Service Update"
+    }
+  },
+  "manual_classifications": {
+    "docusign.net": {
+      "category": "notification",
+      "confidence": 100,
+      "reasoning": "manual override"
+    },
+    "substack.com": {
+      "category": "newsletter",
+      "confidence": 100,
+      "reasoning": "manual override"
+    }
+  }
+}

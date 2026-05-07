@@ -9,7 +9,7 @@ Updates stored in:
 - keep_newsletters: Newsletter senders to preserve in inbox
 - archive_newsletters: Newsletter senders to auto-archive
 - keep_senders: Trusted senders that bypass classification
-- blocked_domains: Spam/unwanted domains
+- archived_domains: Spam/unwanted domains
 """
 
 import json
@@ -56,7 +56,7 @@ class PreferenceLearner:
             "keep_newsletters": [],
             "archive_newsletters": [],
             "keep_senders": [],
-            "blocked_domains": [],
+            "archived_domains": [],
         }
         for key, default_value in defaults.items():
             if key not in self.preferences:
@@ -81,11 +81,11 @@ class PreferenceLearner:
                     self.preferences["keep_newsletters"].append(feedback.sender)
                     updated = True
             elif feedback.category == "promotion":
-                if feedback.sender not in self.preferences["blocked_domains"]:
+                if feedback.sender not in self.preferences["archived_domains"]:
                     # Extract domain from email
                     domain = self._extract_domain(feedback.sender)
-                    if domain and domain not in self.preferences["blocked_domains"]:
-                        self.preferences["blocked_domains"].append(domain)
+                    if domain and domain not in self.preferences["archived_domains"]:
+                        self.preferences["archived_domains"].append(domain)
                         updated = True
 
         elif feedback.decision == UserDecision.KEEP:
@@ -102,15 +102,15 @@ class PreferenceLearner:
                     updated = True
             elif feedback.category == "promotion":
                 domain = self._extract_domain(feedback.sender)
-                if domain and domain not in self.preferences["blocked_domains"]:
-                    self.preferences["blocked_domains"].append(domain)
+                if domain and domain not in self.preferences["archived_domains"]:
+                    self.preferences["archived_domains"].append(domain)
                     updated = True
 
         elif feedback.decision == UserDecision.BLOCK:
             # User wants to block domain
             domain = self._extract_domain(feedback.sender)
-            if domain and domain not in self.preferences["blocked_domains"]:
-                self.preferences["blocked_domains"].append(domain)
+            if domain and domain not in self.preferences["archived_domains"]:
+                self.preferences["archived_domains"].append(domain)
                 updated = True
 
         return updated
@@ -130,14 +130,14 @@ class PreferenceLearner:
             "keep_newsletters_added": 0,
             "archive_newsletters_added": 0,
             "keep_senders_added": 0,
-            "blocked_domains_added": 0,
+            "archived_domains_added": 0,
         }
 
         for feedback in feedbacks:
             initial_keep_newsletters = len(self.preferences["keep_newsletters"])
             initial_archive_newsletters = len(self.preferences["archive_newsletters"])
             initial_keep_senders = len(self.preferences["keep_senders"])
-            initial_blocked_domains = len(self.preferences["blocked_domains"])
+            initial_archived_domains = len(self.preferences["archived_domains"])
 
             self.process_feedback(feedback)
 
@@ -148,8 +148,8 @@ class PreferenceLearner:
                 summary["archive_newsletters_added"] += 1
             if len(self.preferences["keep_senders"]) > initial_keep_senders:
                 summary["keep_senders_added"] += 1
-            if len(self.preferences["blocked_domains"]) > initial_blocked_domains:
-                summary["blocked_domains_added"] += 1
+            if len(self.preferences["archived_domains"]) > initial_archived_domains:
+                summary["archived_domains_added"] += 1
 
         return summary
 
@@ -193,8 +193,8 @@ class PreferenceLearner:
     def add_blocked_domain(self, domain: str) -> bool:
         """Add blocked domain"""
         domain = domain.lower()
-        if domain not in self.preferences["blocked_domains"]:
-            self.preferences["blocked_domains"].append(domain)
+        if domain not in self.preferences["archived_domains"]:
+            self.preferences["archived_domains"].append(domain)
             return True
         return False
 
@@ -222,8 +222,8 @@ class PreferenceLearner:
     def remove_blocked_domain(self, domain: str) -> bool:
         """Remove blocked domain"""
         domain = domain.lower()
-        if domain in self.preferences["blocked_domains"]:
-            self.preferences["blocked_domains"].remove(domain)
+        if domain in self.preferences["archived_domains"]:
+            self.preferences["archived_domains"].remove(domain)
             return True
         return False
 
@@ -249,14 +249,14 @@ class PreferenceLearner:
             self.preferences["keep_senders"] = []
             return True
         elif category == "domains":
-            self.preferences["blocked_domains"] = []
+            self.preferences["archived_domains"] = []
             return True
         elif category == "all":
             self.preferences = {
                 "keep_newsletters": [],
                 "archive_newsletters": [],
                 "keep_senders": [],
-                "blocked_domains": [],
+                "archived_domains": [],
             }
             return True
         return False
@@ -267,7 +267,7 @@ class PreferenceLearner:
             "keep_newsletters": len(self.preferences["keep_newsletters"]),
             "archive_newsletters": len(self.preferences["archive_newsletters"]),
             "keep_senders": len(self.preferences["keep_senders"]),
-            "blocked_domains": len(self.preferences["blocked_domains"]),
+            "archived_domains": len(self.preferences["archived_domains"]),
             "total_learned": sum(
                 len(v) for v in self.preferences.values()
             ),
@@ -324,7 +324,7 @@ if __name__ == "__main__":
         "keep_newsletters": [],
         "archive_newsletters": [],
         "keep_senders": [],
-        "blocked_domains": [],
+        "archived_domains": [],
     }
 
     learner = PreferenceLearner(initial_prefs)

@@ -23,7 +23,7 @@ from datetime import date
 # Resolve script directory for sibling imports
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PLUGIN_DIR = os.path.dirname(SCRIPT_DIR)
-LOCAL_MD = os.path.join(PLUGIN_DIR, ".local.md")
+CONFIG_JSON = os.path.join(PLUGIN_DIR, "config.json")
 UNSUB_LOG = os.path.join(PLUGIN_DIR, ".unsubscribe_log.json")
 
 sys.path.insert(0, SCRIPT_DIR)
@@ -35,7 +35,7 @@ from extract_unsubscribe import (
     extract_unsubscribe_for_domain,
     post_one_click_unsubscribe,
 )
-from classify_logic import EmailClassifier, Category
+from classify_logic import EmailClassifier, Category, ClassificationResult
 from cli_ui import (
     Color,
     CATEGORY_COLORS,
@@ -48,6 +48,7 @@ from cli_ui import (
     progress_bar,
     print_table,
     category_badge,
+    console,
 )
 
 
@@ -74,193 +75,121 @@ def save_unsubscribe_log(log):
 
 
 # ---------------------------------------------------------------------------
-# Config parsing (.local.md frontmatter)
+# Config loading (config.json)
 # ---------------------------------------------------------------------------
 
-def _parse_frontmatter():
-    """Parse .local.md YAML frontmatter into raw text."""
-    if not os.path.exists(LOCAL_MD):
-        return ""
-    with open(LOCAL_MD, "r") as f:
-        content = f.read()
-    match = re.match(r"^---\n(.*?\n)---", content, re.DOTALL)
-    return match.group(1) if match else ""
+def _load_config_json() -> dict:
+    if not os.path.exists(CONFIG_JSON):
+        return {}
+    try:
+        with open(CONFIG_JSON, "r") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return {}
 
 
-def load_blocked_domains():
-    """Parse .local.md YAML frontmatter, extract blocked_domains list."""
-    frontmatter = _parse_frontmatter()
-    if not frontmatter:
-        return []
-
-    domains = []
-    in_blocked = False
-    for line in frontmatter.splitlines():
-        if re.match(r"\s*blocked_domains:", line):
-            in_blocked = True
-            continue
-        if in_blocked:
-            m = re.match(r"\s+-\s+(\S+)", line)
-            if m:
-                domains.append(m.group(1))
-            elif line.strip() and not line.strip().startswith("#"):
-                if re.match(r"\s*\w+:", line):
-                    break
-    return domains
+def _save_config_json(cfg: dict) -> None:
+    with open(CONFIG_JSON, "w") as f:
+        json.dump(cfg, f, indent=2)
+        f.write("\n")
 
 
-def load_config_for_classifier():
-    """Parse .local.md frontmatter into the dict format EmailClassifier expects.
+def load_archived_domains() -> list:
+    cfg = _load_config_json()
+    return list(cfg.get("preferences", {}).get("archived_domains", []))
 
-    Returns dict with 'categories' and 'learned_preferences' keys.
+
+def load_config_for_classifier() -> dict:
+    """Return config in the shape EmailClassifier expects:
+    {'categories': {...}, 'learned_preferences': {...}, 'manual_classifications': {...}, 'llm_classifications': {...}}
     """
-    frontmatter = _parse_frontmatter()
-    if not frontmatter:
-        return {"categories": {}, "learned_preferences": {}}
-
-    config = {"categories": {}, "learned_preferences": {}}
-
-    # State machine for parsing shallow YAML
-    current_section = None       # "categories" or "learned_preferences"
-    current_subsection = None    # e.g. "receipts", "newsletters", "keep_senders"
-    current_key = None           # e.g. "patterns", "common_domains"
-
-    for line in frontmatter.splitlines():
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            continue
-
-        # Top-level keys (no indent)
-        top_match = re.match(r"^(\w[\w_]*):", line)
-        if top_match:
-            key = top_match.group(1)
-            if key == "categories":
-                current_section = "categories"
-                current_subsection = None
-                current_key = None
-            elif key == "learned_preferences":
-                current_section = "learned_preferences"
-                current_subsection = None
-                current_key = None
-            else:
-                current_section = None
-            continue
-
-        if current_section == "categories":
-            # 2-space indent: subsection like "receipts:", "newsletters:"
-            sub_match = re.match(r"^  (\w[\w_]*):", line)
-            if sub_match:
-                current_subsection = sub_match.group(1)
-                config["categories"].setdefault(current_subsection, {})
-                current_key = None
-                continue
-
-            # 4-space indent: key like "patterns:", "common_domains:", or scalar
-            key_match = re.match(r"^    (\w[\w_]*):\s*(.*)", line)
-            if key_match and current_subsection:
-                k = key_match.group(1)
-                v = key_match.group(2).strip().strip('"').strip("'")
-                if v:
-                    config["categories"][current_subsection][k] = v
-                    current_key = None
-                else:
-                    current_key = k
-                    config["categories"][current_subsection].setdefault(k, [])
-                continue
-
-            # 6-space indent: list item under current_key
-            item_match = re.match(r"^\s+-\s+(.+)", line)
-            if item_match and current_subsection and current_key:
-                val = item_match.group(1).strip().strip('"').strip("'")
-                if val:
-                    config["categories"][current_subsection].setdefault(current_key, [])
-                    config["categories"][current_subsection][current_key].append(val)
-                continue
-
-        elif current_section == "learned_preferences":
-            # 2-space indent: subsection like "keep_senders:"
-            sub_match = re.match(r"^  (\w[\w_]*):", line)
-            if sub_match:
-                current_subsection = sub_match.group(1)
-                config["learned_preferences"].setdefault(current_subsection, [])
-                continue
-
-            # 4-space indent: list items
-            item_match = re.match(r"^\s+-\s+(\S+)", line)
-            if item_match and current_subsection:
-                val = item_match.group(1).strip()
-                if val:
-                    config["learned_preferences"].setdefault(current_subsection, [])
-                    config["learned_preferences"][current_subsection].append(val)
-                continue
-
-    return config
+    cfg = _load_config_json()
+    return {
+        "categories": cfg.get("categories", {}),
+        "learned_preferences": cfg.get("preferences", {}),
+        "manual_classifications": cfg.get("manual_classifications", {}),
+        "llm_classifications": cfg.get("llm_classifications", {}),
+    }
 
 
-def append_blocked_domains(new_domains):
-    """Insert new entries into .local.md blocked_domains before closing ---."""
-    if not new_domains or not os.path.exists(LOCAL_MD):
+def append_archived_domains(new_domains: list) -> None:
+    """Append new entries to preferences.archived_domains in config.json."""
+    if not new_domains:
         return
-
-    with open(LOCAL_MD, "r") as f:
-        content = f.read()
-
-    existing = set(load_blocked_domains())
+    cfg = _load_config_json()
+    prefs = cfg.setdefault("preferences", {})
+    existing = set(prefs.get("archived_domains", []))
     to_add = [d for d in new_domains if d not in existing]
     if not to_add:
         return
-
-    today = date.today().strftime("%Y-%m-%d")
-    block = f"    # Added {today}\n"
-    for d in to_add:
-        block += f"    - {d}\n"
-
-    lines = content.split("\n")
-    insert_idx = None
-    in_blocked = False
-    last_blocked_line = None
-
-    for i, line in enumerate(lines):
-        if re.match(r"\s*blocked_domains:", line):
-            in_blocked = True
-            continue
-        if in_blocked:
-            if re.match(r"\s+-\s+\S+", line) or line.strip().startswith("#"):
-                last_blocked_line = i
-            elif line.strip() == "---" or (line.strip() and re.match(r"\w+:", line.strip())):
-                insert_idx = i
-                break
-
-    if insert_idx is None and last_blocked_line is not None:
-        insert_idx = last_blocked_line + 1
-
-    if insert_idx is not None:
-        lines.insert(insert_idx, block.rstrip())
-        with open(LOCAL_MD, "w") as f:
-            f.write("\n".join(lines))
-        print(f"  Updated .local.md: added {len(to_add)} domain(s) to blocked_domains")
+    prefs.setdefault("archived_domains", []).extend(to_add)
+    _save_config_json(cfg)
+    print(f"  Updated config.json: added {len(to_add)} domain(s) to archived_domains")
 
 
 # ---------------------------------------------------------------------------
 # Classification integration
 # ---------------------------------------------------------------------------
 
+_LLM_CAT_ACTION = {
+    "newsletter": "review",
+    "promotion": "archive",
+    "receipt": "archive",
+    "notification": "keep",
+}
+
+
 def classify_domains(domain_emails, config):
-    """Classify each domain using the most recent email's headers.
+    """Classify each domain, applying manual and LLM overrides after programmatic.
 
     Returns dict[str, ClassificationResult].
     """
     classifier = EmailClassifier(config)
+    manual_cls = config.get("manual_classifications", {})
+    llm_cls = config.get("llm_classifications", {})
     results = {}
 
     for domain, emails in domain_emails.items():
-        # Pick the most recent email (last in list)
         sample = emails[-1] if emails else {}
         result = classifier.classify({
             "sender": sample.get("sender", ""),
             "subject": sample.get("subject", ""),
-            "preview": "",  # We only have headers, not body preview
+            "preview": "",
         })
+
+        if domain in manual_cls:
+            m = manual_cls[domain]
+            cat_str = m.get("category", "unknown")
+            try:
+                cat = Category(cat_str)
+            except ValueError:
+                cat = Category.UNKNOWN
+            result = ClassificationResult(
+                category=cat,
+                confidence=100,
+                tier=result.tier,
+                reasoning=f"Manual: {cat_str}",
+                suggested_action=_LLM_CAT_ACTION.get(cat_str, result.suggested_action),
+                source="manual",
+            )
+        elif result.category == Category.UNKNOWN and domain in llm_cls:
+            llm = llm_cls[domain]
+            cat_str = llm.get("category", "unknown")
+            confidence = llm.get("confidence", 0)
+            if cat_str not in ("unknown", "personal") and confidence >= 50:
+                try:
+                    cat = Category(cat_str)
+                    result = ClassificationResult(
+                        category=cat,
+                        confidence=confidence,
+                        tier=result.tier,
+                        reasoning=f"LLM: {llm.get('reasoning', '')}",
+                        suggested_action=_LLM_CAT_ACTION.get(cat_str, "review"),
+                        source="llm",
+                    )
+                except ValueError:
+                    pass
+
         results[domain] = result
 
     return results
@@ -294,13 +223,50 @@ def group_by_category(top_domains, classifications):
 
 
 # ---------------------------------------------------------------------------
+# Recidivist detection
+# ---------------------------------------------------------------------------
+
+def find_recidivists(domain_counts, archived_set, unsub_log):
+    """Find domains where we explicitly unsubscribed but are still emailing.
+
+    Note: domains in archived_set were just archived (no Gmail filter), so
+    receiving new mail from them is expected — not recidivism.
+
+    Returns:
+        dict with:
+            'unsub': set of domains (explicitly unsubscribed, still emailing)
+    """
+    current_domains = set(domain_counts.keys())
+
+    unsub = set()
+    for domain, entry in unsub_log.items():
+        if entry.get("status") in ("success", "opened") and domain in current_domains:
+            unsub.add(domain)
+
+    return {"unsub": unsub}
+
+
+# ---------------------------------------------------------------------------
 # Display: Dashboard
 # ---------------------------------------------------------------------------
 
-def display_dashboard(category_groups, total, blocked_set, unsub_log):
+def display_dashboard(category_groups, total, archived_set, unsub_log, recidivists=None):
     """Print the category summary table."""
     print_header("Dashboard")
-    print(f"  {bold(str(total))} unread across {bold(str(sum(len(v) for v in category_groups.values())))} domains\n")
+    console.print(f"  {bold(str(total))} unread across {bold(str(sum(len(v) for v in category_groups.values())))} domains\n")
+
+    # Recidivist warning block
+    if recidivists:
+        n_unsub = len(recidivists.get("unsub", set()))
+        if n_unsub > 0:
+            warning = colorize(
+                f"  ⚠  {n_unsub} unsubscribe{'s' if n_unsub != 1 else ''} ignored: "
+                f"still emailing after opt-out",
+                Color.RED, Color.BOLD
+            )
+            console.print(warning)
+            console.print(colorize("     Select [r] at the category prompt to review", Color.RED))
+            console.print()
 
     headers = ["", "Category", "Domains", "Emails", "Top Domain"]
     rows = []
@@ -333,7 +299,7 @@ def display_dashboard(category_groups, total, blocked_set, unsub_log):
 # Display: Category view
 # ---------------------------------------------------------------------------
 
-def display_category_view(category_name, items, blocked_set, unsub_log):
+def display_category_view(category_name, items, archived_set, unsub_log, recidivists=None):
     """Print the domain table for a specific category.
 
     Returns ordered list of domains for selection indexing.
@@ -349,7 +315,7 @@ def display_category_view(category_name, items, blocked_set, unsub_log):
     rows = []
 
     for i, (domain, count, result) in enumerate(items, 1):
-        status = domain_status(domain, blocked_set, unsub_log)
+        status = domain_status(domain, archived_set, unsub_log, recidivists)
         is_new = not status
         marker = colorize("*", Color.GREEN, Color.BOLD) if is_new else " "
         num_str = f"{marker}{i:>3}"
@@ -357,8 +323,7 @@ def display_category_view(category_name, items, blocked_set, unsub_log):
         domains.append(domain)
 
     print_table(headers, rows, alignments=["<", "<", ">", "<"])
-    print(dim("  * = new (not blocked, not unsubscribed)"))
-    print()
+    console.print(dim("  * = new (not blocked, not unsubscribed)"))
 
     return domains
 
@@ -367,10 +332,14 @@ def display_category_view(category_name, items, blocked_set, unsub_log):
 # Domain status helper
 # ---------------------------------------------------------------------------
 
-def domain_status(domain, blocked_set, unsub_log):
+def domain_status(domain, archived_set, unsub_log, recidivists=None):
     """Return a status string for a domain."""
-    if domain in blocked_set:
-        return dim("[blocked]")
+    if recidivists:
+        if domain in recidivists.get("unsub", set()):
+            return colorize("[recidivist!]", Color.RED, Color.BOLD)
+
+    if domain in archived_set:
+        return dim("[archived]")
 
     entry = unsub_log.get(domain)
     if entry:
@@ -389,26 +358,26 @@ def domain_status(domain, blocked_set, unsub_log):
 # Prompts
 # ---------------------------------------------------------------------------
 
-def prompt_category_selection(category_groups):
+def prompt_category_selection(category_groups, has_recidivists=False):
     """Numbered category menu.
 
-    Returns category key string, "all", or None (quit).
+    Returns category key string, "all", "recidivists", or None (quit).
     """
     # Build ordered list of available categories
     available = [cat for cat in CATEGORY_ORDER if cat in category_groups]
     total_cats = len(available)
 
-    prompt_parts = []
-    for i, cat in enumerate(available, 1):
-        prompt_parts.append(str(i))
     range_str = f"1-{total_cats}" if total_cats > 1 else "1"
+    recidivist_opt = ", [r]ecidivists" if has_recidivists else ""
 
-    choice = input(f"  > Category [{range_str}], [a]ll, [q]uit: ").strip().lower()
+    choice = input(f"  > Category [{range_str}], [a]ll{recidivist_opt}, [q]uit: ").strip().lower()
 
     if not choice or choice == "q":
         return None
     if choice == "a":
         return "all"
+    if choice == "r" and has_recidivists:
+        return "recidivists"
 
     try:
         idx = int(choice)
@@ -424,7 +393,7 @@ def prompt_category_selection(category_groups):
     return "retry"
 
 
-def interactive_select(domain_list, domain_counts_map, blocked_set, unsub_log):
+def interactive_select(domain_list, domain_counts_map, archived_set, unsub_log):
     """Enhanced domain selection with summary and confirmation.
 
     Accepts numbers, ranges (1-5), 'all', 'all-new'. Shows summary before confirming.
@@ -443,7 +412,7 @@ def interactive_select(domain_list, domain_counts_map, blocked_set, unsub_log):
         elif choice == "all-new":
             selected = [
                 d for d in domain_list
-                if d not in blocked_set
+                if d not in archived_set
                 and unsub_log.get(d, {}).get("status") not in ("success", "opened")
             ]
         else:
@@ -477,7 +446,7 @@ def interactive_select(domain_list, domain_counts_map, blocked_set, unsub_log):
         summaries = [f"{d} ({domain_counts_map.get(d, 0)})" for d in selected[:5]]
         if len(selected) > 5:
             summaries.append(f"...and {len(selected) - 5} more")
-        print(f"  Selected: {', '.join(summaries)} — {bold(str(total_emails))} emails")
+        console.print(f"  Selected: {', '.join(summaries)} — {bold(str(total_emails))} emails")
 
         confirm = input(f"  Confirm? [Y/n/c(lear)] ").strip().lower()
         if confirm in ("", "y"):
@@ -511,7 +480,7 @@ def run_archive_flow(domains, mail, domain_counts_map):
         print("  No emails found to archive.")
         return counts
 
-    confirm = input(f"\n  Archive {bold(str(total))} emails across {len(domains)} domains? [y/N] ").strip().lower()
+    confirm = input(f"\n  Archive {len(domains)} domains ({total} emails)? [y/N] ").strip().lower()
     if confirm != "y":
         print("  Skipped.")
         return {}
@@ -526,7 +495,7 @@ def run_archive_flow(domains, mail, domain_counts_map):
             time.sleep(0.5)
 
     total_archived = sum(archived_counts.values())
-    print(f"\n  Archived {bold(str(total_archived))} total emails.")
+    console.print(f"\n  Archived {bold(str(total_archived))} total emails.")
     return archived_counts
 
 
@@ -575,13 +544,13 @@ def run_unsubscribe_flow(domains, unsub_log, force=False):
     no_link = [r for r in results if not r["http_links"]]
 
     if no_link:
-        print(dim(f"  {len(no_link)} domain(s) had no unsubscribe link"))
+        console.print(dim(f"  {len(no_link)} domain(s) had no unsubscribe link"))
 
     today = date.today().isoformat()
 
     # Auto one-click unsubscribe
     if one_click:
-        print(f"\n  {bold(str(len(one_click)))} domain(s) support one-click unsubscribe:")
+        console.print(f"\n  {bold(str(len(one_click)))} domain(s) support one-click unsubscribe:")
         for r in one_click:
             print(f"    - {r['domain']}")
 
@@ -603,11 +572,11 @@ def run_unsubscribe_flow(domains, unsub_log, force=False):
 
     # Browser-based unsubscribe
     if browser_only:
-        print(f"\n  {bold(str(len(browser_only)))} domain(s) require browser unsubscribe:")
+        console.print(f"\n  {bold(str(len(browser_only)))} domain(s) require browser unsubscribe:")
         for r in browser_only:
             url = r["http_links"][0]
             short_url = url[:70] + "..." if len(url) > 70 else url
-            print(f"    - {r['domain']}: {dim(short_url)}")
+            console.print(f"    - {r['domain']}: {dim(short_url)}")
 
         confirm = input(f"\n  Open these {len(browser_only)} links in browser? [Y/n] ").strip().lower()
         if confirm in ("", "y"):
@@ -640,22 +609,21 @@ def run_unsubscribe_flow(domains, unsub_log, force=False):
 # Legacy flat view (for "all" option)
 # ---------------------------------------------------------------------------
 
-def display_flat_table(top_domains, blocked_set, unsub_log):
+def display_flat_table(top_domains, archived_set, unsub_log, recidivists=None):
     """Print numbered table with domain, count, status. Returns ordered domain list."""
     domains = []
     headers = ["#", "Domain", "Count", "Status"]
     rows = []
 
     for i, (domain, count) in enumerate(top_domains, 1):
-        status = domain_status(domain, blocked_set, unsub_log)
+        status = domain_status(domain, archived_set, unsub_log, recidivists)
         is_new = not status
         marker = colorize("*", Color.GREEN, Color.BOLD) if is_new else " "
         rows.append([f"{marker}{i:>3}", domain, str(count), status])
         domains.append(domain)
 
     print_table(headers, rows, alignments=["<", "<", ">", "<"])
-    print(dim("  * = new (not blocked, not unsubscribed)"))
-    print()
+    console.print(dim("  * = new (not blocked, not unsubscribed)"))
     return domains
 
 
@@ -676,18 +644,18 @@ def parse_flag(name):
 # Action menu within a category or flat view
 # ---------------------------------------------------------------------------
 
-def run_action_menu(domain_list, domain_counts_map, blocked_set, unsub_log, force):
-    """Show action menu, run selected action. Returns updated (blocked_set, unsub_log)."""
+def run_action_menu(domain_list, domain_counts_map, archived_set, unsub_log, force):
+    """Show action menu, run selected action. Returns updated (archived_set, unsub_log)."""
     print("  [a]rchive  [u]nsubscribe  [b]oth  [d]ashboard  [q]uit")
     action = input("  > ").strip().lower()
 
     if action in ("d", "q", ""):
-        return action, blocked_set, unsub_log
+        return action, archived_set, unsub_log
 
     selected = []
 
     if action in ("a", "b"):
-        selected = interactive_select(domain_list, domain_counts_map, blocked_set, unsub_log)
+        selected = interactive_select(domain_list, domain_counts_map, archived_set, unsub_log)
         if selected:
             import imaplib
             user = os.environ.get("GMAIL_EMAIL", "thomkav@gmail.com")
@@ -705,28 +673,28 @@ def run_action_menu(domain_list, domain_counts_map, blocked_set, unsub_log, forc
             if archived:
                 newly_archived = [d for d, c in archived.items() if c > 0]
                 if newly_archived:
-                    append_blocked_domains(newly_archived)
-                    blocked_set.update(newly_archived)
+                    append_archived_domains(newly_archived)
+                    archived_set.update(newly_archived)
 
         if action == "a":
-            return "stay", blocked_set, unsub_log
+            return "stay", archived_set, unsub_log
 
     if action in ("u", "b"):
         if action == "u" or not selected:
-            selected = interactive_select(domain_list, domain_counts_map, blocked_set, unsub_log)
+            selected = interactive_select(domain_list, domain_counts_map, archived_set, unsub_log)
 
         if selected:
             unsub_log = run_unsubscribe_flow(selected, unsub_log, force=force)
             save_unsubscribe_log(unsub_log)
             print("  Unsubscribe log saved.")
 
-        return "stay", blocked_set, unsub_log
+        return "stay", archived_set, unsub_log
 
     if action not in ("a", "u", "b", "d", "q"):
         print(f"  Unknown action: {action}")
-        return "stay", blocked_set, unsub_log
+        return "stay", archived_set, unsub_log
 
-    return action, blocked_set, unsub_log
+    return action, archived_set, unsub_log
 
 
 # ---------------------------------------------------------------------------
@@ -764,8 +732,12 @@ def main():
     domain_counts_map = dict(top_domains)
 
     # Load state
-    blocked_set = set(load_blocked_domains())
+    archived_set = set(load_archived_domains())
     unsub_log = load_unsubscribe_log()
+
+    # --- Recidivist detection ---
+    recidivists = find_recidivists(domain_counts, archived_set, unsub_log)
+    has_recidivists = bool(recidivists["unsub"])
 
     # --- Direct category jump ---
     if category_flag:
@@ -782,18 +754,18 @@ def main():
                 return
 
         items = category_groups[cat_key]
-        domain_list = display_category_view(cat_key, items, blocked_set, unsub_log)
+        domain_list = display_category_view(cat_key, items, archived_set, unsub_log, recidivists)
 
         while True:
-            nav, blocked_set, unsub_log = run_action_menu(
-                domain_list, domain_counts_map, blocked_set, unsub_log, force
+            nav, archived_set, unsub_log = run_action_menu(
+                domain_list, domain_counts_map, archived_set, unsub_log, force
             )
             if nav in ("q", None, ""):
                 break
             if nav == "d":
                 break  # Fall through to dashboard loop below
             # "stay" -> re-display and loop
-            domain_list = display_category_view(cat_key, items, blocked_set, unsub_log)
+            domain_list = display_category_view(cat_key, items, archived_set, unsub_log, recidivists)
 
         if nav != "d":
             print("\nDone.")
@@ -804,8 +776,8 @@ def main():
 
     while True:
         if current_view == "dashboard":
-            display_dashboard(category_groups, total, blocked_set, unsub_log)
-            choice = prompt_category_selection(category_groups)
+            display_dashboard(category_groups, total, archived_set, unsub_log, recidivists)
+            choice = prompt_category_selection(category_groups, has_recidivists)
 
             if choice is None:
                 break
@@ -813,16 +785,55 @@ def main():
                 continue
             if choice == "all":
                 current_view = "all"
+            elif choice == "recidivists":
+                current_view = "recidivists"
             else:
                 current_view = choice
+
+        elif current_view == "recidivists":
+            # Recidivist view: show offending domains as a flat table
+            recid_domains = [
+                (d, domain_counts_map[d])
+                for d in sorted(recidivists["unsub"],
+                                key=lambda x: domain_counts_map.get(x, 0), reverse=True)
+                if d in domain_counts_map
+            ]
+            print_header(f"Recidivists ({len(recid_domains)} domains)", Color.RED)
+            if recid_domains:
+                headers = ["#", "Domain", "Unread", "Prior Action"]
+                rows = []
+                for i, (domain, count) in enumerate(recid_domains, 1):
+                    if domain in recidivists["unsub"]:
+                        entry = unsub_log.get(domain, {})
+                        date_short = entry.get("date", "")[5:] or ""
+                        action = f"unsubscribed {date_short}" if date_short else "unsubscribed"
+                    else:
+                        action = "blocked"
+                    rows.append([
+                        f"  {i}",
+                        colorize(domain, Color.RED, Color.BOLD),
+                        str(count),
+                        action,
+                    ])
+                print_table(headers, rows, alignments=["<", "<", ">", "<"])
+
+            domain_list = [d for d, _ in recid_domains]
+            nav, archived_set, unsub_log = run_action_menu(
+                domain_list, domain_counts_map, archived_set, unsub_log, force
+            )
+            if nav in ("q", None, ""):
+                break
+            if nav == "d":
+                current_view = "dashboard"
+            # "stay" -> loop to re-display
 
         elif current_view == "all":
             # Flat legacy view
             print_header(f"All Domains ({len(top_domains)} domains, {total} emails)")
-            domain_list = display_flat_table(top_domains, blocked_set, unsub_log)
+            domain_list = display_flat_table(top_domains, archived_set, unsub_log, recidivists)
 
-            nav, blocked_set, unsub_log = run_action_menu(
-                domain_list, domain_counts_map, blocked_set, unsub_log, force
+            nav, archived_set, unsub_log = run_action_menu(
+                domain_list, domain_counts_map, archived_set, unsub_log, force
             )
             if nav in ("q", None, ""):
                 break
@@ -838,10 +849,10 @@ def main():
                 continue
 
             items = category_groups[cat_key]
-            domain_list = display_category_view(cat_key, items, blocked_set, unsub_log)
+            domain_list = display_category_view(cat_key, items, archived_set, unsub_log, recidivists)
 
-            nav, blocked_set, unsub_log = run_action_menu(
-                domain_list, domain_counts_map, blocked_set, unsub_log, force
+            nav, archived_set, unsub_log = run_action_menu(
+                domain_list, domain_counts_map, archived_set, unsub_log, force
             )
             if nav in ("q", None, ""):
                 break

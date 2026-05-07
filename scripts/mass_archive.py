@@ -17,43 +17,22 @@ import time
 
 def archive_domain(mail, domain: str, dry_run: bool = False) -> int:
     """Archive all emails from a domain in INBOX. Returns count archived."""
-    # Search for ALL emails from this domain (not just UNSEEN — audit may have marked as read)
-    status, data = mail.search(None, 'FROM', f'"@{domain}"')
-    if status != "OK" or not data[0]:
+    typ, data = mail.uid("SEARCH", None, "FROM", f'"@{domain}"')
+    if typ != "OK" or not data[0]:
         return 0
 
-    msg_ids = data[0].split()
-    count = len(msg_ids)
+    uids = data[0].split()
+    count = len(uids)
 
     if count == 0 or dry_run:
         return count
 
-    # Process in batches of 50 (smaller to avoid sequence number issues after expunge)
-    batch_size = 50
-    archived = 0
-    while True:
-        # Re-search each iteration since expunge changes sequence numbers
-        status, data = mail.search(None, 'FROM', f'"@{domain}"')
-        if status != "OK" or not data[0]:
-            break
+    # UIDs are stable across EXPUNGE so a single STORE+EXPUNGE covers everything.
+    uid_str = b",".join(uids)
+    mail.uid("STORE", uid_str, "+FLAGS", "(\\Seen \\Deleted)")
+    mail.expunge()
 
-        msg_ids = data[0].split()
-        if not msg_ids:
-            break
-
-        batch = msg_ids[:batch_size]
-        batch_str = b",".join(batch)
-
-        # Mark as read
-        mail.store(batch_str, "+FLAGS", "\\Seen")
-        # Mark for deletion from INBOX (Gmail archives, doesn't trash)
-        mail.store(batch_str, "+FLAGS", "\\Deleted")
-        # Expunge after each batch to keep sequence numbers consistent
-        mail.expunge()
-
-        archived += len(batch)
-
-    return archived
+    return count
 
 
 def main():
@@ -90,9 +69,6 @@ def main():
         action = "would archive" if dry_run else "archived"
         print(f"  {action} {count:>4} emails from {domain}")
 
-        if not dry_run and count > 0:
-            # Brief pause between domains to avoid rate limits
-            time.sleep(0.5)
 
     print(f"\n{'Would archive' if dry_run else 'Archived'} {total_archived} total emails across {len(domains)} domains")
 

@@ -77,7 +77,7 @@ Store user decisions:
 - **keep_newsletters**: Senders to preserve in inbox
 - **archive_newsletters**: Senders to auto-archive
 - **keep_senders**: High-trust senders that bypass classification
-- **blocked_domains**: Spam/unwanted domains
+- **archived_domains**: Spam/unwanted domains
 
 ### Step 4: Continuous Improvement
 Next time the classifier encounters:
@@ -123,7 +123,7 @@ amazon.com, ebay.com, stripe.com, paypal.com,
 etsy.com, shopify.com, square.com, checkout.com
 ```
 
-Store these in `blocked_domains` for known spam:
+Store these in `archived_domains` for known spam:
 ```
 discount-spam.com, promotional-blast.net, unsolicited-offers.org
 ```

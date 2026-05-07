@@ -21,3 +21,14 @@ build/
 
 # OS
 .DS_Store
+
+# Local data cache
+data/
+*.sqlite
+*.sqlite-*
+
+# Frontend
+node_modules/
+
+# Pre-migration artifacts
+*.pre-migration

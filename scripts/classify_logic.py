@@ -45,6 +45,7 @@ class ClassificationResult:
     tier: Optional[NewsletterTier] = None
     reasoning: str = ""
     suggested_action: str = "review"
+    source: str = "programmatic"
 
     def to_dict(self) -> dict:
         """Convert to dictionary"""
@@ -54,6 +55,7 @@ class ClassificationResult:
             "tier": self.tier.value if self.tier else None,
             "reasoning": self.reasoning,
             "suggested_action": self.suggested_action,
+            "source": self.source,
         }
 
 
@@ -73,7 +75,7 @@ class EmailClassifier:
 
     def classify(self, email: dict) -> ClassificationResult:
         """
-        Classify an email
+        Classify an email.
 
         Args:
             email: Email data with sender, subject, preview
@@ -84,104 +86,85 @@ class EmailClassifier:
         sender = email.get("sender", "").lower()
         subject = email.get("subject", "").lower()
         preview = email.get("preview", "").lower()
-        # Include sender in body for pattern matching (catches newsletter@, marketing@, etc.)
         email_body = f"{sender} {subject} {preview}"
 
-        # Check learned preferences first
-        learned_result = self._check_learned_preferences(sender, email_body)
-        if learned_result:
-            return learned_result
+        # Archived domains: always archive, skip further classification
+        archived_domains = self.learned_prefs.get("archived_domains", [])
+        for domain in archived_domains:
+            if domain.lower() in sender:
+                return ClassificationResult(
+                    category=Category.PROMOTION,
+                    confidence=100,
+                    reasoning=f"In auto-archive list ({domain})",
+                    suggested_action="archive",
+                )
 
-        # Check if this looks like a personal/conversational email (skip classification)
-        personal_result = self._classify_personal(sender, subject, preview)
-        if personal_result:
-            return personal_result
+        # keep_newsletters: always keep, classify as newsletter
+        keep_newsletters = self.learned_prefs.get("keep_newsletters", [])
+        for nl in keep_newsletters:
+            if nl.lower() in sender:
+                return ClassificationResult(
+                    category=Category.NEWSLETTER,
+                    confidence=100,
+                    tier=NewsletterTier.HIGH,
+                    reasoning=f"In keep_newsletters list ({nl})",
+                    suggested_action="keep",
+                )
 
-        # Check notification (security alerts, TOS, account notices)
-        notification_result = self._classify_notification(sender, email_body)
-        if notification_result:
-            return notification_result
+        # archive_newsletters: always archive, classify as newsletter
+        archive_newsletters = self.learned_prefs.get("archive_newsletters", [])
+        for nl in archive_newsletters:
+            if nl.lower() in sender:
+                return ClassificationResult(
+                    category=Category.NEWSLETTER,
+                    confidence=100,
+                    tier=NewsletterTier.LOW,
+                    reasoning=f"In archive_newsletters list ({nl})",
+                    suggested_action="archive",
+                )
 
-        # Try each category in order of confidence
-        results = []
+        # Run the full classification pipeline to get a real category
+        result = self._run_classification(sender, subject, preview, email_body)
 
-        # Check receipt
-        receipt_result = self._classify_receipt(sender, email_body)
-        if receipt_result:
-            results.append(receipt_result)
+        # keep_senders: override action to keep, but preserve the classified category
+        keep_senders = self.learned_prefs.get("keep_senders", [])
+        for ks in keep_senders:
+            if ks.lower() in sender:
+                result.suggested_action = "keep"
+                result.reasoning = result.reasoning.rstrip() + f" [keep list: {ks}]"
+                break
 
-        # Check newsletter
-        newsletter_result = self._classify_newsletter(sender, email_body)
-        if newsletter_result:
-            results.append(newsletter_result)
+        return result
 
-        # Check promotion
-        promotion_result = self._classify_promotion(sender, email_body)
-        if promotion_result:
-            results.append(promotion_result)
+    def _run_classification(self, sender: str, subject: str, preview: str, email_body: str) -> ClassificationResult:
+        """Run pattern-based classification; returns best match or UNKNOWN."""
 
-        # Return highest confidence
-        if results:
-            return max(results, key=lambda r: r.confidence)
+        # Personal/conversational check
+        personal = self._classify_personal(sender, subject, preview)
+        if personal:
+            return personal
 
-        # Unknown category
+        # Collect all category candidates and pick highest confidence
+        candidates = []
+        for fn in (
+            self._classify_notification,
+            self._classify_receipt,
+            self._classify_newsletter,
+            self._classify_promotion,
+        ):
+            r = fn(sender, email_body)
+            if r:
+                candidates.append(r)
+
+        if candidates:
+            return max(candidates, key=lambda r: r.confidence)
+
         return ClassificationResult(
             category=Category.UNKNOWN,
             confidence=0,
             reasoning="No patterns matched",
             suggested_action="review",
         )
-
-    def _check_learned_preferences(self, sender: str, email_body: str) -> Optional[ClassificationResult]:
-        """Check learned preferences before pattern matching"""
-
-        # Check keep_senders (always keep in inbox)
-        keep_senders = self.learned_prefs.get("keep_senders", [])
-        for keep_sender in keep_senders:
-            if keep_sender.lower() in sender or sender.endswith(keep_sender.lower()):
-                return ClassificationResult(
-                    category=Category.UNKNOWN,
-                    confidence=100,
-                    reasoning=f"Sender '{keep_sender}' in trusted list",
-                    suggested_action="keep",
-                )
-
-        # Check keep_newsletters
-        keep_newsletters = self.learned_prefs.get("keep_newsletters", [])
-        for newsletter_sender in keep_newsletters:
-            if newsletter_sender.lower() in sender or sender.endswith(newsletter_sender.lower()):
-                return ClassificationResult(
-                    category=Category.NEWSLETTER,
-                    confidence=100,
-                    tier=NewsletterTier.HIGH,
-                    reasoning=f"Newsletter sender '{newsletter_sender}' in keep list",
-                    suggested_action="keep",
-                )
-
-        # Check archive_newsletters
-        archive_newsletters = self.learned_prefs.get("archive_newsletters", [])
-        for newsletter_sender in archive_newsletters:
-            if newsletter_sender.lower() in sender or sender.endswith(newsletter_sender.lower()):
-                return ClassificationResult(
-                    category=Category.NEWSLETTER,
-                    confidence=100,
-                    tier=NewsletterTier.LOW,
-                    reasoning=f"Newsletter sender '{newsletter_sender}' in archive list",
-                    suggested_action="archive",
-                )
-
-        # Check blocked_domains
-        blocked_domains = self.learned_prefs.get("blocked_domains", [])
-        for domain in blocked_domains:
-            if domain.lower() in sender:
-                return ClassificationResult(
-                    category=Category.PROMOTION,
-                    confidence=100,
-                    reasoning=f"Domain '{domain}' in blocked list",
-                    suggested_action="archive",
-                )
-
-        return None
 
     def _classify_personal(self, sender: str, subject: str, preview: str) -> Optional[ClassificationResult]:
         """Detect personal/conversational emails that should stay in inbox"""
@@ -235,12 +218,30 @@ class EmailClassifier:
 
         # Known notification sender domains
         notification_domains = [
-            "accounts.google.com", "apple.com", "github.com", "microsoft.com",
-            "id.apple.com", "appleid.apple.com", "linkedin.com",
+            # Google
+            "accounts.google.com", "docs.google.com", "google.com",
+            # Apple
+            "apple.com", "id.apple.com", "appleid.apple.com",
+            # Dev tools
+            "github.com", "docker.com", "netlify.com", "heroku.com",
+            # Microsoft / enterprise
+            "microsoft.com", "linkedin.com",
+            # Password / security
+            "1password.com", "info.1password.com",
+            # Domain / hosting
+            "namecheap.com", "squarespace.com", "fastcomet.com",
+            # HR / payroll
+            "justworks.com", "trinet.com", "mail-identity.trinet.com", "ascensus.com",
+            # Financial
+            "r.sofi.com", "o.sofi.org", "plaid.com", "carta.com",
+            "notify.wellsfargo.com", "mail1.wellsfargo.com",
+            # Airlines / travel (transactional notifications)
+            "delta.com", "e.delta.com", "o.delta.com", "t.delta.com",
+            "notifications.alaskaair.com", "email.alaskaair.com",
         ]
         for domain in notification_domains:
             if domain in sender:
-                score += 30
+                score += 55  # curated list — sufficient signal on its own
                 matches.append(f"Notification domain: {domain}")
                 break
 
@@ -338,10 +339,19 @@ class EmailClassifier:
                 matches.append(f"Newsletter sender: {pat}")
                 break
 
-        # Sender domain contains "newsletter" or "update"
-        if any(x in sender for x in ["newsletter.", "update.", "campaign.", "email."]):
-            score += 20
-            matches.append("Newsletter-style sender domain")
+        # Sender domain or subdomain strongly implies newsletter
+        newsletter_domain_signals = ["newsletter.", "update.", "campaign.", "digest.", "news."]
+        for sig in newsletter_domain_signals:
+            if sig in sender:
+                score += 30
+                matches.append(f"Newsletter subdomain: {sig}")
+                break
+
+        # Weaker signals: mail.*, email.* subdomains (used by many bulk senders)
+        if not any(sig in sender for sig in newsletter_domain_signals):
+            if any(x in sender for x in ["email.", "mail."]):
+                score += 15
+                matches.append("Bulk mail subdomain")
 
         # Bulk sender indicators (noreply with non-personal content)
         if "noreply@" in sender or "no-reply@" in sender:
@@ -556,7 +566,7 @@ if __name__ == "__main__":
             "keep_newsletters": [],
             "archive_newsletters": [],
             "keep_senders": [],
-            "blocked_domains": [],
+            "archived_domains": [],
         },
     }
 

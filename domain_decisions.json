@@ -1,0 +1,6172 @@
+{
+  "my.joinhoney.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "carefirst.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 70
+  },
+  "namecheap.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 17
+  },
+  "justworks.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "1password.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 33
+  },
+  "sy.nexus": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "alerts.cvs.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "r.sofi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "docker.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "tahniholt.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 19
+  },
+  "wikimedia.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "huggingface.co": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "dogtopia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "email.paperlesspost.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "mail.miro.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "themultiverse.school": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "tailscale.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "ucdenver.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 93
+  },
+  "hotmail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 27
+  },
+  "dor.oregon.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "250390027.mailchimpapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "etix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "labaton.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "hackylabs.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "m.mississippistudios.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mynotifications.cvs.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "hello.turo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "info.1password.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "delta.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "link.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "email.schwab.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mail.proton.me": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "194652774.mailchimpapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "eonline.e-vanguard.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "uchealth.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 69
+  },
+  "anonymousensemble.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 90
+  },
+  "acuityscheduling-mail.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 18
+  },
+  "montclair.edu": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "plans.eventbrite.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "oregonforall.us": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "acuityscheduling.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 18
+  },
+  "kindreddogpdx.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 25
+  },
+  "berniesanders.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "verdi.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "multco.us": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "messages.lhmailer.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "forbitterforworse.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "mail.momence.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 14
+  },
+  "saikat.us": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "performancespacenewyork.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "opentable.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 47
+  },
+  "pcun.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "account.etsy.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "bolt.eu": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "order.online": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "e.lululemon.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "nowyogapdx.ccsend.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "nicolamoore.eu": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "vote.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 18
+  },
+  "event.eventbrite.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "meyerandassoc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "gopassport.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "support.freetaxusa.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "myturn.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "alerts.parkmobile.io": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "inaturalist.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "citi.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "myhopcard.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "email.etsy.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "feedbackemail.americanexpress.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "care.lifestance.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "gr-gallery.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "gillibrand.senate.gov": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "thepeoplesyoga.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "artistcraftsman.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "e.doctorswithoutborders.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "thewoostergroup.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 15
+  },
+  "e.thekeyrewards.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "vizcom.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "makebooks.blurb.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "conserve.nature.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "stillsitting.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "christinetylerhill.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "verifyle.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "plaid.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.creditkarma.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "lyrahealth.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "mail5.zocdoc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "updates.ubisoft.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "thetiebar.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "taxes.freetaxusa.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "messages.gofundme.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "news.fullcircle.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "eternal.tv": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "vagaro.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "printwithme.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "plutobooks.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "frame.work": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "ocasiocortez.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "mail.hbomax.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "retsupport.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "thegreenearthco.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "spincyclenyc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "shipstation.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 14
+  },
+  "skillshare.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "e.mail.washingtonpost.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "carbonaraapp.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "namaspa.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "netlify.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "zenoti.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 14
+  },
+  "mailman.bloomerang-mail.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "email.sevenrooms.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mail.ridewithgps.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "202675278.mailchimpapp.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "eventsured.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "surveynrc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "notification.evgo.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "lodgecastiron.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "smartwaiver.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "moonshotgamestore.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "united.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 35
+  },
+  "farmstand.fullcircle.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "fullcircle.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "loopdeloopvintner.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "liquidquartzsealer.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "pamcut.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mail.swiship.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "judge.me": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "mtmograph.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "email1.marriott-vacations.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "orders.indochino.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "etsy.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 122
+  },
+  "poacafe.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "abathhouse.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 15
+  },
+  "healthadvocate.uhc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "jetbrains.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "covermanager.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "comunicaciones.iberia.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "inguest.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "googlemail.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 26
+  },
+  "brf.empowermyretirement.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "matchafreak.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "penrosefriends.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "justride.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "rosehaven.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "edit.houzz.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "risk-reward.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "e.dcsg.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "workingfamilies.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "chunks.shop": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "wonderbagworld.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "actionnetworkhelp.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "morningceramics.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "turntonetworks.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "abramsbooks.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "booking.spothopperapp.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "adoptoneblock.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "therebello.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "recreation.gov": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "pulsepdx.net": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "photomyne.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "skincareessentials.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "marketing.freetaxusa.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "wise.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "wearerecs.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "bonterratech.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "61779777.mailchimpapp.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "listen360.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "buffalogames.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "outletpdx.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "m.cascadetickets.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "m.shopifyemail.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "go.reuters.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "ranchosantana.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "blockbluelight.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "retirementpartner.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "basecamp.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "barrowstreettheatre.ccsend.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "exploretock.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "toast-restaurants.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "marketing.blvd.me": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "multcolib.sirsi.net": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "aarmy.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "product.miro.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "o.thekeyrewards.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "notifications.quantumfiber.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "otter.ai": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "mail.threads.net": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "e.democrats.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "moxyinternational.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "makerpipe.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "everyaction.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "st.urbanoutfitters.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "22356331.mailchimpapp.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "humanitix.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "djpdx.info": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "flagstar.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "mail-identity.trinet.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "ascensus.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "usps.gov": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "roninresearch.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "oregonlive.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "todoist.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "loyalty.email.ikea.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "yogasix.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.alltrails.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "clippercard.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "gorgeweddingconcierge.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 17
+  },
+  "m2.washpost.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "glasp.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "info.wise.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "notifications.lowes.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "updates.notion.so": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "appointment-plus.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "craighill.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "groundnews.app": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "promote.weebly.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "crm.ba.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "gainrepmail.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "on-running.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "clover.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email.livingroomtheaters.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "system.u-tec.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "renewhome.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "yardgames.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "annabryantart.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "theguardian.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "paperculture.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "culturedcode.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "facebookuserprivacysettlement.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "carta.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 30
+  },
+  "restaurant-information.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "saphety.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "em.ferry.nyc": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "e.tatteredcover.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "encuestas.iberia.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "alerts.caremark.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "alotrolado.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "welcomecustomer.gonift.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "lamama.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "uchicago.edu": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "coloradosos.gov": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "advocate.uhc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "press.uchicago.edu": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.thefork.pt": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "notifications.surlatable.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.surlatable.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "e.livingroomtheaters.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "playwrightshorizons.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "info.tidal.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "info.classpass.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "marketing.sg.weavecoms.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "ntslive.co.uk": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "honeygrow.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "psksupermarkets.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "service.theguardian.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.otterbox.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "theoneill.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 59
+  },
+  "katieporter.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "h5.hilton.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "mailout.plex.tv": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "info.bonterratech.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "zupans.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "thefutonshop.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "news.native-instruments.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "ses.vevor.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "shop.schoolhouse.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "innovations.samsungusa.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "boulderingproject.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "ora.vevor.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.lodgecastiron.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.hatch.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "doctors-without-borders.classy-mail.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "newyork.msf.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.quince.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "theparisreview.info": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "emails.alomoves.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.parkmobile.io": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "libraryfoundation.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "lustery.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.nymag.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "printhouseavl.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "secretparty.io": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "kl.blackdiamondequipment.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.mrcooper.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "my.store-emails.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "spotapps.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "getchipdrop.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "note.marcopolo.me": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cadem.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "updates.biketownpdx.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "tix-mail.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail-15.hive.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pocketcasts.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "mail.schwab.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e4.rover.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.potterybarnkids.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "alerts.rei.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "customer-mail.smile.io": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "elavon.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.crunchyroll.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "marketing.id.me": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "teafund.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "messaging.peacocktv.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "union.fit": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "is.email.nextdoor.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "plugshare.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "openstageit.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "thisiswoowoo.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mailusa.atgtickets.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "nqujb5.fg97.fdske.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.instinctvet.email": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "bamboosushi.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "thesocietyhotel.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "your.cvs.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "slack.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "campaign.eventbrite.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "smallpdf.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pendosurvey.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mnb.email": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "notifications.alaskaair.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "openart.ai": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "order.eventbrite.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "zolababy.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "jivamuktiyoganyc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "evidencebasedbirth.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "solgaard.co": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "democrats.senatemajority.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "weddings.theknot.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "betteroffbowling.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "susannebartsch.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "masusushi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "wellspentmarket.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "m.aladdin-theater.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "emailupdates.trimet.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mikeandcarlee.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "message.sevenrooms.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "response.dpacnc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "seiu503.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "v.alaskaair.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "colorofchange.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "feedback.oregonlive.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "venmo.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "loanadministration.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "gmail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "me.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "yahoo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 182
+  },
+  "jimfindlaynyc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 134
+  },
+  "nonsensenyc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 64
+  },
+  "xfinitymobile.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 74
+  },
+  "maboumines.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 63
+  },
+  "cuanschutz.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 56
+  },
+  "brooklyngypsies.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 52
+  },
+  "aol.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 47
+  },
+  "3ld.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 53
+  },
+  "id.apple.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 34
+  },
+  "github.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 33
+  },
+  "icloud.com": {
+    "state": "keep",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "docusign.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 15
+  },
+  "wetransfer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "eventbrite.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 32
+  },
+  "mail2.zocdoc.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 27
+  },
+  "mms.att.net": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 18
+  },
+  "wearecuriousfoxes.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 18
+  },
+  "matcheducation.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 17
+  },
+  "therepresentatives.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 17
+  },
+  "ladanceproject.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 17
+  },
+  "naatco.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 16
+  },
+  "wellnessliving.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 14
+  },
+  "sona-systems.net": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "dixonplace.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "hbs.edu": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "noreply.acorns.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "cancer.org": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 12
+  },
+  "mindfulsupportservices.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 12
+  },
+  "nyc.rr.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "stripe.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 20
+  },
+  "ezcater.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "twentysidedstore.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "reputon.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "apple.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 17
+  },
+  "n.delta.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "accountprotection.microsoft.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "microsoft.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "orders.apple.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.1password.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "account.microsoft.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.trinet.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "prodduke.onmicrosoft.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "communication.microsoft.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "q.quantumfiber.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "redgiant.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email.nebula.tv": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "newsletter.quivr.app": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "comms.mail.washingtonpost.com": {
+    "state": "archived",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "here.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mac.com": {
+    "state": "keep",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "simonhardingdesign.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 22
+  },
+  "lastpass.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "troikatronix.freshdesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "phnyc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "travel.priceline.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "mail.nystateofhealth.ny.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "haveibeenpwned.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "fareharbor.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "lyft-new.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "notifications.skype.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "mgb.modento.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "insideicloud.icloud.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "hrccommunityhub.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "agents.icims.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "uch.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "calendly.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "questdiagnostics.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "emailinfo.geeksquad.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "alerts.depop.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "gc.cuny.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "haas.berkeley.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "npr.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "wistia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "customerservice.nyc.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "cigna.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "wellsfargo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "txn-email03.playstation.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "radiationbusiness.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mit.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "crowdcast.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "nytechmetal.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "urbanglass.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "e.clearme.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "sf-notifications.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "cablevision.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "alticeusa.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mail.uipath.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mongodb.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "reddit.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "lyft-bikes-scooters.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "t.spiritairlines.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "expressvpn.xyz": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "brainshark.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "gallup4.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mail6.zocdoc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "notices.nystateofhealth.ny.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "roll20.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "sketchfab.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "toogoodtogo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "tmail.nvidia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "seatgeek.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "farmersinsurance.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "ss.email.nextdoor.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "ground.news": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "bcbssettlement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "dsny.nyc.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "mail.zocdoc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "verifoneway.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "maestroconference.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "durhamhabitat.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "intuit.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "communitywarehouse.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "emails.hertz.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "account.netflix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "provident.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "ctt.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 13
+  },
+  "policy.farmers.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 11
+  },
+  "support.meundies.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 14
+  },
+  "beyondmenu.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "wecar.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "smiledining.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "secure-booker.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "saytechnologies.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "chownow.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 8
+  },
+  "cultivatecatering.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "powells.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "schwab.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "amtrak.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 10
+  },
+  "janeapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "wixsiteautomations.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "tulasoftware.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "diginn.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "gusto.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "aa.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 15
+  },
+  "asurion.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "ceramicartsnetwork.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "slingemail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "northernbrewer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "nitehawkcinema.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "mail.crateandbarrel.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "the-citizenry.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "revelsystems.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "ridewithvia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "bookrenter.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "volcanicbottleshoppe.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "chasetravel.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "mechanicalkeyboards.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "hamptonjitney.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "shipup.co": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "houseloan.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "image3d.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "timberlinelodge.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "itch.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "messages.tax.ny.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "limebike.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "playtomic.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "li.me": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "glympse.cb2.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "staycourant.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "showclix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "den.tl": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "ifly.southwest.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "smdservers.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "wennercpa.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "prospectusdocs.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "safeguardit.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "e.gogoair.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "figure53.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "orders.otterbox.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "enterprisecarshare.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "publicstorage.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "starcycleride.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "active.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "iberia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "alaskaair.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "openedgepay.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "leonardfrisbie.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "email.blinds.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "o.rejuvenation.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "h6.hilton.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "epoch.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "edenbrothers.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "brownpapertickets.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "ferry.nyc": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "bookshop.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "usps.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "notifications.auspost.com.au": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "dickblick.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "gearo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "sent-via.netsuite.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "epicgames.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "hq.bill.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "order.westelm.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "mail.gofarrewards.wellsfargo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "tdymoving.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "culturalinsurance.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "moderndomesticpdx.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "officedepot.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "firstgroup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "busify.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "viasat.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "wfgnationaltitle.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "acehardware.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "ricoconsign.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "schoolhouse.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "huntfishoregon.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "ticketweb.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "peakdesign.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "precompro.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "bookeo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "wifi.southwest.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "good.store": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "notify.postalmate.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email1.geico.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "macsales.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "zellecitibank.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "trn.hellosawyer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "goshippo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email.homedepot.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "moma.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "eat.grubhub.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "m.blueapron.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "heartland.us": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "collapsablegiraffe.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "targetgiftcardcenter.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "ondecksports.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email.bananarepublic.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "mail.authorize.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "bookmail.wordery.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "leafly.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "agoda.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "allianzassistance.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "reservations.rentalcars.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "lawdepot.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "em.nordstrom.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "cinemaspice.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "prana.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "uncommongoods.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "essential.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "charlesletourneau.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "hilton.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "controlvoltage.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "usairwaysmobile.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "ticketmaster.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "payments.intuit.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "i.tate.org.uk": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.lightspeedhq.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "loopreturns.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "canarytechnologies.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "olo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "wfgtitle.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "tilefive.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cs.officedepot.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "epilepsy-fnd-colorado.classy-mail.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pendleton.narvar.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "penwool.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "payments.farmers.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "fnf.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "spoton.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "paymynotice.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "loox.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cinema21.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "laurelhursttheater.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "wixinvoices.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "thegrotto.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "property.booking.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "rockgympro.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mcmenamins.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "thecinemagictheater.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.cb2.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "acornpm.mailer.appfolio.us": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "naturesfootprint.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "powr.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "fourthwall.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "100-percent.co.uk": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "californiacarnivores.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "itsteranga.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "stamps.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "vendhq.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "staples.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "halfbakedart.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "restaurantlogin.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "tmw.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "redscorner.us": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "squaretrade.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "dentalxchange.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "villagedentaldtc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "chat.inboxhealth.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pirateship.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "noreply.email.carfax.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pr.hayneedlecom.emailpowerreviews.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cotopaxi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "bananarepublic.narvar.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "flosusa.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "musictoday.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "ko-fi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "usa.uniqlo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "paddle.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "indiebound.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "addlibra.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mobilebytes.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "ancientbathsny.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "foxrentacar.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email.urbanoutfitters.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "info.awardhq.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pretix.eu": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.thrifty.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "production.priceline.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "comodo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "optimum.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "seamlessweb.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "www.colorado.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "reachnow.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "movietickets.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "kaplan.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "oyegroup.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "xifin.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "vendinimail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "zirmed.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "wepay.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "boltbus.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "showmecables.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "tixato.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "efax-reports.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "stockfootageforfree.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "dime.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.mywellsfargorewards.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "amplestoragecenter.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "studentbluenc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "backstagecreative.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "xkcd.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "hertz.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "supershuttle.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "thegetdownnyc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "interfaithallianceco.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "news.edx.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "troikatronix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 9
+  },
+  "thevolunteercenter.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "users.smore.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "reply.bronto.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "leetcode.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "helpfulengineering.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pbs12.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "news.maxon.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cultureyard.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.galvanize.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "sweatco.in": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "crateandbarrel.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "fully.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "nc.rr.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cro.consumer.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "email.sonyentertainmentnetwork.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "messaging.squareup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "newsletter.newyorker.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "arena.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "substack.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "vxnbill.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "bluura.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "earthship.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "prefare-denver.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "contemporaneous.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "hrc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "movementresearch.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "futureperfectproductions.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "thebushwickstarr.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "stormkingartcenter.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "newgeorgiaproject.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "issueprojectroom.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "unsplash.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "academia-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "triangle-arts-association.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "cironline.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "causeiq.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "mg.drivers.coop": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "smcdems.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "sepuedepdx.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 7
+  },
+  "wixbookings.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "enterprise.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "surveysouthwest.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "drivers.coop": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "partners.try.be": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "benisouk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "mindfultherapygroup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "livingroomtheaters.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "booking.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "cornershopapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "marinevinylfabric.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "seattlecoffeegear.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "indiecommerce.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "welcome.mydeviceprotect.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "virtualvisibilityinc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "resurva.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "americanmontage.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "tigerlilyholistic.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "mail3.zocdoc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "alexandria-nyc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "acroyoga.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "sharegrid.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "ovationtix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "codewars.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "masienda.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "sfmc.empowermyretirement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "baydin.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "lks-lantern.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "zola.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "mail.mailchimpapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "boardgamearena.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "gofundme.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "seatedapp.io": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "sierraclub.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "rosetofilms.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "transitionswm.merceradvisors.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "peerspace.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "mail.universaltennis.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "wonderlandnewyork.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "naflink.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "e.animoto.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "eatkubeh.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "localmed.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "prefaremeals.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "ableton.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "mail.betterment.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "thepeoplemovers.co": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "stackoverflow.email": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 6
+  },
+  "thekinkkit.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "plusthis.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "formlift.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "pb08.wixemails.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "ykvision.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "nwnavigator.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "simplenexus.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "discover.offerup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "welcome.offerup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "planetofthevapes.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "climatepeople.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "rxorder.walgreens.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "jetblue.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "kickstartfinder.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "shonsimon.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "cmycubes.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "feiyue-shoes.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "loom.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "sharegrid-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "codevid19.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "triplebyte.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "ynab-1f617b5d34d0.intercom-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "customink.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "reverb.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "splice.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "robtherich.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 5
+  },
+  "todaytix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "milkcratekitchen.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "eventteament.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "auraframes.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "disinformationindex.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "blinkcharging.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "joinhoney.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "prop.trulia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "judgeme.email": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "cachelifeny.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "spitfireaudio.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "airtable.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "splash.events": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "neo4j.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "chief.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "support.facebook.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "mydeviceprotect.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "monday.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "janestreet.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "galvanize.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "audinate.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "rt.adobesystems.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "goarro.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "neulionnetwork.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "billmonk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "springboardr.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "onetravel.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "e.tripadvisor.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "withremy.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "spoke.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "bigwinds.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "ptande.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "tatteredcover.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "em.farmers.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "adp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "e-mail.columbia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "drawnames.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "boomarts.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "roulette.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "studioxfitness.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "build.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "promo.theweekjunior.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "showdigs.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "soltechsolutions.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "italist.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "analogcases.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "1800doorbell.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "goodyoga.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "outbound.research.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "blueapron.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "demaction.us": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "limnu.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "thrivemarket.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "optima-rec.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "e.embracepetinsurance.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "careers.ibm.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "datastax.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 4
+  },
+  "rev-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "mobirise.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "abilitie.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "m.seatedapp.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "rev.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "thegabrielmethod.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "bootcampspot.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "burningman.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "bhphoto.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "nightnationrun.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "mail.acorns.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "chinaresidencies.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "eventsmart.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 3
+  },
+  "blackmagicdesign.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "manifestbodyworks.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "ticketcentral.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "videoblocksupdates.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "onetravelspecials.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "actionnetwork.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "prophecy.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.openai.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "fullbrig.ht": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "godaddy.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "aimmedia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "heliumcomedy.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "news.thefork.pt": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "byok.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "digital.metamail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "go.metamail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "bde.blackdiamondequipment.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "1800postcards.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "theopalinsights.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "bengingi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "email.truebill.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "marketing.pressed.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "barrowstreettheatre.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "glia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "ecoroots.us": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "goaffpro.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "havenprintco.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "ridearro.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "easeus.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "sg.rentalcars.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "peets.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "theaterlabnyc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "offers.privateinternetaccess.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "bacnyc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "simplynuc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "triangleartsnyc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "knockdowncenter.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "keap.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "cinchwallet.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "bellingcat.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "theskint.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "1iota.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "orangetheoryfitness.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "eltechs.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "flywheelsports.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "eventbee.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "hoststreamsell.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "aescripts.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "pbs.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "picatic.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "zapier.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "googlegroups.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "em.dsw.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "gocurb.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "mail2.smarttix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "hootsuite.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "celtx.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "icontact.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "pijonbox.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "email.apple.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "patreon.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "toasttab.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "xray.fm": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "em.aetna.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.instagram.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "getaccept.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.rejuvenation.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "39215330.mailchimpapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "emails.sohorep.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "eml.walgreens.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "kalayogabk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "chirpbooks.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "promotion.bedbathandbeyond.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "epicgardening.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.williams-sonoma.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "botanicalinterests.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "jdfulwiler.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "text-to-sql.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "waii.ai": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "crunchbase.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "7480657.mailchimpapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "7035532.brevosend.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.indochino.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "tuxedoaction.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "proudmarycoffee.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "privy-marketing.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "sfmcmail.indochino.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "vendoservices.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "bd.blackdiamondequipment.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "doublethedonation.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "davidbloomconductor.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "weloveshag.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "algaecookingclub.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cleeng.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "vanguardretirement-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "porquenotacos.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "sofarsounds.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.westelm.co.uk": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "nvgaming.nvidia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "qualtrics-survey.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "r2.arts-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "sharpeningsupplies.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "rei.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 2
+  },
+  "updates.offerup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.evgo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "springbone.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "e.converse.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "amp.events": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "metrorock.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "greenerprinter.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "clinic.specialseasy.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "universe.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "hitchd.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "express2.medallia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "survey.coned.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "distrokid.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pillowcube.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "motionarray.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "healthdataexchange.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "registration.edx.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mp1.tripadvisor.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "emailbedbathandbeyond.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "sparkbeyond.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "kx.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mail.pageuppeople.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "reppify.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "trm.brassring.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "underdog.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "drivendata.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "talent.icims.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "ontramail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "discordapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "factorio.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "spireworks.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "pivotal.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "auth.cloud.datastax.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 0
+  },
+  "e.digikey.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "m.teachable.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "bootstrapstudio.io": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "bookweb.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "findkeep.love": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "creators.gumroad.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "xixcollective.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "withfriends.co": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "freeconferencecall.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "primalvideo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "trilogyed.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "xlnaudio.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "canva.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "light-speed.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "sellcoursesonline.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "infusionsoft.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "mailchimp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "creative-capital.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "tn.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "cyclebardtc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "democrats.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "triumph.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "burkesurvey.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "shutterstock.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "turbosquid.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "surveymonkeyuser.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "bikramyogawestlinn.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "redbullsoundselect.uservoice.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "adobelightroom.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "thebuildersassociation.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "memberclicks-mail.net": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "globalfocusundergrad.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "expressvpn.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "ticketfly.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "shiftplanning.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "aspirepublicschools.org": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "earnmoremall.mywellsfargorewards.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "delightedapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "postyourbook02.info": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "arlp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "email.chegg.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "dukeschedulator.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "gainesvilleimprov.com": {
+    "state": "seen",
+    "decided_at": "2026-05-06",
+    "email_count": 1
+  },
+  "uncommonschools.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "fightforprogress.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "fracturedatlas.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "donorthreesixty.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "youneedabudget.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "dcdc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "immediatemedium.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "dentrix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 8
+  },
+  "mytimemail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 8
+  },
+  "mightytext.net": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 8
+  },
+  "email.meta.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 7
+  },
+  "auth.apartments.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 7
+  },
+  "mykevo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 7
+  },
+  "eclinicalmail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 6
+  },
+  "sharevault.net": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 6
+  },
+  "theamm.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "mail.op.onepeloton.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "insights.truebill.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "alesolutions.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "groupme.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "box.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "portlandoregon.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "info.crunchyroll.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "wix-groups.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "care.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "statefarm.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "anthem.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 6
+  },
+  "gallupmail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "learning.nycda.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "midea.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "wacom.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "adobesign.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "nebula.tv": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "migracioncolombia.gov.co": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "id.me": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "ngpvan.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "onlinemail.tableau.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "fusedesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "dessa.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "email.vimeo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "nest.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "system.mg.schedulicity.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "toggl.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "evernote.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 5
+  },
+  "envato.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 3
+  },
+  "ifttt.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "thecircuitgym.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "notify.offerup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "bangemails.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "e.fredmeyermail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "mg-it.circlemedical.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "login.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "accountchek.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "circleci.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "send.concentrix.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "networkforgood.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "services.teamviewer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "kellybenefits.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "healthsafe-id.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "optimumsuddenlinkfeesettlement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "mail.lpr.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "relay.showmojo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "mail.hellosign.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "icrc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "support-us.icrc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "brooklynboulders.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "txn-email.playstation.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "cornershop.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "clockwisemd.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "taskrabbit.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "aom.southwest.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "jmtw.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "tableau.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "getkisi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "agoda-messaging.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "account.pinterest.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "email.anthem.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "netlinksolution.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "nyumc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "mail.house.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "jet.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "quora.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "vectorworks.net": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "publictheater.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "timerepublik.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "dispatch.lhmailer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "hirevue.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "mathworks.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 4
+  },
+  "bcbsnc.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "disqus.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "interactivepython.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "ryanairmail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "kivuto.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "chase.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "labatongoogleassistantarbitrationsettlement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "picktime.io": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "portlandtherapycenter.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mail.journalclub.io": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "hs.email.nextdoor.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "actionid.ngpvan.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "supercast.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "quantumfiber.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mail.plex.tv": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "welcomemember.gonift.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "aclu-or.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "inrupt.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "support.kanary.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "familyforward.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "notifications.dcsg.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "empower-retirement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "shadowdark01-f153f.firebaseapp.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "financialaidantitrustsettlement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "dell.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "krogerhealth.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "campaigns.meta.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "cascadia-partners.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "app.smartsheet.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "urgentcarecolombia.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "condenast.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "notification.getyourguide.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "getcheex.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "guildmortgage.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "createsend.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mtadd.empowermyretirement.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "info.mta.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "manychat.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "email02.account.sony.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "wickpilates.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "facebookmail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mail.app.supabase.io": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "theupsstore.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "alerts.hotpads.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "arapahoevotes.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "alomoves.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "legal.bill.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "roam-research-6a2c436dc9f6.intercom-mail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "brooklynboulders.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "quorumfcu.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mta.info": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "email.account.sony.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mail.spin.pm": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "svc.volunteermatch.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "batch.mg.schedulicitymail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "oktheater.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mails.teamviewer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "email.checkout.visa.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "trint.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "email.dowjones.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "ontraport.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "e.udemymail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "ubi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "data36.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "katenorthrup.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "teamviewer.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "joinit.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "verizon.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "alert.wellsfargoemail.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "state.co.us": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "allevents.in": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "vimeo.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "digikey.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "otterbox.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "essentialsupport.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "virginamerica.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 2
+  },
+  "elevate.virginamerica.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "keyprom8.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "beyondpay.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "hpd.nyc.gov": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mtc-nyc.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "nypl.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "alerts.skype.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "customersupport.rakuten.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "slideshark.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "quickbase.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mail.tes.co.uk": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "marquette.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "autodesk.zendesk.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "mail1.prezi.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "hendersoncollegiate.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "e.travelocity.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "email.evernote.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 0
+  },
+  "tde.org": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "siu.edu": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "duke.net": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "webex.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "keble.ox.ac.uk": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "myusairways.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  },
+  "smtp.zazzle.com": {
+    "state": "seen",
+    "decided_at": "2026-05-07",
+    "email_count": 1
+  }
+}

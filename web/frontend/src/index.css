@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+
+  input[type="checkbox"] {
+    @apply accent-indigo-600 cursor-pointer;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-indigo-600 hover:bg-indigo-700 text-white;
+  }
+
+  .btn-ghost {
+    @apply btn bg-gray-100 hover:bg-gray-200 text-gray-700 border border-gray-200;
+  }
+
+  .btn-archive {
+    @apply btn bg-amber-600 hover:bg-amber-700 text-white;
+  }
+
+  .btn-unsub {
+    @apply btn bg-violet-600 hover:bg-violet-700 text-white;
+  }
+
+  .btn-both {
+    @apply btn bg-red-600 hover:bg-red-700 text-white;
+  }
+}

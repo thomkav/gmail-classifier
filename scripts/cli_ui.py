@@ -1,49 +1,41 @@
 #!/usr/bin/env python3
 """
-CLI UI Helpers
+CLI UI Helpers — powered by Rich
 
-ANSI color constants, progress bar, table formatting, and category badges.
-All stdlib — no external deps. Respects NO_COLOR env var and --no-color flag.
+Drop-in replacement for the hand-rolled ANSI version. Exports the same
+public API (Color, colorize, bold, dim, print_header, progress_bar,
+print_table, category_badge, plus the category constants) but delegates
+to Rich for correct column-width handling and consistent styling.
 """
 
-import os
 import sys
+from rich.console import Console
+from rich.table import Table
+from rich.text import Text
+from rich import box as rich_box
+
+
+console = Console(highlight=False)
 
 
 # ---------------------------------------------------------------------------
-# Color detection
-# ---------------------------------------------------------------------------
-
-def _color_enabled():
-    """Return True if ANSI colors should be used."""
-    if os.environ.get("NO_COLOR"):
-        return False
-    if "--no-color" in sys.argv:
-        return False
-    return hasattr(sys.stdout, "isatty") and sys.stdout.isatty()
-
-
-_USE_COLOR = _color_enabled()
-
-
-# ---------------------------------------------------------------------------
-# ANSI codes
+# Color constants — Rich style names
 # ---------------------------------------------------------------------------
 
 class Color:
-    RESET = "\033[0m"
-    BOLD = "\033[1m"
-    DIM = "\033[2m"
-    RED = "\033[31m"
-    GREEN = "\033[32m"
-    YELLOW = "\033[33m"
-    BLUE = "\033[34m"
-    MAGENTA = "\033[35m"
-    CYAN = "\033[36m"
-    WHITE = "\033[37m"
+    RESET = ""
+    BOLD = "bold"
+    DIM = "dim"
+    RED = "red"
+    GREEN = "green"
+    YELLOW = "yellow"
+    BLUE = "blue"
+    MAGENTA = "magenta"
+    CYAN = "cyan"
+    WHITE = "white"
 
 
-# Category → color mapping
+# Category → Rich style mapping
 CATEGORY_COLORS = {
     "newsletter": Color.CYAN,
     "promotion": Color.YELLOW,
@@ -52,7 +44,6 @@ CATEGORY_COLORS = {
     "unknown": Color.DIM,
 }
 
-# Category → short badge
 CATEGORY_BADGES = {
     "newsletter": "NWS",
     "promotion": "PRO",
@@ -61,10 +52,8 @@ CATEGORY_BADGES = {
     "unknown": "---",
 }
 
-# Display order for dashboard
 CATEGORY_ORDER = ["newsletter", "promotion", "receipt", "notification", "unknown"]
 
-# Human-readable names
 CATEGORY_NAMES = {
     "newsletter": "Newsletters",
     "promotion": "Promotions",
@@ -75,52 +64,42 @@ CATEGORY_NAMES = {
 
 
 # ---------------------------------------------------------------------------
-# Colorize helpers
+# Markup helpers
 # ---------------------------------------------------------------------------
 
-def colorize(text, *codes):
-    """Wrap text in ANSI codes. Returns plain text when colors disabled."""
-    if not _USE_COLOR or not codes:
+def colorize(text, *styles):
+    """Wrap text in Rich markup. Returns plain text when no styles given."""
+    if not styles:
         return str(text)
-    prefix = "".join(codes)
-    return f"{prefix}{text}{Color.RESET}"
+    style = " ".join(s for s in styles if s)
+    return f"[{style}]{text}[/]"
 
 
 def bold(text):
-    return colorize(text, Color.BOLD)
+    return f"[bold]{text}[/]"
 
 
 def dim(text):
-    return colorize(text, Color.DIM)
+    return f"[dim]{text}[/]"
 
 
 # ---------------------------------------------------------------------------
 # Structural output
 # ---------------------------------------------------------------------------
 
-def get_terminal_width():
-    """Return terminal width with 80-col fallback."""
-    try:
-        return os.get_terminal_size().columns
-    except (AttributeError, ValueError, OSError):
-        return 80
-
-
 def print_header(title, color=None):
-    """Print a styled section header with rules."""
-    width = min(get_terminal_width(), 70)
-    rule_len = max(width - len(title) - 4, 10)
-    prefix = f"{Color.BOLD}{color}" if _USE_COLOR and color else (Color.BOLD if _USE_COLOR else "")
-    suffix = Color.RESET if _USE_COLOR else ""
-    print(f"\n{prefix}{title} {'─' * rule_len}{suffix}")
+    """Print a styled section header using Rich Rule."""
+    console.print()
+    title_markup = f"[bold {color}]{title}[/]" if color else f"[bold]{title}[/]"
+    console.rule(title_markup, align="left")
 
 
 # ---------------------------------------------------------------------------
-# Progress bar
+# Progress bar — plain print with \r overwrite (bypasses Rich buffering)
 # ---------------------------------------------------------------------------
 
 def progress_bar(current, total, width=30, label=""):
-    """Overwriting progress bar on a single line."""
+    """Overwriting single-line progress bar."""
     if total == 0:
         return
     frac = current / total
@@ -138,7 +117,7 @@ def progress_bar(current, total, width=30, label=""):
 
     print(f"\r{line}", end="", flush=True)
     if current >= total:
-        print()  # newline when done
+        print()
 
 
 # ---------------------------------------------------------------------------
@@ -146,10 +125,7 @@ def progress_bar(current, total, width=30, label=""):
 # ---------------------------------------------------------------------------
 
 def print_table(headers, rows, alignments=None):
-    """Print a formatted table with column alignment.
-
-    alignments: list of '<' (left) or '>' (right), defaults to left.
-    """
+    """Print a formatted table using Rich's Table for correct column widths."""
     if not rows:
         return
 
@@ -157,42 +133,28 @@ def print_table(headers, rows, alignments=None):
     if alignments is None:
         alignments = ["<"] * col_count
 
-    # Calculate column widths
-    widths = [len(str(h)) for h in headers]
+    justify_map = {"<": "left", ">": "right"}
+
+    table = Table(
+        box=rich_box.SIMPLE_HEAD,
+        show_header=True,
+        header_style="bold",
+        pad_edge=True,
+        show_edge=False,
+    )
+
+    for i, header in enumerate(headers):
+        justify = justify_map.get(alignments[i] if i < len(alignments) else "<", "left")
+        table.add_column(str(header), justify=justify, no_wrap=True)
+
     for row in rows:
-        for i, cell in enumerate(row):
-            if i < col_count:
-                widths[i] = max(widths[i], len(str(cell)))
+        cells = []
+        for i in range(col_count):
+            cell = str(row[i]) if i < len(row) else ""
+            cells.append(Text.from_markup(cell))
+        table.add_row(*cells)
 
-    def fmt_row(cells, is_header=False):
-        parts = []
-        for i, cell in enumerate(cells):
-            if i >= col_count:
-                break
-            w = widths[i]
-            s = str(cell)
-            if alignments[i] == ">":
-                s = s.rjust(w)
-            else:
-                s = s.ljust(w)
-            parts.append(s)
-        line = "  " + "  ".join(parts)
-        if is_header and _USE_COLOR:
-            return colorize(line, Color.BOLD)
-        return line
-
-    # Header
-    print(fmt_row(headers, is_header=True))
-
-    # Separator
-    sep_parts = []
-    for i in range(col_count):
-        sep_parts.append("─" * widths[i])
-    print("  " + "  ".join(sep_parts))
-
-    # Rows
-    for row in rows:
-        print(fmt_row(row))
+    console.print(table)
 
 
 # ---------------------------------------------------------------------------
@@ -200,8 +162,8 @@ def print_table(headers, rows, alignments=None):
 # ---------------------------------------------------------------------------
 
 def category_badge(category_name):
-    """Return a colored inline badge like [NWS]."""
-    key = category_name.lower() if category_name else "unknown"
+    """Return a Rich markup badge like [NWS]."""
+    key = (category_name or "unknown").lower()
     badge = CATEGORY_BADGES.get(key, "---")
     color = CATEGORY_COLORS.get(key, Color.DIM)
-    return colorize(f"[{badge}]", color, Color.BOLD)
+    return f"[{color} bold][{badge}][/]"

@@ -101,7 +101,7 @@ Is sender in keep_senders?
 Is sender in keep_newsletters?
   → Keep in inbox (important)
 
-Is sender domain in blocked_domains?
+Is sender domain in archived_domains?
   → Auto-archive (spam)
 
 Is sender in archive_newsletters?
@@ -208,7 +208,7 @@ learned_preferences:
     - important@sender.com
   archive_newsletters:            # Always archive these
     - spam@domain.com
-  blocked_domains:                # Skip from inbox
+  archived_domains:                # Skip from inbox
     - unwanted.com
 ```
 

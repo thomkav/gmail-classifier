@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 install *)",
+      "Bash(curl -s -X POST http://localhost:8000/api/domains/keep -H 'Content-Type: application/json' -d '{\"domains\": [\"diagnose-test.com\"]}')",
+      "Bash(task *)"
+    ]
+  }
+}

@@ -24,8 +24,9 @@ def extract_sender_info(from_header: str) -> tuple:
 
 
 def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993,
-                         include_subjects=False, progress_fn=None):
-    """Fetch FROM headers (and optionally Subject) for all unread emails in INBOX.
+                         include_subjects=False, progress_fn=None,
+                         unseen_only=True):
+    """Fetch FROM headers (and optionally Subject) for emails in INBOX.
 
     Args:
         imap_host: IMAP server hostname.
@@ -33,6 +34,8 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993,
         include_subjects: When True, also fetch Subject headers and return
             a 5-tuple with domain_emails dict as the fifth element.
         progress_fn: Optional callback(current, total) for progress reporting.
+        unseen_only: When True (default), only fetch UNSEEN emails.
+            When False, fetch ALL inbox emails.
 
     Returns:
         4-tuple (sender_counter, domain_counter, sender_to_domain, total) when
@@ -54,10 +57,12 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993,
     mail.login(user, password)
     mail.select("INBOX", readonly=True)
 
-    # Search for unread emails
+    # Search for emails
+    search_criteria = "UNSEEN" if unseen_only else "ALL"
+    label = "unread" if unseen_only else "inbox"
     if not progress_fn:
-        print("Searching for unread emails...", file=sys.stderr)
-    status, data = mail.search(None, "UNSEEN")
+        print(f"Searching for {label} emails...", file=sys.stderr)
+    status, data = mail.search(None, search_criteria)
     if status != "OK":
         print(f"ERROR: Search failed: {status}", file=sys.stderr)
         sys.exit(1)
@@ -65,7 +70,7 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993,
     msg_ids = data[0].split()
     total = len(msg_ids)
     if not progress_fn:
-        print(f"Found {total} unread emails. Fetching headers...", file=sys.stderr)
+        print(f"Found {total} {label} emails. Fetching headers...", file=sys.stderr)
 
     sender_counter = Counter()
     domain_counter = Counter()
@@ -122,18 +127,26 @@ def fetch_unread_senders(imap_host="imap.gmail.com", imap_port=993,
 
 
 def main():
-    sender_counts, domain_counts, sender_to_domain, total = fetch_unread_senders()
+    unseen_only = "--all" not in sys.argv
+    limit = 50
+    for arg in sys.argv[1:]:
+        if arg.startswith("--limit="):
+            try:
+                limit = int(arg.split("=", 1)[1])
+            except ValueError:
+                pass
+    sender_counts, domain_counts, sender_to_domain, total = fetch_unread_senders(unseen_only=unseen_only)
 
     # Output as JSON for programmatic use
     results = {
         "total_unread": total,
         "top_senders": [
             {"sender": sender, "count": count, "domain": sender_to_domain.get(sender, "")}
-            for sender, count in sender_counts.most_common(50)
+            for sender, count in sender_counts.most_common(limit)
         ],
         "top_domains": [
             {"domain": domain, "count": count}
-            for domain, count in domain_counts.most_common(50)
+            for domain, count in domain_counts.most_common(limit)
         ],
     }
 

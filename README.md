@@ -161,7 +161,7 @@ learned_preferences:
     - boss@company.com
     - friend@personal.com
 
-  blocked_domains:
+  archived_domains:
     - unwanted-spam.com
 ```
 
@@ -234,8 +234,8 @@ Newsletter from spam@promotional.com
 
 ```
 $ /organize-config edit
-# Add to blocked_domains:
-blocked_domains:
+# Add to archived_domains:
+archived_domains:
   - flash-sale-spam.com
   - daily-deals.net
 ```
@@ -291,7 +291,7 @@ export GMAIL_APP_PASSWORD="your-16-char-password"
 
 Edit `.local.md` to adjust preferences:
 - Remove senders from `keep_newsletters` or `archive_newsletters`
-- Remove domains from `blocked_domains`
+- Remove domains from `archived_domains`
 - Reset with `/organize-config reset`
 
 ## Architecture

@@ -81,7 +81,7 @@ learned_preferences:
     - boss@company.com
     - friend@personal.com
 
-  blocked_domains:
+  archived_domains:
     - unwanted-spam.com
 ```
 
@@ -102,7 +102,7 @@ After editing, the classifier will automatically keep emails from `new-newslette
 
 ```yaml
 learned_preferences:
-  blocked_domains:
+  archived_domains:
     - unwanted-spam.com
     - promotional-blasts.net  # Add this
 ```
@@ -212,7 +212,7 @@ Reset specific preferences:
 /organize-config reset newsletters
 
 # Clear blocked domains
-/organize-config reset blocked_domains
+/organize-config reset archived_domains
 
 # Reset everything (use with caution!)
 /organize-config reset all
@@ -237,7 +237,7 @@ learned_preferences:
 
 # Add common promotional domains you don't want
 learned_preferences:
-  blocked_domains:
+  archived_domains:
     - flash-sale-spam.com
     - daily-deal-blast.net
 
