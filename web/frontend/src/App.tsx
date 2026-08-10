@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import type { AuditResult, CategoryName, ActionResult, Domain, DomainDecision, DecisionState, Classification } from "./types";
 import { api } from "./api";
@@ -6,9 +6,11 @@ import { AuditTable } from "./components/AuditTable";
 import { DecisionsPanel } from "./components/DecisionsPanel";
 import { AutoArchiveModal } from "./components/AutoArchiveModal";
 import { Tooltip, InfoTip } from "./components/Tooltip";
-import { useAudit, useDecisions, useEnqueueJob, useJob } from "./hooks";
+import { useAccounts, useAudit, useDecisions, useEnqueueJob, useJob } from "./hooks";
 import { useEventStream, type AppEvent } from "./useEvents";
 import { qk } from "./queryClient";
+
+const LAST_ACCOUNT_KEY = "gmail-classifier:last-account-id";
 
 type Tab = "all" | CategoryName | "impact" | "decisions";
 
@@ -65,9 +67,40 @@ export function App() {
   const [syncJobId, setSyncJobId] = useState<number | null>(null);
   const [classifyJobId, setClassifyJobId] = useState<number | null>(null);
 
-  const auditQuery = useAudit(unseenOnly);
+  // Which Gmail account is active. Persisted across reloads; defaults to the
+  // server's default account (or the first one) once the account list loads.
+  const accountsQuery = useAccounts();
+  const accounts = accountsQuery.data ?? [];
+  const [accountId, setAccountId] = useState<number | null>(() => {
+    const stored = Number(localStorage.getItem(LAST_ACCOUNT_KEY));
+    return Number.isFinite(stored) && stored > 0 ? stored : null;
+  });
+  useEffect(() => {
+    if (accountId != null || accounts.length === 0) return;
+    const fallback = accounts.find((a) => a.is_default) ?? accounts[0];
+    setAccountId(fallback.id);
+  }, [accountId, accounts]);
+
+  // Most action handlers below are memoized with narrow dependency arrays
+  // (pre-existing pattern in this file), so they'd otherwise close over a
+  // stale accountId forever after the first render. Read via this ref instead
+  // of the `accountId` variable directly inside any useCallback body.
+  const accountIdRef = useRef(accountId);
+  useEffect(() => { accountIdRef.current = accountId; }, [accountId]);
+
+  const switchAccount = useCallback((id: number) => {
+    setAccountId(id);
+    localStorage.setItem(LAST_ACCOUNT_KEY, String(id));
+    setTab("all");
+    setSelected(new Set());
+    setError(null);
+    setSyncJobId(null);
+    setClassifyJobId(null);
+  }, []);
+
+  const auditQuery = useAudit(unseenOnly, accountId);
   const audit: AuditResult | undefined = auditQuery.data;
-  const decisionsQuery = useDecisions();
+  const decisionsQuery = useDecisions(accountId);
   const allDecisions: Record<string, DomainDecision> = (decisionsQuery.data as Record<string, DomainDecision>) ?? {};
   const enqueueJob = useEnqueueJob();
   const syncJob = useJob(syncJobId);
@@ -105,14 +138,14 @@ export function App() {
 
   // Cache empty (404)? auto-trigger a sync so first-time users see something.
   useEffect(() => {
-    if (auditQuery.error && !syncJobId) {
+    if (auditQuery.error && !syncJobId && accountId != null) {
       // first-run convenience — don't surface as a hard error.
       setError(null);
-      enqueueJob.mutate({ kind: "sync" }, {
+      enqueueJob.mutate({ kind: "sync", params: { account_id: accountId } }, {
         onSuccess: (d) => setSyncJobId(d.id),
       });
     }
-  }, [auditQuery.error, syncJobId]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [auditQuery.error, syncJobId, accountId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const addToast = useCallback(
     (message: string, type: Toast["type"] = "success") => {
@@ -123,20 +156,29 @@ export function App() {
     []
   );
 
-  /** Mutate the cached audit immutably without an extra GET. */
+  // Several handlers below are memoized with narrow dep arrays and would
+  // otherwise call this with a stale unseenOnly. Keep a ref so identity stays
+  // stable while the value read is always current.
+  const unseenOnlyRef = useRef(unseenOnly);
+  useEffect(() => { unseenOnlyRef.current = unseenOnly; }, [unseenOnly]);
+
+  /** Mutate the cached audit immutably without an extra GET. Stable identity
+   * (deps never change) so callers that memoize over it never go stale. */
   const updateAudit = useCallback(
     (mut: (prev: AuditResult) => AuditResult) => {
-      qc.setQueryData<AuditResult>(qk.audit(unseenOnly), (prev) => prev ? mut(prev) : prev);
+      qc.setQueryData<AuditResult>(qk.audit(unseenOnlyRef.current, accountIdRef.current), (prev) => prev ? mut(prev) : prev);
     },
-    [qc, unseenOnly]
+    [qc]
   );
 
   const runAudit = useCallback(
     async (_forceUnseenOnly?: boolean) => {
+      const acct = accountIdRef.current;
+      if (acct == null) return;
       setError(null);
       setSelected(new Set());
       try {
-        const { id } = await api.enqueueJob("sync", {});
+        const { id } = await api.enqueueJob("sync", { account_id: acct });
         setSyncJobId(id);
         setTab("all");
         // The audit cache will refresh automatically when the SSE job.done event fires.
@@ -156,7 +198,7 @@ export function App() {
       countMap?: Map<string, number>
     ) => {
       const today = new Date().toISOString().split("T")[0];
-      qc.setQueryData<Record<string, DomainDecision>>(qk.decisions(), (prev) => {
+      qc.setQueryData<Record<string, DomainDecision>>(qk.decisions(accountIdRef.current), (prev) => {
         const next = { ...(prev ?? {}) };
         for (const domain of domains) {
           next[domain] = { state, decided_at: today, email_count: countMap?.get(domain) ?? 0 };
@@ -178,39 +220,16 @@ export function App() {
     [qc, updateAudit]
   );
 
-  const handleClear = useCallback(
+  const handleArchiveNow = useCallback(
     async (domains: string[]) => {
       if (domains.length === 0) return;
       setActionLoading(true);
       try {
-        const { results } = await api.clearDomains(domains);
+        const { results } = await api.clearDomains(domains, accountIdRef.current ?? undefined);
         const countMap = new Map(results.map((r) => [r.domain, r.count ?? 0]));
         const succeeded = results.filter((r) => r.success).map((r) => r.domain);
         applyInboxRemovalToState(results);
         applyDecisionOptimistic(succeeded, "seen", false, countMap);
-        const total = results.reduce((s, r) => s + (r.count ?? 0), 0);
-        const ok = succeeded.length;
-        const fail = results.filter((r) => !r.success).length;
-        addToast(`Cleared ${total} emails from ${ok} domain(s)${fail ? ` (${fail} failed)` : ""}`);
-      } catch (e) {
-        addToast(e instanceof Error ? e.message : "Clear failed", "error");
-      } finally {
-        setActionLoading(false);
-      }
-    },
-    [addToast] // eslint-disable-line react-hooks/exhaustive-deps
-  );
-
-  const handleArchive = useCallback(
-    async (domains: string[]) => {
-      if (domains.length === 0) return;
-      setActionLoading(true);
-      try {
-        const { results } = await api.archiveDomains(domains);
-        const countMap = new Map(results.map((r) => [r.domain, r.count ?? 0]));
-        const succeeded = results.filter((r) => r.success).map((r) => r.domain);
-        applyInboxRemovalToState(results);
-        applyDecisionOptimistic(succeeded, "archived", false, countMap);
         const total = results.reduce((s, r) => s + (r.count ?? 0), 0);
         const ok = succeeded.length;
         const fail = results.filter((r) => !r.success).length;
@@ -224,12 +243,66 @@ export function App() {
     [addToast] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
+  const handleSetAutoArchive = useCallback(
+    async (domains: string[]) => {
+      if (domains.length === 0) return;
+      setActionLoading(true);
+      try {
+        await api.setAutoArchiveDomains(domains, accountIdRef.current ?? undefined);
+        const domainSet = new Set(domains);
+        updateAudit((prev) => ({
+          ...prev,
+          domains: prev.domains.map((d) =>
+            domainSet.has(d.domain) ? { ...d, archived: true } : d
+          ),
+        }));
+        applyDecisionOptimistic(domains, "archived", true);
+        addToast(`${domains.length} domain(s) set to auto-archive`);
+      } catch (e) {
+        addToast(e instanceof Error ? e.message : "Failed to set auto-archive", "error");
+      } finally {
+        setActionLoading(false);
+      }
+    },
+    [addToast] // eslint-disable-line react-hooks/exhaustive-deps
+  );
+
+  const handleUnsetAutoArchive = useCallback(
+    async (domains: string[]) => {
+      if (domains.length === 0) return;
+      setActionLoading(true);
+      try {
+        await api.unsetAutoArchiveDomains(domains, accountIdRef.current ?? undefined);
+        const domainSet = new Set(domains);
+        updateAudit((prev) => ({
+          ...prev,
+          domains: prev.domains.map((d) =>
+            domainSet.has(d.domain) ? { ...d, archived: false } : d
+          ),
+        }));
+        qc.setQueryData<Record<string, DomainDecision>>(qk.decisions(accountIdRef.current), (prev) => {
+          const next = { ...(prev ?? {}) };
+          for (const d of domains) {
+            if (next[d]?.state === "archived") next[d] = { ...next[d], state: "seen" };
+          }
+          return next;
+        });
+        addToast(`${domains.length} domain(s) removed from auto-archive`);
+      } catch (e) {
+        addToast(e instanceof Error ? e.message : "Failed to remove auto-archive", "error");
+      } finally {
+        setActionLoading(false);
+      }
+    },
+    [addToast, qc] // eslint-disable-line react-hooks/exhaustive-deps
+  );
+
   const handleUnsubscribe = useCallback(
     async (domains: string[]) => {
       if (domains.length === 0) return;
       setActionLoading(true);
       try {
-        const { results } = await api.unsubscribeDomains(domains, "auto");
+        const { results } = await api.unsubscribeDomains(domains, "auto", accountIdRef.current ?? undefined);
         for (const r of results) {
           if (r.method === "browser" && r.url) {
             window.open(r.url, "_blank", "noopener,noreferrer");
@@ -249,130 +322,9 @@ export function App() {
     [addToast] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
-  const handleBoth = useCallback(
-    async (domains: string[]) => {
-      if (domains.length === 0) return;
-      setActionLoading(true);
-      try {
-        const [archiveRes, unsubRes] = await Promise.all([
-          api.archiveDomains(domains),
-          api.unsubscribeDomains(domains, "auto"),
-        ]);
-        for (const r of unsubRes.results) {
-          if (r.method === "browser" && r.url) {
-            window.open(r.url, "_blank", "noopener,noreferrer");
-          }
-        }
-        const archiveCountMap = new Map(archiveRes.results.map((r) => [r.domain, r.count ?? 0]));
-        const archiveSucceeded = archiveRes.results.filter((r) => r.success).map((r) => r.domain);
-        applyInboxRemovalToState(archiveRes.results);
-        // Archive wins over unsub for the decision state (most committed action)
-        applyDecisionOptimistic(archiveSucceeded, "archived", false, archiveCountMap);
-        const total = archiveRes.results.reduce((s, r) => s + (r.count ?? 0), 0);
-        const unsubOk = unsubRes.results.filter((r) => r.success).length;
-        addToast(`Archived ${total} emails; unsubscribed from ${unsubOk} domain(s)`);
-      } catch (e) {
-        addToast(e instanceof Error ? e.message : "Action failed", "error");
-      } finally {
-        setActionLoading(false);
-      }
-    },
-    [addToast] // eslint-disable-line react-hooks/exhaustive-deps
-  );
-
-  const handleKeep = useCallback(
-    async (domains: string[]) => {
-      if (domains.length === 0) return;
-      setActionLoading(true);
-      try {
-        await api.keepDomains(domains);
-        const keepSet = new Set(domains);
-        updateAudit((prev) => ({ ...prev, domains: prev.domains.map((d) => keepSet.has(d.domain) ? { ...d, keep: true } : d) }));
-        applyDecisionOptimistic(domains, "keep", true);
-        setSelected((prev) => {
-          const next = new Set(prev);
-          for (const d of domains) next.delete(d);
-          return next;
-        });
-        addToast(`${domains.length} domain(s) set to never auto-archive`);
-      } catch (e) {
-        addToast(e instanceof Error ? e.message : "Failed to update keep list", "error");
-      } finally {
-        setActionLoading(false);
-      }
-    },
-    [addToast] // eslint-disable-line react-hooks/exhaustive-deps
-  );
-
-  const handleUnkeep = useCallback(
-    async (domains: string[]) => {
-      if (domains.length === 0) return;
-      setActionLoading(true);
-      try {
-        await api.unkeepDomains(domains);
-        const set = new Set(domains);
-        updateAudit((prev) => ({ ...prev, domains: prev.domains.map((d) => set.has(d.domain) ? { ...d, keep: false } : d) }));
-        qc.setQueryData<Record<string, DomainDecision>>(qk.decisions(), (prev) => {
-          const next = { ...(prev ?? {}) };
-          for (const d of domains) {
-            if (next[d]?.state === "keep") next[d] = { ...next[d], state: "seen" };
-          }
-          return next;
-        });
-        addToast(`${domains.length} domain(s) removed from never auto-archive list`);
-      } catch (e) {
-        addToast(e instanceof Error ? e.message : "Failed to update keep list", "error");
-      } finally {
-        setActionLoading(false);
-      }
-    },
-    [addToast]
-  );
-
-  const handleNoUnsub = useCallback(
-    async (domains: string[]) => {
-      if (domains.length === 0) return;
-      setActionLoading(true);
-      try {
-        await api.noUnsubDomains(domains);
-        const noUnsubSet = new Set(domains);
-        updateAudit((prev) => ({ ...prev, domains: prev.domains.map((d) => noUnsubSet.has(d.domain) ? { ...d, no_unsub: true } : d) }));
-        setSelected((prev) => {
-          const next = new Set(prev);
-          for (const d of domains) next.delete(d);
-          return next;
-        });
-        addToast(`${domains.length} domain(s) set to skip unsub`);
-      } catch (e) {
-        addToast(e instanceof Error ? e.message : "Failed to update no-unsub list", "error");
-      } finally {
-        setActionLoading(false);
-      }
-    },
-    [addToast]
-  );
-
-  const handleUnNoUnsub = useCallback(
-    async (domains: string[]) => {
-      if (domains.length === 0) return;
-      setActionLoading(true);
-      try {
-        await api.unNoUnsubDomains(domains);
-        const set = new Set(domains);
-        updateAudit((prev) => ({ ...prev, domains: prev.domains.map((d) => set.has(d.domain) ? { ...d, no_unsub: false } : d) }));
-        addToast(`${domains.length} domain(s) removed from skip-unsub list`);
-      } catch (e) {
-        addToast(e instanceof Error ? e.message : "Failed to update no-unsub list", "error");
-      } finally {
-        setActionLoading(false);
-      }
-    },
-    [addToast]
-  );
-
   const handleClassifyUnknown = useCallback(async () => {
     try {
-      const { id } = await api.enqueueJob("classify", { unseen_only: unseenOnly });
+      const { id } = await api.enqueueJob("classify", { unseen_only: unseenOnly, account_id: accountIdRef.current });
       setClassifyJobId(id);
     } catch (e) {
       addToast(e instanceof Error ? e.message : "Classification failed", "error");
@@ -381,9 +333,9 @@ export function App() {
 
   const handleForceReclassify = useCallback(async () => {
     try {
-      const { deleted } = await api.resetUnknownCache();
+      const { deleted } = await api.resetUnknownCache(undefined, accountIdRef.current ?? undefined);
       if (deleted > 0) addToast(`Cleared ${deleted} cached unknown(s) — re-classifying…`);
-      const { id } = await api.enqueueJob("classify", { unseen_only: unseenOnly });
+      const { id } = await api.enqueueJob("classify", { unseen_only: unseenOnly, account_id: accountIdRef.current });
       setClassifyJobId(id);
     } catch (e) {
       addToast(e instanceof Error ? e.message : "Force reclassify failed", "error");
@@ -412,7 +364,7 @@ export function App() {
   const handleClassifyManual = useCallback(
     async (domain: string, category: CategoryName) => {
       try {
-        const result = await api.classifyDomainManual(domain, category);
+        const result = await api.classifyDomainManual(domain, category, accountIdRef.current ?? undefined);
         updateAudit((prev) => ({
           ...prev,
           domains: prev.domains.map((d) =>
@@ -496,6 +448,22 @@ export function App() {
         <h1 className="text-sm font-semibold tracking-wide text-gray-800 uppercase">
           Gmail Classifier
         </h1>
+
+        {accounts.length > 0 && (
+          <select
+            value={accountId ?? ""}
+            onChange={(e) => switchAccount(Number(e.target.value))}
+            disabled={loading || actionLoading}
+            className="text-xs bg-gray-50 border border-gray-300 rounded px-2 py-1 text-gray-700 disabled:opacity-50"
+          >
+            {accounts.map((a) => (
+              <option key={a.id} value={a.id}>
+                {a.display || a.email}
+              </option>
+            ))}
+          </select>
+        )}
+
         {audit && (
           <span className="text-gray-400 text-xs">
             {audit.total_unread.toLocaleString()} {unseenOnly ? "unread" : "inbox"} · {audit.domains.length} domains
@@ -706,14 +674,8 @@ export function App() {
             <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 py-2 flex items-center gap-3 shrink-0 shadow-sm">
               <span className="text-xs text-gray-600">{selected.size} selected</span>
 
-              <Tooltip content="Removes all emails from selected domains from INBOX right now — one-time cleanup. Does not add to any list; future mail is unaffected.">
-                <button onClick={() => handleClear(selectedDomains)} disabled={actionLoading} className="btn-ghost text-xs">
-                  Clear
-                </button>
-              </Tooltip>
-
-              <Tooltip content="Removes all emails from INBOX AND adds each domain to your auto-archive list. Future mail from these domains will be caught by Auto-archive.">
-                <button onClick={() => handleArchive(selectedDomains)} disabled={actionLoading} className="btn-archive text-xs">
+              <Tooltip content="Move all current emails from selected domains out of your inbox — one-time cleanup. Does not affect future mail.">
+                <button onClick={() => handleArchiveNow(selectedDomains)} disabled={actionLoading} className="btn-ghost text-xs">
                   Archive
                 </button>
               </Tooltip>
@@ -724,29 +686,17 @@ export function App() {
                 </button>
               </Tooltip>
 
-              <Tooltip content="Archives emails AND unsubscribes for all selected domains simultaneously.">
-                <button onClick={() => handleBoth(selectedDomains)} disabled={actionLoading} className="btn-both text-xs">
-                  Both
-                </button>
-              </Tooltip>
-
               <div className="w-px h-4 bg-gray-200 mx-1" />
 
-              <Tooltip content="Adds selected domains to your keep_senders list. Future mail from these domains bypasses classification and is never auto-archived.">
-                <button onClick={() => handleKeep(selectedDomains)} disabled={actionLoading} className="text-xs px-2.5 py-1 rounded border border-emerald-300 text-emerald-700 hover:bg-emerald-50 disabled:opacity-40">
-                  Never auto-archive
-                </button>
-              </Tooltip>
-
-              <Tooltip content="Adds selected domains to your no_unsub list. Unsubscribe actions will be skipped for these domains — useful for accounts you want to archive but can't unsubscribe from.">
-                <button onClick={() => handleNoUnsub(selectedDomains)} disabled={actionLoading} className="text-xs px-2.5 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-40">
-                  Skip unsub
+              <Tooltip content="Add selected domains to your auto-archive list. Future mail from these domains will be caught by auto-archive runs.">
+                <button onClick={() => handleSetAutoArchive(selectedDomains)} disabled={actionLoading} className="text-xs px-2.5 py-1 rounded border border-amber-300 text-amber-700 hover:bg-amber-50 disabled:opacity-40">
+                  Auto-archive
                 </button>
               </Tooltip>
 
               {actionLoading && <Spinner />}
               <button onClick={() => setSelected(new Set())} className="ml-auto text-xs text-gray-400 hover:text-gray-600">
-                Clear
+                ×
               </button>
             </div>
           )}
@@ -774,14 +724,10 @@ export function App() {
                   )
                 }
                 allSelected={filteredDomains.length > 0 && selected.size === filteredDomains.length}
-                onClear={(domain) => handleClear([domain])}
-                onArchive={(domain) => handleArchive([domain])}
+                onArchiveNow={(domain) => handleArchiveNow([domain])}
                 onUnsubscribe={(domain) => handleUnsubscribe([domain])}
-                onBoth={(domain) => handleBoth([domain])}
-                onKeep={(domain) => handleKeep([domain])}
-                onUnkeep={(domain) => handleUnkeep([domain])}
-                onNoUnsub={(domain) => handleNoUnsub([domain])}
-                onUnNoUnsub={(domain) => handleUnNoUnsub([domain])}
+                onSetAutoArchive={(domain) => handleSetAutoArchive([domain])}
+                onUnsetAutoArchive={(domain) => handleUnsetAutoArchive([domain])}
                 onClassifyManual={handleClassifyManual}
                 actionLoading={actionLoading}
               />
@@ -793,6 +739,7 @@ export function App() {
       {/* Auto-archive modal */}
       {showAutoArchive && (
         <AutoArchiveModal
+          accountId={accountId}
           onClose={() => setShowAutoArchive(false)}
           onApplied={(result) => {
             addToast(

@@ -56,20 +56,23 @@ from cli_ui import (
 # Unsubscribe log (.unsubscribe_log.json)
 # ---------------------------------------------------------------------------
 
-def load_unsubscribe_log():
-    """Read .unsubscribe_log.json -> {domain: {date, method, status, url}}"""
-    if not os.path.exists(UNSUB_LOG):
+def load_unsubscribe_log(path=None):
+    """Read .unsubscribe_log.json -> {domain: {date, method, status, url}}.
+    `path` lets callers (e.g. the web app, per account) point at a different file;
+    defaults to the single-account CLI location."""
+    path = path or UNSUB_LOG
+    if not os.path.exists(path):
         return {}
     try:
-        with open(UNSUB_LOG, "r") as f:
+        with open(path, "r") as f:
             return json.load(f)
     except (json.JSONDecodeError, OSError):
         return {}
 
 
-def save_unsubscribe_log(log):
+def save_unsubscribe_log(log, path=None):
     """Write log back to JSON file."""
-    with open(UNSUB_LOG, "w") as f:
+    with open(path or UNSUB_LOG, "w") as f:
         json.dump(log, f, indent=2)
         f.write("\n")
 
@@ -78,32 +81,34 @@ def save_unsubscribe_log(log):
 # Config loading (config.json)
 # ---------------------------------------------------------------------------
 
-def _load_config_json() -> dict:
-    if not os.path.exists(CONFIG_JSON):
+def _load_config_json(path=None) -> dict:
+    path = path or CONFIG_JSON
+    if not os.path.exists(path):
         return {}
     try:
-        with open(CONFIG_JSON, "r") as f:
+        with open(path, "r") as f:
             return json.load(f)
     except (json.JSONDecodeError, OSError):
         return {}
 
 
-def _save_config_json(cfg: dict) -> None:
-    with open(CONFIG_JSON, "w") as f:
+def _save_config_json(cfg: dict, path=None) -> None:
+    with open(path or CONFIG_JSON, "w") as f:
         json.dump(cfg, f, indent=2)
         f.write("\n")
 
 
-def load_archived_domains() -> list:
-    cfg = _load_config_json()
+def load_archived_domains(path=None) -> list:
+    cfg = _load_config_json(path)
     return list(cfg.get("preferences", {}).get("archived_domains", []))
 
 
-def load_config_for_classifier() -> dict:
+def load_config_for_classifier(path=None) -> dict:
     """Return config in the shape EmailClassifier expects:
     {'categories': {...}, 'learned_preferences': {...}, 'manual_classifications': {...}, 'llm_classifications': {...}}
+    `path` lets callers (e.g. the web app, per account) point at a different config.json.
     """
-    cfg = _load_config_json()
+    cfg = _load_config_json(path)
     return {
         "categories": cfg.get("categories", {}),
         "learned_preferences": cfg.get("preferences", {}),
@@ -112,18 +117,18 @@ def load_config_for_classifier() -> dict:
     }
 
 
-def append_archived_domains(new_domains: list) -> None:
+def append_archived_domains(new_domains: list, path=None) -> None:
     """Append new entries to preferences.archived_domains in config.json."""
     if not new_domains:
         return
-    cfg = _load_config_json()
+    cfg = _load_config_json(path)
     prefs = cfg.setdefault("preferences", {})
     existing = set(prefs.get("archived_domains", []))
     to_add = [d for d in new_domains if d not in existing]
     if not to_add:
         return
     prefs.setdefault("archived_domains", []).extend(to_add)
-    _save_config_json(cfg)
+    _save_config_json(cfg, path)
     print(f"  Updated config.json: added {len(to_add)} domain(s) to archived_domains")
 
 

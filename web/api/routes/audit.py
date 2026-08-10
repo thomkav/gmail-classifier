@@ -12,6 +12,7 @@ router = APIRouter()
 
 class SyncRequest(BaseModel):
     full_resync: bool = False
+    account_id: int | None = None
 
 
 @router.post("/sync")
@@ -20,7 +21,7 @@ async def run_sync(req: SyncRequest):
     try:
         from db import get_default_account_id
         from imap_sync import sync_inbox
-        account_id = get_default_account_id()
+        account_id = req.account_id or get_default_account_id()
         rep = await asyncio.to_thread(sync_inbox, account_id, req.full_resync)
         return {
             "account_id": rep.account_id,
@@ -39,12 +40,12 @@ async def run_sync(req: SyncRequest):
 
 
 @router.post("/audit")
-async def run_audit(unseen_only: bool = True, force: bool = False):
+async def run_audit(unseen_only: bool = True, force: bool = False, account_id: int | None = None):
     """Sync inbox if needed, then return the rolled-up audit view from cache."""
     try:
         from db import get_default_account_id
         from imap_sync import sync_inbox
-        account_id = get_default_account_id()
+        account_id = account_id or get_default_account_id()
         if force:
             await asyncio.to_thread(sync_inbox, account_id)
         else:
@@ -56,11 +57,11 @@ async def run_audit(unseen_only: bool = True, force: bool = False):
 
 
 @router.get("/audit/cached")
-async def get_cached_audit(unseen_only: bool = True):
+async def get_cached_audit(unseen_only: bool = True, account_id: int | None = None):
     """Pure cache read — no IMAP traffic. Returns 404 if cache empty."""
     try:
         from db import get_conn, get_default_account_id
-        account_id = get_default_account_id()
+        account_id = account_id or get_default_account_id()
         row = get_conn().execute(
             "SELECT COUNT(*) FROM messages WHERE account_id=? AND in_inbox=1",
             (account_id,),
@@ -76,6 +77,7 @@ async def get_cached_audit(unseen_only: bool = True):
 
 def _build_audit_view(account_id: int, unseen_only: bool) -> dict:
     """Roll up the cached INBOX rows the same way the old endpoint did."""
+    from constants import config_json_for, unsub_log_for
     from imap_sync import list_inbox_domains
     from inbox_audit import (
         load_config_for_classifier,
@@ -86,14 +88,15 @@ def _build_audit_view(account_id: int, unseen_only: bool) -> dict:
     from config_helper import load_preference_list
     from decision_store import load_decisions, save_decisions_bulk
 
-    config = load_config_for_classifier()
+    config_path = config_json_for(account_id)
+    config = load_config_for_classifier(config_path)
     lp = config.get("learned_preferences", {})
 
-    archived_set = set(load_archived_domains())
+    archived_set = set(load_archived_domains(config_path))
     keep_set = set(lp.get("keep_senders", []))
-    no_unsub_set = set(load_preference_list("no_unsub"))
-    unsub_log = load_unsubscribe_log()
-    decisions = load_decisions()
+    no_unsub_set = set(load_preference_list("no_unsub", account_id))
+    unsub_log = load_unsubscribe_log(unsub_log_for(account_id))
+    decisions = load_decisions(account_id)
 
     rollup = list_inbox_domains(account_id, unseen_only=unseen_only)
     classifications = classify_domains(rollup["domain_emails"], config)
@@ -110,7 +113,7 @@ def _build_audit_view(account_id: int, unseen_only: bool) -> dict:
                 "domain": domain,
                 "count": count,
                 "emails": [
-                    {"sender": e.get("sender", ""), "subject": e.get("subject", "")}
+                    {"sender": e.get("sender", ""), "subject": e.get("subject", ""), "date": e.get("date")}
                     for e in emails_list[:5]
                 ],
                 "classification": cls.to_dict() if cls else None,
@@ -129,7 +132,7 @@ def _build_audit_view(account_id: int, unseen_only: bool) -> dict:
         if entry["decision"] and entry["decision"]["state"] == "unsub_pending"
     ]
     if recidivist_transitions:
-        save_decisions_bulk(recidivist_transitions)
+        save_decisions_bulk(recidivist_transitions, account_id)
         recidivist_set = {d for d, _, _ in recidivist_transitions}
         for entry in domains_out:
             if entry["domain"] in recidivist_set:

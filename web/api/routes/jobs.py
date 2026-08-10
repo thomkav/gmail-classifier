@@ -19,7 +19,8 @@ class EnqueueRequest(BaseModel):
 @router.post("/jobs")
 def enqueue_job(req: EnqueueRequest):
     try:
-        job_id = jobs_mod.enqueue(req.kind, req.params or {})
+        params = req.params or {}
+        job_id = jobs_mod.enqueue(req.kind, params, account_id=params.get("account_id"))
         return {"id": job_id, "kind": req.kind}
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))

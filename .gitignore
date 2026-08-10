@@ -30,5 +30,8 @@ data/
 # Frontend
 node_modules/
 
+# Taskfile local cache
+.task/
+
 # Pre-migration artifacts
 *.pre-migration

@@ -64,22 +64,6 @@ function EditableCategoryBadge({
   );
 }
 
-function ConfidenceBar({ confidence }: { confidence: number }) {
-  const pct = Math.round(confidence);
-  const color =
-    pct >= 80 ? "bg-emerald-500" :
-    pct >= 60 ? "bg-blue-500" :
-    pct >= 40 ? "bg-amber-500" : "bg-red-500";
-  return (
-    <div className="flex items-center gap-1.5">
-      <div className="w-16 h-1 bg-gray-200 rounded-full overflow-hidden">
-        <div className={`h-full rounded-full ${color}`} style={{ width: `${pct}%` }} />
-      </div>
-      <span className="text-gray-500 text-xs w-7 tabular-nums">{pct}%</span>
-    </div>
-  );
-}
-
 const DECISION_STYLES: Record<DecisionState, { bg: string; text: string; label: string }> = {
   recidivist:    { bg: "bg-red-50",     text: "text-red-700",     label: "recidivist" },
   unsub_pending: { bg: "bg-violet-50",  text: "text-violet-700",  label: "unsub-watch" },
@@ -99,12 +83,40 @@ function DecisionBadge({ state, date }: { state: DecisionState; date: string }) 
   );
 }
 
-function TierBadge({ tier }: { tier?: string | null }) {
-  if (!tier) return null;
-  const styles =
-    tier === "high"   ? "text-emerald-700" :
-    tier === "medium" ? "text-amber-700"   : "text-gray-400";
-  return <span className={`text-xs ${styles}`}>{tier}</span>;
+function DomainFavicon({ domain }: { domain: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return (
+      <div className="w-4 h-4 rounded-sm bg-gray-200 shrink-0 flex items-center justify-center">
+        <span className="text-[8px] text-gray-400 font-bold leading-none">
+          {domain[0]?.toUpperCase() ?? "?"}
+        </span>
+      </div>
+    );
+  }
+  return (
+    <img
+      src={`https://www.google.com/s2/favicons?domain=${domain}&sz=32`}
+      alt=""
+      width={16}
+      height={16}
+      className="w-4 h-4 rounded-sm shrink-0"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
+function formatDate(iso: string | null | undefined): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return "";
+  const now = new Date();
+  const diffMs = now.getTime() - d.getTime();
+  const diffDays = Math.floor(diffMs / 86400000);
+  if (diffDays === 0) return "today";
+  if (diffDays === 1) return "yesterday";
+  if (diffDays < 7) return `${diffDays}d ago`;
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
 function ToggleSwitch({
@@ -153,14 +165,10 @@ interface Props {
   onToggle: (domain: string) => void;
   onToggleAll: () => void;
   allSelected: boolean;
-  onClear: (domain: string) => void;
-  onArchive: (domain: string) => void;
+  onArchiveNow: (domain: string) => void;
   onUnsubscribe: (domain: string) => void;
-  onBoth: (domain: string) => void;
-  onKeep: (domain: string) => void;
-  onUnkeep: (domain: string) => void;
-  onNoUnsub: (domain: string) => void;
-  onUnNoUnsub: (domain: string) => void;
+  onSetAutoArchive: (domain: string) => void;
+  onUnsetAutoArchive: (domain: string) => void;
   onClassifyManual: (domain: string, category: CategoryName) => void;
   actionLoading: boolean;
 }
@@ -171,14 +179,10 @@ export function AuditTable({
   onToggle,
   onToggleAll,
   allSelected,
-  onClear,
-  onArchive,
+  onArchiveNow,
   onUnsubscribe,
-  onBoth,
-  onKeep,
-  onUnkeep,
-  onNoUnsub,
-  onUnNoUnsub,
+  onSetAutoArchive,
+  onUnsetAutoArchive,
   onClassifyManual,
   actionLoading,
 }: Props) {
@@ -208,19 +212,23 @@ export function AuditTable({
             <input type="checkbox" checked={allSelected} onChange={onToggleAll} className="block" />
           </th>
 
-          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider">
+          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-52">
             Domain
           </th>
 
-          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-28">
+          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider">
+            Latest message
+          </th>
+
+          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-24">
             Category
           </th>
 
-          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-36">
+          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-28">
             <Tooltip side="bottom" content={
               <>
                 <strong>Status</strong> — what's already been done for this domain:
-                <br /><span className="font-medium">auto-arch MM-DD</span> — archived on that date.
+                <br /><span className="font-medium">auto-arch MM-DD</span> — set to auto-archive on that date.
                 <br /><span className="font-medium">unsub-watch</span> — unsubscribe pending; if mail keeps arriving it becomes recidivist.
               </>
             }>
@@ -228,17 +236,11 @@ export function AuditTable({
             </Tooltip>
           </th>
 
-          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-28">
-            <Tooltip side="bottom" content="Classifier confidence score (0–100%). Red bar = low confidence.">
-              <span className="cursor-default">Confidence</span>
-            </Tooltip>
-          </th>
-
-          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-48">
+          <th className="px-2 py-2 text-xs text-gray-500 font-normal uppercase tracking-wider w-32">
             Settings
           </th>
 
-          <th className="px-2 py-2 w-36" />
+          <th className="px-2 py-2 w-28" />
         </tr>
       </thead>
       <tbody>
@@ -246,6 +248,7 @@ export function AuditTable({
           const isSelected = selected.has(d.domain);
           const isExpanded = expanded.has(d.domain);
           const cls = d.classification;
+          const latestEmail = d.emails[0];
 
           return (
             <Fragment key={d.domain}>
@@ -258,7 +261,7 @@ export function AuditTable({
                 onClick={() => onToggle(d.domain)}
               >
                 {/* Checkbox */}
-                <td className="px-2 py-2" onClick={(e) => e.stopPropagation()}>
+                <td className="px-2 py-2.5" onClick={(e) => e.stopPropagation()}>
                   <input
                     type="checkbox"
                     checked={isSelected}
@@ -267,8 +270,8 @@ export function AuditTable({
                   />
                 </td>
 
-                {/* Domain */}
-                <td className="px-2 py-2">
+                {/* Domain — favicon + name + count */}
+                <td className="px-2 py-2.5">
                   <div className="flex items-center gap-2">
                     <button
                       onClick={(e) => { e.stopPropagation(); toggleExpand(d.domain); }}
@@ -276,27 +279,45 @@ export function AuditTable({
                     >
                       {isExpanded ? "▾" : "▸"}
                     </button>
-                    <span className="text-gray-800 font-mono text-xs">{d.domain}</span>
-                    <span className="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded tabular-nums">
+                    <DomainFavicon domain={d.domain} />
+                    <span className="text-gray-800 font-mono text-xs truncate">{d.domain}</span>
+                    <span className="text-xs text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded tabular-nums shrink-0">
                       {d.count}
                     </span>
                   </div>
                 </td>
 
+                {/* Latest message — subject + date */}
+                <td className="px-2 py-2.5 min-w-0">
+                  {latestEmail ? (
+                    <div className="flex items-baseline gap-3 min-w-0">
+                      <span className="text-gray-600 text-xs truncate flex-1 min-w-0">
+                        {latestEmail.subject || <span className="text-gray-300 italic">no subject</span>}
+                      </span>
+                      {latestEmail.date && (
+                        <span className="text-gray-400 text-xs shrink-0 tabular-nums">
+                          {formatDate(latestEmail.date)}
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <span className="text-gray-300 text-xs italic">—</span>
+                  )}
+                </td>
+
                 {/* Category */}
-                <td className="px-2 py-2">
-                  <div className="flex items-center gap-2">
+                <td className="px-2 py-2.5">
+                  <div className="flex items-center gap-1.5">
                     <EditableCategoryBadge
                       category={cls?.category}
                       source={cls?.source}
                       onSave={(cat) => onClassifyManual(d.domain, cat)}
                     />
-                    {cls?.tier && <TierBadge tier={cls.tier} />}
                   </div>
                 </td>
 
                 {/* Status */}
-                <td className="px-2 py-2">
+                <td className="px-2 py-2.5">
                   <div className="flex flex-wrap gap-1">
                     {d.decision ? (
                       <DecisionBadge state={d.decision.state} date={d.decision.decided_at} />
@@ -308,55 +329,34 @@ export function AuditTable({
                   </div>
                 </td>
 
-                {/* Confidence */}
-                <td className="px-2 py-2">
-                  <ConfidenceBar confidence={cls?.confidence ?? 0} />
+                {/* Settings — auto-archive toggle */}
+                <td className="px-2 py-2.5" onClick={(e) => e.stopPropagation()}>
+                  <ToggleSwitch
+                    checked={d.archived}
+                    onChange={() => d.archived ? onUnsetAutoArchive(d.domain) : onSetAutoArchive(d.domain)}
+                    label="Auto-archive"
+                    disabled={actionLoading}
+                    tooltip={d.archived
+                      ? "Auto-archive is ON — this domain will be caught by future auto-archive runs. Toggle off to remove."
+                      : "Auto-archive is OFF — toggle on to include in auto-archive runs."
+                    }
+                  />
                 </td>
 
-                {/* Settings — toggle switches */}
-                <td className="px-2 py-2" onClick={(e) => e.stopPropagation()}>
-                  <div className="flex flex-col gap-1.5">
-                    <ToggleSwitch
-                      checked={d.keep}
-                      onChange={() => d.keep ? onUnkeep(d.domain) : onKeep(d.domain)}
-                      label="Never auto-archive"
-                      disabled={actionLoading}
-                      tooltip={d.keep
-                        ? "ON — this domain bypasses auto-archive. Toggle off to remove from keep list."
-                        : "OFF — toggle on to add to keep list. Mail from this domain will never be auto-archived."
-                      }
-                    />
-                    <ToggleSwitch
-                      checked={d.no_unsub}
-                      onChange={() => d.no_unsub ? onUnNoUnsub(d.domain) : onNoUnsub(d.domain)}
-                      label="Skip unsub"
-                      disabled={actionLoading}
-                      tooltip={d.no_unsub
-                        ? "ON — unsubscribe actions are skipped for this domain. Toggle off to allow."
-                        : "OFF — toggle on to skip unsubscribe for this domain (e.g. accounts you want to keep receiving but can't unsubscribe from)."
-                      }
-                    />
-                  </div>
-                </td>
-
-                {/* Row actions — one-time operations only */}
-                <td className="px-2 py-2 text-right" onClick={(e) => e.stopPropagation()}>
+                {/* Row actions */}
+                <td className="px-2 py-2.5 text-right" onClick={(e) => e.stopPropagation()}>
                   <div className="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <RowActions
                       domain={d.domain}
-                      isKeep={d.keep}
-                      isNoUnsub={d.no_unsub}
-                      onClear={onClear}
-                      onArchive={onArchive}
+                      onArchiveNow={onArchiveNow}
                       onUnsubscribe={onUnsubscribe}
-                      onBoth={onBoth}
                       disabled={actionLoading}
                     />
                   </div>
                 </td>
               </tr>
 
-              {/* Expanded — sample subjects + reasoning */}
+              {/* Expanded — remaining subjects + reasoning */}
               {isExpanded && (
                 <tr className={`border-b ${isSelected ? "bg-indigo-50/60 border-indigo-100" : "bg-gray-50 border-gray-100"}`}>
                   <td colSpan={7} className="px-10 py-2.5">
@@ -369,6 +369,9 @@ export function AuditTable({
                               <span className="text-gray-300">—</span>
                               <span className="text-gray-600 truncate">{e.subject}</span>
                             </>
+                          )}
+                          {e.date && (
+                            <span className="text-gray-400 shrink-0 ml-auto tabular-nums">{formatDate(e.date)}</span>
                           )}
                         </div>
                       ))}
@@ -387,65 +390,34 @@ export function AuditTable({
   );
 }
 
-const ROW_ACTION_TIPS = {
-  clear: "Clear: removes all current emails from this domain from your INBOX — one-time cleanup. Does not add to any list; future mail is unaffected.",
-  arc: "Archive: removes all emails from INBOX AND adds this domain to your auto-archive list. Future mail from this domain will be caught by Auto-archive.",
-  unsub: "Unsubscribe: finds the List-Unsubscribe header in the most recent email. Attempts a one-click HTTP POST (RFC 8058) if supported, otherwise opens the unsubscribe URL in your browser.",
-  both: "Both: archives (permanent) AND unsubscribes simultaneously.",
-};
-
 function RowActions({
   domain,
-  isKeep,
-  isNoUnsub,
-  onClear,
-  onArchive,
+  onArchiveNow,
   onUnsubscribe,
-  onBoth,
   disabled,
 }: {
   domain: string;
-  isKeep: boolean;
-  isNoUnsub: boolean;
-  onClear: (d: string) => void;
-  onArchive: (d: string) => void;
+  onArchiveNow: (d: string) => void;
   onUnsubscribe: (d: string) => void;
-  onBoth: (d: string) => void;
   disabled: boolean;
 }) {
   return (
     <div className="flex gap-1">
       <button
-        onClick={() => onClear(domain)}
-        disabled={disabled || isKeep}
-        title={ROW_ACTION_TIPS.clear}
+        onClick={() => onArchiveNow(domain)}
+        disabled={disabled}
+        title="Move all current emails from this domain out of your inbox — one-time cleanup. Does not affect future mail."
         className="text-xs px-2 py-1 rounded bg-gray-50 hover:bg-gray-100 text-gray-600 border border-gray-200 disabled:opacity-40"
       >
-        clear
-      </button>
-      <button
-        onClick={() => onArchive(domain)}
-        disabled={disabled || isKeep}
-        title={ROW_ACTION_TIPS.arc}
-        className="text-xs px-2 py-1 rounded bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 disabled:opacity-40"
-      >
-        arc
+        Archive
       </button>
       <button
         onClick={() => onUnsubscribe(domain)}
-        disabled={disabled || isNoUnsub}
-        title={ROW_ACTION_TIPS.unsub}
+        disabled={disabled}
+        title="Find the List-Unsubscribe header in the most recent email. Attempts a one-click HTTP POST (RFC 8058) if supported, otherwise opens the unsubscribe URL in your browser."
         className="text-xs px-2 py-1 rounded bg-violet-50 hover:bg-violet-100 text-violet-700 border border-violet-200 disabled:opacity-40"
       >
-        unsub
-      </button>
-      <button
-        onClick={() => onBoth(domain)}
-        disabled={disabled || isKeep || isNoUnsub}
-        title={ROW_ACTION_TIPS.both}
-        className="text-xs px-2 py-1 rounded bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 disabled:opacity-40"
-      >
-        both
+        Unsub
       </button>
     </div>
   );

@@ -3,6 +3,7 @@ import type { AutoArchivePlan, ApplyResult } from "../types";
 import { api } from "../api";
 
 interface Props {
+  accountId: number | null;
   onClose: () => void;
   onApplied: (result: ApplyResult) => void;
 }
@@ -15,7 +16,7 @@ function Spinner() {
   );
 }
 
-export function AutoArchiveModal({ onClose, onApplied }: Props) {
+export function AutoArchiveModal({ accountId, onClose, onApplied }: Props) {
   const [phase, setPhase] = useState<Phase>("loading-plan");
   const [plan, setPlan] = useState<AutoArchivePlan | null>(null);
   const [threshold, setThreshold] = useState(70);
@@ -25,7 +26,7 @@ export function AutoArchiveModal({ onClose, onApplied }: Props) {
     setPhase("loading-plan");
     setError(null);
     try {
-      const p = await api.getAutoArchivePlan(t);
+      const p = await api.getAutoArchivePlan(t, accountId ?? undefined);
       setPlan(p);
       setPhase("review");
     } catch (e) {
@@ -41,7 +42,7 @@ export function AutoArchiveModal({ onClose, onApplied }: Props) {
   async function applyPlan() {
     setPhase("applying");
     try {
-      const result = await api.applyAutoArchive(threshold);
+      const result = await api.applyAutoArchive(threshold, accountId ?? undefined);
       onApplied(result);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Apply failed");

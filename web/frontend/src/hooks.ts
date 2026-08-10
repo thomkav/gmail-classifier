@@ -1,22 +1,32 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { api } from "./api";
 import { qk } from "./queryClient";
-import type { AuditResult, Job, LlmStatus } from "./types";
+import type { Account, AuditResult, Job, LlmStatus } from "./types";
+
+export function useAccounts() {
+  return useQuery<Account[]>({
+    queryKey: qk.accounts(),
+    queryFn: () => api.getAccounts(),
+    staleTime: 60_000,
+  });
+}
 
 /** Cached audit (no IMAP roundtrip). Hydrates instantly from /api/audit/cached. */
-export function useAudit(unseenOnly: boolean) {
+export function useAudit(unseenOnly: boolean, accountId: number | null) {
   return useQuery<AuditResult>({
-    queryKey: qk.audit(unseenOnly),
-    queryFn: () => api.getCachedAuditUnseen(unseenOnly),
+    queryKey: qk.audit(unseenOnly, accountId),
+    queryFn: () => api.getCachedAuditUnseen(unseenOnly, accountId ?? undefined),
+    enabled: accountId != null,
     staleTime: 60_000,
     retry: false,
   });
 }
 
-export function useDecisions() {
+export function useDecisions(accountId: number | null) {
   return useQuery({
-    queryKey: qk.decisions(),
-    queryFn: () => api.getDecisions(),
+    queryKey: qk.decisions(accountId),
+    queryFn: () => api.getDecisions(accountId ?? undefined),
+    enabled: accountId != null,
   });
 }
 
@@ -72,6 +82,7 @@ export function useEnqueueJob() {
 
 export function useSyncInbox() {
   return useMutation({
-    mutationFn: (full: boolean) => api.syncInbox(full),
+    mutationFn: ({ full, accountId }: { full: boolean; accountId?: number }) =>
+      api.syncInbox(full, accountId),
   });
 }

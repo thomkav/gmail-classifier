@@ -7,6 +7,7 @@ sys.path.insert(0, str(API_DIR))
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from routes.accounts import router as accounts_router
 from routes.audit import router as audit_router
 from routes.domains import router as domains_router
 from routes.autoarchive import router as autoarchive_router
@@ -42,6 +43,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(accounts_router, prefix="/api")
 app.include_router(audit_router, prefix="/api")
 app.include_router(domains_router, prefix="/api")
 app.include_router(autoarchive_router, prefix="/api")

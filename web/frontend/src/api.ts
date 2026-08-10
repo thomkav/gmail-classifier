@@ -1,4 +1,5 @@
 import type {
+  Account,
   AuditResult,
   AutoArchivePlan,
   ApplyResult,
@@ -25,104 +26,120 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 export const api = {
   health: () => request<{ status: string }>("/api/health"),
 
-  runAudit: (unseenOnly = true) =>
-    request<AuditResult>(`/api/audit?unseen_only=${unseenOnly}`, { method: "POST" }),
+  getAccounts: () => request<Account[]>("/api/accounts"),
 
-  getCachedAudit: () =>
-    request<AuditResult>("/api/audit/cached"),
+  runAudit: (unseenOnly = true, accountId?: number) =>
+    request<AuditResult>(`/api/audit?unseen_only=${unseenOnly}${qsAccount(accountId)}`, { method: "POST" }),
 
-  getAutoArchivePlan: (threshold = 70) =>
-    request<AutoArchivePlan>(`/api/autoarchive/plan?threshold=${threshold}`),
+  getCachedAudit: (accountId?: number) =>
+    request<AuditResult>(`/api/audit/cached${qsAccount(accountId, true)}`),
 
-  applyAutoArchive: (threshold = 70) =>
+  getAutoArchivePlan: (threshold = 70, accountId?: number) =>
+    request<AutoArchivePlan>(`/api/autoarchive/plan?threshold=${threshold}${qsAccount(accountId)}`),
+
+  applyAutoArchive: (threshold = 70, accountId?: number) =>
     request<ApplyResult>("/api/autoarchive/apply", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ threshold }),
+      body: JSON.stringify({ threshold, account_id: accountId ?? null }),
     }),
 
-  clearDomains: (domains: string[]) =>
+  clearDomains: (domains: string[], accountId?: number) =>
     request<{ results: ActionResult[] }>("/api/domains/clear", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains }),
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
     }),
 
-  archiveDomains: (domains: string[]) =>
+  archiveDomains: (domains: string[], accountId?: number) =>
     request<{ results: ActionResult[] }>("/api/domains/archive", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains }),
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
     }),
 
-  unsubscribeDomains: (domains: string[], mode = "auto") =>
+  unsubscribeDomains: (domains: string[], mode = "auto", accountId?: number) =>
     request<{ results: ActionResult[] }>("/api/domains/unsubscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains, mode }),
+      body: JSON.stringify({ domains, mode, account_id: accountId ?? null }),
     }),
 
-  keepDomains: (domains: string[]) =>
+  setAutoArchiveDomains: (domains: string[], accountId?: number) =>
+    request<{ ok: boolean; domains: string[] }>("/api/domains/set-auto-archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
+    }),
+
+  unsetAutoArchiveDomains: (domains: string[], accountId?: number) =>
+    request<{ ok: boolean; domains: string[] }>("/api/domains/unset-auto-archive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
+    }),
+
+  keepDomains: (domains: string[], accountId?: number) =>
     request<{ ok: boolean; domains: string[] }>("/api/domains/keep", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains }),
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
     }),
 
-  unkeepDomains: (domains: string[]) =>
+  unkeepDomains: (domains: string[], accountId?: number) =>
     request<{ ok: boolean; domains: string[] }>("/api/domains/un-keep", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains }),
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
     }),
 
-  noUnsubDomains: (domains: string[]) =>
+  noUnsubDomains: (domains: string[], accountId?: number) =>
     request<{ ok: boolean; domains: string[] }>("/api/domains/no-unsub", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains }),
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
     }),
 
-  unNoUnsubDomains: (domains: string[]) =>
+  unNoUnsubDomains: (domains: string[], accountId?: number) =>
     request<{ ok: boolean; domains: string[] }>("/api/domains/un-no-unsub", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains }),
+      body: JSON.stringify({ domains, account_id: accountId ?? null }),
     }),
 
-  getDecisions: () =>
-    request<Record<string, DomainDecision>>("/api/decisions"),
+  getDecisions: (accountId?: number) =>
+    request<Record<string, DomainDecision>>(`/api/decisions${qsAccount(accountId, true)}`),
 
-  getDecisionsSummary: () =>
-    request<Record<string, number>>("/api/decisions/summary"),
+  getDecisionsSummary: (accountId?: number) =>
+    request<Record<string, number>>(`/api/decisions/summary${qsAccount(accountId, true)}`),
 
-  classifyUnknown: () =>
-    request<ClassifyResult>("/api/classify/unknown", { method: "POST" }),
+  classifyUnknown: (accountId?: number) =>
+    request<ClassifyResult>(`/api/classify/unknown${qsAccount(accountId, true)}`, { method: "POST" }),
 
   getClassifyProgress: () =>
     request<{ running: boolean; total: number; completed: number; results_so_far: Record<string, Classification> }>("/api/classify/progress"),
 
-  classifyDomainManual: (domain: string, category: string) =>
+  classifyDomainManual: (domain: string, category: string, accountId?: number) =>
     request<Classification & { ok: boolean; domain: string }>("/api/domains/classify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domain, category }),
+      body: JSON.stringify({ domain, category, account_id: accountId ?? null }),
     }),
 
-  clearDomainClassification: (domain: string) =>
-    request<{ ok: boolean; domain: string }>(`/api/domains/classify/${encodeURIComponent(domain)}`, {
+  clearDomainClassification: (domain: string, accountId?: number) =>
+    request<{ ok: boolean; domain: string }>(`/api/domains/classify/${encodeURIComponent(domain)}${qsAccount(accountId, true)}`, {
       method: "DELETE",
     }),
 
   // ── New (T2/T3/T4): SQLite-backed cache, jobs, LLM status ──────────────
-  getCachedAuditUnseen: (unseenOnly = true) =>
-    request<AuditResult>(`/api/audit/cached?unseen_only=${unseenOnly}`),
+  getCachedAuditUnseen: (unseenOnly = true, accountId?: number) =>
+    request<AuditResult>(`/api/audit/cached?unseen_only=${unseenOnly}${qsAccount(accountId)}`),
 
-  syncInbox: (full = false) =>
+  syncInbox: (full = false, accountId?: number) =>
     request<SyncReport>("/api/sync", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ full_resync: full }),
+      body: JSON.stringify({ full_resync: full, account_id: accountId ?? null }),
     }),
 
   enqueueJob: (kind: string, params: Record<string, unknown> = {}) =>
@@ -141,10 +158,18 @@ export const api = {
   llmStatus: (probe = true) =>
     request<LlmStatus>(`/api/llm/status?probe=${probe}`),
 
-  resetUnknownCache: (domains?: string[]) =>
+  resetUnknownCache: (domains?: string[], accountId?: number) =>
     request<{ deleted: number }>("/api/llm/cache/reset-unknowns", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ domains: domains ?? null }),
+      body: JSON.stringify({ domains: domains ?? null, account_id: accountId ?? null }),
     }),
 };
+
+/** Query-string fragment for an optional account_id — "" (omitted) picks the
+ * server's default account. `first` controls whether it's the first param (?) or an
+ * additional one (&). */
+function qsAccount(accountId: number | undefined, first = false): string {
+  if (accountId == null) return "";
+  return `${first ? "?" : "&"}account_id=${accountId}`;
+}

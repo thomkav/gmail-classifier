@@ -1,6 +1,4 @@
 import asyncio
-import imaplib
-import os
 import time
 
 from fastapi import APIRouter, HTTPException
@@ -11,12 +9,13 @@ router = APIRouter()
 
 class ApplyRequest(BaseModel):
     threshold: int = 70
+    account_id: int | None = None
 
 
 @router.get("/autoarchive/plan")
-async def get_plan(threshold: int = 70):
+async def get_plan(threshold: int = 70, account_id: int | None = None):
     try:
-        return await asyncio.to_thread(_do_plan, threshold)
+        return await asyncio.to_thread(_do_plan, threshold, account_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -24,19 +23,24 @@ async def get_plan(threshold: int = 70):
 @router.post("/autoarchive/apply")
 async def apply_plan(req: ApplyRequest):
     try:
-        return await asyncio.to_thread(_do_apply, req.threshold)
+        return await asyncio.to_thread(_do_apply, req.threshold, req.account_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
-def _do_plan(threshold: int) -> dict:
+def _do_plan(threshold: int, account_id: int | None = None) -> dict:
+    from constants import config_json_for
+    from db import get_default_account_id
+    from imap_sync import connect_account
     from sender_audit import fetch_unread_senders
     from inbox_audit import load_config_for_classifier, load_archived_domains, classify_domains
     from auto_archive import build_archive_plan
     from mass_archive import archive_domain
 
-    config = load_config_for_classifier()
-    archived_set = set(load_archived_domains())
+    account_id = account_id or get_default_account_id()
+    config_path = config_json_for(account_id)
+    config = load_config_for_classifier(config_path)
+    archived_set = set(load_archived_domains(config_path))
 
     # Always scan ALL inbox mail (read + unread) — auto-archive cleans the inbox
     # regardless of read status, and archived_domain slip-throughs are often already read.
@@ -49,19 +53,15 @@ def _do_plan(threshold: int) -> dict:
     # Replace fetched counts with a dry-run archive search so the plan shows exactly
     # how many emails will be removed per domain.
     if to_archive:
-        user = os.environ.get("GMAIL_EMAIL", "thomkav@gmail.com")
-        password = os.environ.get("GMAIL_APP_PASSWORD", "")
-        if password:
-            mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-            mail.login(user, password)
-            mail.select("INBOX", readonly=True)
-            for entry in to_archive:
-                entry["count"] = archive_domain(mail, entry["domain"], dry_run=True)
-            try:
-                mail.close()
-                mail.logout()
-            except Exception:
-                pass
+        mail = connect_account(account_id)
+        mail.select("INBOX", readonly=True)
+        for entry in to_archive:
+            entry["count"] = archive_domain(mail, entry["domain"], dry_run=True)
+        try:
+            mail.close()
+            mail.logout()
+        except Exception:
+            pass
 
     return {
         "dry_run": True,
@@ -72,7 +72,10 @@ def _do_plan(threshold: int) -> dict:
     }
 
 
-def _do_apply(threshold: int) -> dict:
+def _do_apply(threshold: int, account_id: int | None = None) -> dict:
+    from constants import config_json_for
+    from db import get_default_account_id
+    from imap_sync import connect_account
     from sender_audit import fetch_unread_senders
     from inbox_audit import (
         load_config_for_classifier,
@@ -83,8 +86,10 @@ def _do_apply(threshold: int) -> dict:
     from auto_archive import build_archive_plan
     from mass_archive import archive_domain
 
-    config = load_config_for_classifier()
-    archived_set = set(load_archived_domains())
+    account_id = account_id or get_default_account_id()
+    config_path = config_json_for(account_id)
+    config = load_config_for_classifier(config_path)
+    archived_set = set(load_archived_domains(config_path))
 
     _, domain_counter, _, total, domain_emails = fetch_unread_senders(
         include_subjects=True, unseen_only=False
@@ -95,13 +100,7 @@ def _do_apply(threshold: int) -> dict:
     if not to_archive:
         return {"total_archived": 0, "domains": {}, "newly_blocked": []}
 
-    user = os.environ.get("GMAIL_EMAIL", "thomkav@gmail.com")
-    password = os.environ.get("GMAIL_APP_PASSWORD", "")
-    if not password:
-        raise RuntimeError("GMAIL_APP_PASSWORD not set")
-
-    mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-    mail.login(user, password)
+    mail = connect_account(account_id)
     mail.select("INBOX")
 
     archived_counts: dict[str, int] = {}
@@ -123,7 +122,7 @@ def _do_apply(threshold: int) -> dict:
         pass
 
     if newly_blocked:
-        append_archived_domains(newly_blocked)
+        append_archived_domains(newly_blocked, config_path)
 
     return {
         "total_archived": sum(archived_counts.values()),

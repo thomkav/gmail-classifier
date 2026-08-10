@@ -3,7 +3,16 @@
     "allow": [
       "Bash(pip3 install *)",
       "Bash(curl -s -X POST http://localhost:8000/api/domains/keep -H 'Content-Type: application/json' -d '{\"domains\": [\"diagnose-test.com\"]}')",
-      "Bash(task *)"
+      "Bash(task *)",
+      "Bash(GITLAB_HOST=gitlab.datakit.site glab repo create thinbox --private --description \"Local-first multi-account email client \\(Gmail OAuth + Proton Bridge\\); successor to gmail-classifier\")",
+      "Bash(GITLAB_HOST=gitlab.datakit.site glab api projects -X POST -f name=thinbox -f path=thinbox -f namespace_id=2 -f visibility=private -f 'description=Local-first multi-account email client \\(Gmail OAuth + Proton Bridge\\); successor to gmail-classifier' -f initialize_with_readme=false)",
+      "Bash(glab --version)",
+      "Bash(brew list *)",
+      "Bash(uv --version)",
+      "Bash(awk -F= '{print \"line has \"length\\($2\\)\" chars after =\"}')",
+      "Read(//Users/thomasmacbookair/**)",
+      "Bash(zsh -n ~/.zsh_secrets)",
+      "Bash(bash -n ~/.zsh_secrets)"
     ]
   }
 }

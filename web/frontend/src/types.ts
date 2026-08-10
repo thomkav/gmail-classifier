@@ -1,3 +1,11 @@
+export interface Account {
+  id: number;
+  email: string;
+  display: string | null;
+  is_default: boolean;
+  last_synced_at: string | null;
+}
+
 export type CategoryName =
   | "receipt"
   | "newsletter"
@@ -10,6 +18,7 @@ export type SuggestedAction = "keep" | "review" | "archive";
 export interface EmailSample {
   sender: string;
   subject: string;
+  date?: string | null;
 }
 
 export interface Classification {

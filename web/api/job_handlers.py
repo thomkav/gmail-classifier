@@ -86,7 +86,7 @@ def _h_classify(job_id: int, params: dict, ctx: JobContext) -> dict:
         completed += len(batch_results)
         ctx.progress(completed, total, "classifying")
 
-    raw = classify_domains_llm(domain_subjects, on_batch_done=on_batch_done)
+    raw = classify_domains_llm(domain_subjects, on_batch_done=on_batch_done, account_id=account_id)
 
     results = {}
     for domain, r in raw.items():
@@ -111,7 +111,8 @@ def _h_classify(job_id: int, params: dict, ctx: JobContext) -> dict:
 def _h_auto_archive(job_id: int, params: dict, ctx: JobContext) -> dict:
     from routes.autoarchive import _do_apply
     threshold = int(params.get("threshold", 70))
+    account_id = params.get("account_id")
     ctx.progress(0, 1, "starting", force=True)
-    result = _do_apply(threshold)
+    result = _do_apply(threshold, account_id)
     ctx.progress(1, 1, "done", force=True)
     return result

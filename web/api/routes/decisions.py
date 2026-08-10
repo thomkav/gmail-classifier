@@ -5,13 +5,13 @@ router = APIRouter()
 
 
 @router.get("/decisions")
-def get_decisions():
-    return load_decisions()
+def get_decisions(account_id: int | None = None):
+    return load_decisions(account_id)
 
 
 @router.get("/decisions/summary")
-def get_decisions_summary():
-    decisions = load_decisions()
+def get_decisions_summary(account_id: int | None = None):
+    decisions = load_decisions(account_id)
     summary: dict[str, int] = {}
     for entry in decisions.values():
         state = entry.get("state", "unknown")

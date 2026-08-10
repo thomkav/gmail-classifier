@@ -10,6 +10,7 @@ MIGRATIONS in version order — never edit an existing one.
 from __future__ import annotations
 
 import os
+import re
 import sqlite3
 import sys
 import threading
@@ -142,9 +143,16 @@ def _m002_seed_default_account(conn: sqlite3.Connection) -> None:
         )
 
 
+def _m003_password_env_var(conn: sqlite3.Connection) -> None:
+    """Explicit app-password env var name per account, overriding the derived
+    slug — accounts are often set up by hand with a human-chosen var name."""
+    conn.execute("ALTER TABLE accounts ADD COLUMN password_env_var TEXT")
+
+
 MIGRATIONS = [
     (1, "init", _m001_init),
     (2, "seed_default_account", _m002_seed_default_account),
+    (3, "password_env_var", _m003_password_env_var),
 ]
 
 
@@ -195,13 +203,105 @@ def get_account(account_id: int) -> sqlite3.Row | None:
     ).fetchone()
 
 
+def list_accounts() -> list[sqlite3.Row]:
+    return list(get_conn().execute("SELECT * FROM accounts ORDER BY id"))
+
+
+def account_env_var(email: str) -> str:
+    """Deterministic app-password env var name for an account, e.g.
+    thomaskavanagh.dev@gmail.com -> GMAIL_APP_PASSWORD_THOMASKAVANAGH_DEV.
+    """
+    local_part = email.split("@", 1)[0]
+    slug = re.sub(r"[^A-Za-z0-9]+", "_", local_part).strip("_").upper()
+    return f"GMAIL_APP_PASSWORD_{slug}"
+
+
+def get_account_password(account_id: int) -> str:
+    """Resolve an account's app password: explicit password_env_var column first
+    (accounts are often wired up by hand with a human-chosen var name), then the
+    derived slug, then — for the default account only — the legacy unsuffixed
+    $GMAIL_APP_PASSWORD for backward compatibility."""
+    acct = get_account(account_id)
+    if acct is None:
+        raise RuntimeError(f"unknown account_id={account_id}")
+    var = acct["password_env_var"] or account_env_var(acct["email"])
+    password = os.environ.get(var, "")
+    if not password and acct["is_default"]:
+        password = os.environ.get("GMAIL_APP_PASSWORD", "")
+    if not password:
+        raise RuntimeError(
+            f"No app password set for {acct['email']} — set ${var} in ~/.zsh_secrets"
+        )
+    return password
+
+
+def add_account(
+    email: str,
+    display: str | None = None,
+    make_default: bool = False,
+    password_env_var: str | None = None,
+) -> int:
+    with transaction() as c:
+        if make_default:
+            c.execute("UPDATE accounts SET is_default = 0")
+        cur = c.execute(
+            "INSERT INTO accounts (email, display, is_default, password_env_var) VALUES (?, ?, ?, ?)",
+            (email, display, 1 if make_default else 0, password_env_var),
+        )
+        rowid = cur.lastrowid
+        if rowid is None:
+            raise RuntimeError("insert failed: no lastrowid")
+        return int(rowid)
+
+
+def set_account_password_env_var(account_id: int, var_name: str) -> None:
+    get_conn().execute(
+        "UPDATE accounts SET password_env_var = ? WHERE id = ?", (var_name, account_id)
+    )
+
+
 # ── CLI entrypoint ─────────────────────────────────────────────────────────
 
 def _cli() -> int:
     if len(sys.argv) < 2:
-        print("usage: python3 db.py {migrate|status|reset}", file=sys.stderr)
+        print("usage: python3 db.py {migrate|status|reset|add-account|list-accounts}", file=sys.stderr)
         return 2
     cmd = sys.argv[1]
+    if cmd == "add-account":
+        if len(sys.argv) < 3:
+            print("usage: python3 db.py add-account <email> [display] [--default] [--env-var NAME]", file=sys.stderr)
+            return 2
+        email = sys.argv[2]
+        rest = sys.argv[3:]
+        make_default = "--default" in rest
+        env_var = None
+        if "--env-var" in rest:
+            i = rest.index("--env-var")
+            env_var = rest[i + 1]
+            rest = rest[:i] + rest[i + 2:]
+        rest = [a for a in rest if a != "--default"]
+        display = rest[0] if rest else None
+        get_conn()
+        account_id = add_account(email, display, make_default, env_var)
+        var = env_var or account_env_var(email)
+        print(f"[db] added account id={account_id} email={email}")
+        print(f"[db] set ${var} in ~/.zsh_secrets to that account's Gmail app password")
+        return 0
+    if cmd == "set-account-env-var":
+        if len(sys.argv) < 4:
+            print("usage: python3 db.py set-account-env-var <account_id> <ENV_VAR_NAME>", file=sys.stderr)
+            return 2
+        get_conn()
+        set_account_password_env_var(int(sys.argv[2]), sys.argv[3])
+        print(f"[db] account {sys.argv[2]} now reads ${sys.argv[3]}")
+        return 0
+    if cmd == "list-accounts":
+        get_conn()
+        for a in list_accounts():
+            default = " (default)" if a["is_default"] else ""
+            var = a["password_env_var"] or account_env_var(a["email"])
+            print(f"  id={a['id']}  {a['email']}{default}  env_var=${var}  last_synced_at={a['last_synced_at']}")
+        return 0
     if cmd == "migrate":
         get_conn()
         print(f"[db] migrations up to date at {DB_PATH}")

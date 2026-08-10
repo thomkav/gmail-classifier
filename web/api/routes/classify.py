@@ -27,6 +27,7 @@ _CATEGORY_DEFAULT_ACTION = {
 class ManualClassifyRequest(BaseModel):
     domain: str
     category: str
+    account_id: int | None = None
 
 
 @router.get("/classify/progress")
@@ -36,12 +37,12 @@ async def classify_progress():
 
 
 @router.post("/classify/unknown")
-async def classify_unknown():
+async def classify_unknown(account_id: int | None = None):
     """Classify all unknown domains using the local LLM. Reads the audit view fresh
     from SQLite each time so it works without depending on a previous /api/audit call."""
     from routes.audit import _build_audit_view
     from db import get_default_account_id
-    account_id = get_default_account_id()
+    account_id = account_id or get_default_account_id()
     try:
         cache = await asyncio.to_thread(_build_audit_view, account_id, True)
     except Exception as e:
@@ -82,7 +83,7 @@ async def classify_unknown():
             }
 
     try:
-        raw = await asyncio.to_thread(_do_classify_llm, domain_subjects, on_batch_done)
+        raw = await asyncio.to_thread(_do_classify_llm, domain_subjects, on_batch_done, account_id)
     except Exception as e:
         _progress["running"] = False
         raise HTTPException(status_code=500, detail=str(e))
@@ -116,7 +117,7 @@ async def classify_domain_manual(req: ManualClassifyRequest):
             detail=f"Invalid category. Must be one of: {', '.join(sorted(VALID_CATEGORIES))}",
         )
     try:
-        await asyncio.to_thread(_do_set_manual, req.domain, req.category)
+        await asyncio.to_thread(_do_set_manual, req.domain, req.category, req.account_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -137,25 +138,25 @@ async def classify_domain_manual(req: ManualClassifyRequest):
 
 
 @router.delete("/domains/classify/{domain}")
-async def clear_domain_classification(domain: str):
+async def clear_domain_classification(domain: str, account_id: int | None = None):
     """Remove a manual classification override for a domain."""
     try:
-        await asyncio.to_thread(_do_clear_manual, domain)
+        await asyncio.to_thread(_do_clear_manual, domain, account_id)
         return {"ok": True, "domain": domain}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 
-def _do_classify_llm(domain_subjects: dict, on_batch_done=None) -> dict:
+def _do_classify_llm(domain_subjects: dict, on_batch_done=None, account_id: int | None = None) -> dict:
     from llm_classifier import classify_domains_llm
-    return classify_domains_llm(domain_subjects, on_batch_done=on_batch_done)
+    return classify_domains_llm(domain_subjects, on_batch_done=on_batch_done, account_id=account_id)
 
 
-def _do_set_manual(domain: str, category: str) -> None:
+def _do_set_manual(domain: str, category: str, account_id: int | None = None) -> None:
     from llm_classifier import set_manual_classification
-    set_manual_classification(domain, category)
+    set_manual_classification(domain, category, account_id)
 
 
-def _do_clear_manual(domain: str) -> None:
+def _do_clear_manual(domain: str, account_id: int | None = None) -> None:
     from llm_classifier import clear_manual_classification
-    clear_manual_classification(domain)
+    clear_manual_classification(domain, account_id)

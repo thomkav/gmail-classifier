@@ -18,7 +18,8 @@ import threading
 import time
 import urllib.error
 import urllib.request
-from constants import CONFIG_JSON
+from constants import config_json_for
+from db import get_default_account_id
 
 _config_lock = threading.Lock()
 _llm_semaphore = threading.Semaphore(1)
@@ -33,12 +34,13 @@ BATCH_SIZE = 20
 VALID_CATEGORIES = {"newsletter", "promotion", "receipt", "notification", "personal", "unknown"}
 
 
-def _load_cache_key(key: str) -> dict:
+def _load_cache_key(key: str, account_id: int | None = None) -> dict:
+    path = config_json_for(account_id or get_default_account_id())
     with _config_lock:
-        if not CONFIG_JSON.exists():
+        if not path.exists():
             return {}
         try:
-            return json.loads(CONFIG_JSON.read_text()).get(key, {})
+            return json.loads(path.read_text()).get(key, {})
         except (json.JSONDecodeError, OSError):
             return {}
 
@@ -54,17 +56,18 @@ def _is_error_result(r: dict) -> bool:
     return False
 
 
-def _save_cache_key(key: str, data: dict) -> None:
+def _save_cache_key(key: str, data: dict, account_id: int | None = None) -> None:
+    path = config_json_for(account_id or get_default_account_id())
     with _config_lock:
         try:
-            cfg = json.loads(CONFIG_JSON.read_text()) if CONFIG_JSON.exists() else {}
+            cfg = json.loads(path.read_text()) if path.exists() else {}
         except (json.JSONDecodeError, OSError):
             cfg = {}
         cfg[key] = data
-        CONFIG_JSON.write_text(json.dumps(cfg, indent=2) + "\n")
+        path.write_text(json.dumps(cfg, indent=2) + "\n")
 
 
-def classify_domains_llm(domain_subjects: dict, on_batch_done=None) -> dict:
+def classify_domains_llm(domain_subjects: dict, on_batch_done=None, account_id: int | None = None) -> dict:
     """Classify domains using the local LLM, single-flight, with cache + backoff.
 
     Args:
@@ -74,7 +77,7 @@ def classify_domains_llm(domain_subjects: dict, on_batch_done=None) -> dict:
     Returns:
         {domain: {"category": ..., "confidence": ..., "reasoning": ...}}
     """
-    cache = _load_cache_key("llm_classifications")
+    cache = _load_cache_key("llm_classifications", account_id)
     results = {d: cache[d] for d in domain_subjects if d in cache}
     to_classify = [(d, s) for d, s in domain_subjects.items() if d not in cache]
 
@@ -101,7 +104,7 @@ def classify_domains_llm(domain_subjects: dict, on_batch_done=None) -> dict:
                 # Don't poison the cache with error rows — re-try those next time.
                 if not _is_error_result(result):
                     cache[domain] = result
-            _save_cache_key("llm_classifications", cache)
+            _save_cache_key("llm_classifications", cache, account_id)
             if on_batch_done:
                 on_batch_done(batch_results)
             if i + BATCH_SIZE < len(to_classify):
@@ -228,7 +231,7 @@ def _classify_batch(batch: list, timeout: int = LLM_TIMEOUT) -> dict:
     return results
 
 
-def reset_unknown_cache(domains: list[str] | None = None) -> int:
+def reset_unknown_cache(domains: list[str] | None = None, account_id: int | None = None) -> int:
     """Remove LLM-cached entries that classify_domains won't actually apply.
 
     Clears entries where category is 'unknown' or 'personal' (both excluded from
@@ -241,28 +244,28 @@ def reset_unknown_cache(domains: list[str] | None = None) -> int:
     Returns:
         number of entries deleted
     """
-    cache = _load_cache_key("llm_classifications")
+    cache = _load_cache_key("llm_classifications", account_id)
     if domains is not None:
         to_delete = [d for d in domains if d in cache]
     else:
         to_delete = [d for d, v in cache.items() if v.get("category") in ("unknown", "personal")]
     for d in to_delete:
         del cache[d]
-    _save_cache_key("llm_classifications", cache)
+    _save_cache_key("llm_classifications", cache, account_id)
     return len(to_delete)
 
 
-def set_manual_classification(domain: str, category: str) -> None:
-    cache = _load_cache_key("manual_classifications")
+def set_manual_classification(domain: str, category: str, account_id: int | None = None) -> None:
+    cache = _load_cache_key("manual_classifications", account_id)
     cache[domain] = {"category": category, "confidence": 100, "reasoning": "manual override"}
-    _save_cache_key("manual_classifications", cache)
+    _save_cache_key("manual_classifications", cache, account_id)
 
 
-def clear_manual_classification(domain: str) -> None:
-    cache = _load_cache_key("manual_classifications")
+def clear_manual_classification(domain: str, account_id: int | None = None) -> None:
+    cache = _load_cache_key("manual_classifications", account_id)
     if domain in cache:
         del cache[domain]
-        _save_cache_key("manual_classifications", cache)
+        _save_cache_key("manual_classifications", cache, account_id)
 
 
 # ── Status / health ────────────────────────────────────────────────────────

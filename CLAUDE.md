@@ -4,7 +4,7 @@
 
 A Claude Code plugin for inbox management. Connects to Gmail via IMAP, audits senders, archives bulk mail, and manages unsubscribes. Lives at `~/.claude/plugins/gmail-classifier/` (this repo is symlinked/copied there).
 
-**Auth**: `GMAIL_APP_PASSWORD` in `~/.zsh_secrets`. All `task` targets source this.
+**Auth**: Gmail app passwords live in the `gmail-classifier` 1Password vault (`my.1password.com` account), one login item per account. `task` targets inject them via `op run --account my.1password.com --env-file=.env.op -- <cmd>` (see `.env.op` at repo root for the `op://` references — safe to commit, no secret values). Multi-account: `web/api/db.py`'s `accounts` table maps each account to its own `GMAIL_APP_PASSWORD_<SLUG>` var; `.env.op` also carries a legacy unsuffixed `GMAIL_APP_PASSWORD`/`GMAIL_EMAIL` pair (pointed at the default account, `thomkav@gmail.com`) for the older `scripts/*.py` CLI tools that predate multi-account support.
 
 **Primary interface**: web app (`task web`). The interactive TUI (`scripts/inbox_audit.py`) is being deprecated — use the web UI for archive/unsubscribe flows.
 

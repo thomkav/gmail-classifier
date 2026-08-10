@@ -16,14 +16,13 @@ from __future__ import annotations
 import email
 import email.utils
 import imaplib
-import os
 import time
 from collections import Counter
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Callable, Iterable
 
-from db import get_conn, get_account, transaction
+from db import get_conn, get_account, get_account_password, transaction
 
 INBOX = "INBOX"
 DEFAULT_BATCH = 200
@@ -48,12 +47,15 @@ class SyncReport:
 # ── IMAP plumbing ──────────────────────────────────────────────────────────
 
 
-def _connect(account_email: str) -> imaplib.IMAP4_SSL:
-    password = os.environ.get("GMAIL_APP_PASSWORD", "")
-    if not password:
-        raise RuntimeError("GMAIL_APP_PASSWORD not set in environment")
+def connect_account(account_id: int) -> imaplib.IMAP4_SSL:
+    """Open an authenticated IMAP connection for the given account. Shared by
+    every module that needs live IMAP access (sync, archive, unsubscribe, autoarchive)."""
+    acct = get_account(account_id)
+    if acct is None:
+        raise RuntimeError(f"unknown account_id={account_id}")
+    password = get_account_password(account_id)
     mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-    mail.login(account_email, password)
+    mail.login(acct["email"], password)
     return mail
 
 
@@ -271,9 +273,8 @@ def sync_inbox(
     acct = get_account(account_id)
     if acct is None:
         raise RuntimeError(f"unknown account_id={account_id}")
-    email_addr = acct["email"]
 
-    mail = _connect(email_addr)
+    mail = connect_account(account_id)
     try:
         uidvalidity = _select_inbox(mail)
         prev_uidvalidity, last_uid = _get_state(account_id, INBOX)
@@ -409,7 +410,7 @@ def list_inbox_domains(
         if d not in domain_emails:
             domain_emails[d] = []
         if len(domain_emails[d]) < SUBJECT_SAMPLE_PER_DOMAIN:
-            domain_emails[d].append({"sender": r["sender"], "subject": r["subject"]})
+            domain_emails[d].append({"sender": r["sender"], "subject": r["subject"], "date": r["internal_date"]})
 
     total = sum(domain_counter.values())
 

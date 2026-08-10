@@ -1,14 +1,15 @@
 version: '3'
 
 # Gmail Classifier — task CLI workflows
-# Run `task --list` for the menu. All targets that touch IMAP source ~/.zsh_secrets
-# (which exports GMAIL_APP_PASSWORD).
+# Run `task --list` for the menu. All targets that touch IMAP inject app passwords
+# from 1Password (vault: gmail-classifier) via `op run --env-file=.env.op`.
 
 vars:
   ROOT:
     sh: pwd
   SCRIPTS: '{{.ROOT}}/scripts'
   WEB: '{{.ROOT}}/web'
+  OP_RUN: 'op run --account my.1password.com --env-file={{.ROOT}}/.env.op --'
 
 env:
   PYTHONUNBUFFERED: '1'
@@ -36,7 +37,7 @@ tasks:
     desc: Run the FastAPI backend on :45100 (autoreload)
     dir: '{{.WEB}}/api'
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && uvicorn main:app --reload --port 45100
+      - '{{.OP_RUN}} uvicorn main:app --reload --port 45100'
 
   web:frontend:
     desc: Run the Vite dev server on :45101
@@ -49,8 +50,7 @@ tasks:
     deps: [web:install]
     cmds:
       - |
-        source ~/.zsh_secrets 2>/dev/null
-        (cd {{.WEB}}/api && uvicorn main:app --reload --port 45100) &
+        (cd {{.WEB}}/api && {{.OP_RUN}} uvicorn main:app --reload --port 45100) &
         API=$!
         (cd {{.WEB}}/frontend && npm run dev) &
         FE=$!
@@ -68,7 +68,7 @@ tasks:
   db:migrate:
     desc: Apply SQLite schema migrations
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.WEB}}/api/db.py migrate
+      - '{{.OP_RUN}} python3 {{.WEB}}/api/db.py migrate'
 
   db:reset:
     desc: Wipe and recreate the SQLite cache (DESTRUCTIVE)
@@ -82,49 +82,49 @@ tasks:
   audit:quick:
     desc: JSON snapshot of unread senders (no UI, no actions)
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/sender_audit.py
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/sender_audit.py'
 
   audit:all:
     desc: JSON snapshot of ALL inbox mail (read + unread)
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/sender_audit.py --all
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/sender_audit.py --all'
 
   auto-archive:dry-run:
     desc: Preview the auto-archive plan (no changes)
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/auto_archive.py --dry-run
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/auto_archive.py --dry-run'
 
   auto-archive:apply:
     desc: Apply the auto-archive plan
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/auto_archive.py --apply
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/auto_archive.py --apply'
 
   recidivists:
     desc: Report domains that ignored unsubscribe and are still emailing
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/recidivist_check.py
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/recidivist_check.py'
 
   sweep:dry-run:
     desc: Find blocked-list domains still slipping into inbox (preview)
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/sweep_blocked.py
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/sweep_blocked.py'
 
   sweep:apply:
     desc: Sweep blocked-list domains out of the inbox
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/sweep_blocked.py --apply
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/sweep_blocked.py --apply'
 
   batch-archive:dry-run:
     desc: Dry-run mass archive from a domain list file (FILE=path/to/file.txt)
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/batch_archive.py {{.FILE}}
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/batch_archive.py {{.FILE}}'
     requires:
       vars: [FILE]
 
   batch-archive:apply:
     desc: Apply mass archive from a domain list file (FILE=path/to/file.txt)
     cmds:
-      - source ~/.zsh_secrets 2>/dev/null && python3 {{.SCRIPTS}}/batch_archive.py {{.FILE}} --apply
+      - '{{.OP_RUN}} python3 {{.SCRIPTS}}/batch_archive.py {{.FILE}} --apply'
     requires:
       vars: [FILE]
 
