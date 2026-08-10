@@ -38,7 +38,7 @@ def _on_startup():
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:45101"],
+    allow_origins=["http://localhost:45101", "http://127.0.0.1:45101"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

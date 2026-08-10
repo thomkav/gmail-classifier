@@ -37,7 +37,7 @@ tasks:
     desc: Run the FastAPI backend on :45100 (autoreload)
     dir: '{{.WEB}}/api'
     cmds:
-      - '{{.OP_RUN}} uvicorn main:app --reload --port 45100'
+      - '{{.OP_RUN}} uvicorn main:app --reload --port 45100 --timeout-graceful-shutdown 3'
 
   web:frontend:
     desc: Run the Vite dev server on :45101
@@ -50,7 +50,7 @@ tasks:
     deps: [web:install]
     cmds:
       - |
-        (cd {{.WEB}}/api && {{.OP_RUN}} uvicorn main:app --reload --port 45100) &
+        (cd {{.WEB}}/api && {{.OP_RUN}} uvicorn main:app --reload --port 45100 --timeout-graceful-shutdown 3) &
         API=$!
         (cd {{.WEB}}/frontend && npm run dev) &
         FE=$!

@@ -1,7 +1,12 @@
 """SQLite cache + schema migrations.
 
-Single shared connection per process is OK for our load. We open in WAL mode so
-the IMAP sync thread and request threads can read concurrently while one writes.
+One connection per thread (thread-local), all pointing at the same WAL-mode
+file — WAL explicitly supports concurrent readers plus one writer across
+connections. A single connection object shared across threads is NOT safe
+even with check_same_thread=False: that flag only disables Python's own
+same-thread guard, it does not make libsqlite3 safe for concurrent use of one
+connection from multiple OS threads, and doing so has been observed to
+segfault the whole process under real concurrent request load.
 
 Schema versioning is intentionally simple: a `schema_migrations` table records
 applied migrations by integer version. To add a migration, append a function to
@@ -22,15 +27,15 @@ from constants import PROJECT_ROOT
 DB_DIR = PROJECT_ROOT / "data"
 DB_PATH = DB_DIR / "gmail_classifier.sqlite"
 
-_conn: sqlite3.Connection | None = None
-_conn_lock = threading.Lock()
+_local = threading.local()
+_migrate_lock = threading.Lock()
+_migrated = False
 
 
 def _connect() -> sqlite3.Connection:
     DB_DIR.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(
         DB_PATH,
-        check_same_thread=False,
         isolation_level=None,  # autocommit; we manage transactions explicitly
         detect_types=sqlite3.PARSE_DECLTYPES,
     )
@@ -43,14 +48,19 @@ def _connect() -> sqlite3.Connection:
 
 
 def get_conn() -> sqlite3.Connection:
-    """Return the process-wide connection, creating + migrating on first call."""
-    global _conn
-    if _conn is None:
-        with _conn_lock:
-            if _conn is None:
-                _conn = _connect()
-                _migrate(_conn)
-    return _conn
+    """Return this thread's connection, creating it (and migrating the schema,
+    once process-wide) on first call from that thread."""
+    global _migrated
+    conn = getattr(_local, "conn", None)
+    if conn is None:
+        conn = _connect()
+        _local.conn = conn
+        if not _migrated:
+            with _migrate_lock:
+                if not _migrated:
+                    _migrate(conn)
+                    _migrated = True
+    return conn
 
 
 @contextmanager
